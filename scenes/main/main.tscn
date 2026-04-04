@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcns1kdh373t0"]
 
-[ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/GameManager.gd" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_hyk8p"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 
