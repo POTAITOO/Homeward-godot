@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://5p2exb5eaijv"]
+
+[ext_resource type="Script" uid="uid://b7o512ab41pyl" path="res://scripts/hometile.gd" id="1_roknl"]
+
+[node name="Tile" type="Node2D" unique_id=1881069619]
+script = ExtResource("1_roknl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1228088176]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=889462168]
+offset_right = 40.0
+offset_bottom = 23.0

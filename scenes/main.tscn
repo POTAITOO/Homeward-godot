@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dsgmc1hr8uc51"]
+
+[ext_resource type="Script" uid="uid://d2hudsaryimnf" path="res://scripts/GameManager.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bghaqmim2i7nq" path="res://scripts/BaseMap.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://dn5j0wvs214n0" path="res://scripts/dice.gd" id="3_sugp2"]
+
+[node name="Main" type="Node" unique_id=1220513885]
+
+[node name="GameManager" type="Node" parent="." unique_id=955054316]
+script = ExtResource("1_o5qli")
+
+[node name="Map" type="Node2D" parent="." unique_id=1310768905]
+script = ExtResource("2_0wfyh")
+
+[node name="TileContainer" type="Node2D" parent="Map" unique_id=340160360]
+
+[node name="Players" type="Node2D" parent="Map" unique_id=1944720971]
+
+[node name="Dice" type="Node2D" parent="." unique_id=1236469842]
+script = ExtResource("3_sugp2")
+
+[node name="Label" type="Label" parent="Dice" unique_id=1516501366]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RollButton" type="Button" parent="." unique_id=1945142389]
+offset_left = 53.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 95.0
+text = "Roll Dice
+"

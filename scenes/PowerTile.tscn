@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://s27smd15i5dx"]
+
+[ext_resource type="Script" uid="uid://cvidvc60uw4dj" path="res://scripts/powertile.gd" id="1_4uy5q"]
+
+[node name="Tile" type="Node2D" unique_id=1881069619]
+script = ExtResource("1_4uy5q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1228088176]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=889462168]
+offset_right = 40.0
+offset_bottom = 23.0

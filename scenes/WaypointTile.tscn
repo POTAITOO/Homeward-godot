@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bkjy7dn1tg7ib"]
+
+[ext_resource type="Script" uid="uid://dmfskk2kw25pp" path="res://scripts/waypointtile.gd" id="1_4x73g"]
+
+[node name="Tile" type="Node2D" unique_id=1881069619]
+script = ExtResource("1_4x73g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1228088176]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=889462168]
+offset_right = 40.0
+offset_bottom = 23.0
