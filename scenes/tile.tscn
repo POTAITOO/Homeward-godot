@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dmjl8bdflf7y7"]
+
+[ext_resource type="Script" uid="uid://cbvpcf0rtw4hk" path="res://scripts/tile.gd" id="1_3dk36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiyn6"]
+size = Vector2(80, 80)
+
+[node name="Tile" type="Node2D" unique_id=2082388665]
+script = ExtResource("1_3dk36")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1673016623]
+offset_right = 80.0
+offset_bottom = 80.0
+color = Color(0.23112184, 0.019933026, 0, 1)
+
+[node name="NumLabel" type="Label" parent="." unique_id=945372364]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 44.0
+offset_bottom = 25.0
+text = "1"
+
+[node name="IconLabel" type="Label" parent="." unique_id=1159113764]
+offset_top = 25.0
+offset_right = 80.0
+offset_bottom = 65.0
+text = " 🚌"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area" type="Area2D" parent="." unique_id=1942631566]
+
+[node name="Shape" type="CollisionShape2D" parent="Area" unique_id=887427856]
+position = Vector2(44, 41)
+shape = SubResource("RectangleShape2D_uiyn6")

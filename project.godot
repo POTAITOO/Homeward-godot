@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Homeward"
-run/main_scene="uid://bcns1kdh373t0"
+config/name="homeward-board"
+run/main_scene="uid://c1eow54ykj4lo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
