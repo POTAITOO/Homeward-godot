@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dd1bi6muvhq42"]
+
+[ext_resource type="SpriteFrames" uid="uid://uj0mbxxhvaxs" path="res://assets/players/Student_1.tres" id="1_4p73j"]
+[ext_resource type="Script" uid="uid://w3kcrkwcvrne" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hnj63"]
+radius = 19.0
+height = 52.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1109358877]
+script = ExtResource("1_g2els")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=897178416]
+sprite_frames = ExtResource("1_4p73j")
+animation = &"right walk"
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=2055872899]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_hnj63")

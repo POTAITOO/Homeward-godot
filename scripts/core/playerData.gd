@@ -8,9 +8,6 @@ var position_index: int = 0
 var energy: int = 100
 var money: int = 0
 
-func _init(id: int, name: String):
-	player_id = id
-	player_name = name
 	
 func move(steps: int):
 	position_index += steps
