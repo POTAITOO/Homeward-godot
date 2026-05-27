@@ -1,4 +1,5 @@
 extends Node
+const Player = preload("res://scripts/core/Player.gd")
 
 @export var player_scene: PackedScene
 #example data for test (Inspection)
@@ -9,11 +10,11 @@ extends Node
 var players = []
 var current_player_index: int = 0
 var current_turn: int = 0
+var game_over: bool = false
 
 @onready var players_node = get_parent().get_node("Players")
 
 func _ready():
-	randomize()
 	print("Game Started")
 	setup_players()
 	start_game()
@@ -37,8 +38,12 @@ func start_game():
 	
 #Turn Logic 
 func play_turn():
+	if game_over:
+		return
+	
 	if current_turn >= max_turns:
 		print("Game Over")
+		game_over = true
 		return
 	
 	var player = players[current_player_index]
