@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://c0snw0kjdxerw"]
+
+[ext_resource type="Script" uid="uid://c8limqfdav54d" path="res://scripts/Tile_Script/dog_left.gd" id="1_70mjf"]
+[ext_resource type="Texture2D" uid="uid://k08v3ickt141" path="res://assets/Tiles/Dog-Sheet.png" id="2_ighr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofqn7"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhy6f"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bldp2"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujo2b"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(0, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad4us"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(128, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp564"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(256, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcjvq"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(384, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31a0t"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(512, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7bgh"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(640, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guw3n"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(0, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar5yi"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(128, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve47m"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(256, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msio4"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(384, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx4hc"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(512, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxyin"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(640, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7qqx"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(768, 512, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yk0ed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofqn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhy6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bldp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujo2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad4us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp564")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcjvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31a0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7bgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guw3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar5yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve47m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msio4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx4hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxyin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7qqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1583450229]
+script = ExtResource("1_70mjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410945029]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_pty6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=968532581]
+sprite_frames = SubResource("SpriteFrames_yk0ed")

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b56kkvetcjf1e"]
+
+[ext_resource type="Script" uid="uid://ujg43j4ls7vp" path="res://scripts/Tile_Script/plain.gd" id="1_j4gu5"]
+[ext_resource type="Texture2D" uid="uid://bn5x4rmc5j0si" path="res://assets/Tiles/Plain-Tile-Sheet.png" id="2_h414v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4gu5"]
+atlas = ExtResource("2_h414v")
+region = Rect2(0, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h414v"]
+atlas = ExtResource("2_h414v")
+region = Rect2(128, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qk8t"]
+atlas = ExtResource("2_h414v")
+region = Rect2(256, 256, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abnmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4gu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h414v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qk8t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1583450229]
+script = ExtResource("1_j4gu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410945029]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_pty6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=263502440]
+sprite_frames = SubResource("SpriteFrames_abnmg")

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://5v0bvjsts6n6"]
+
+[ext_resource type="Texture2D" uid="uid://cdlv06p5g1pss" path="res://assets/UI/Backdrop_Sky-Sheet.png" id="1_v77j7"]
+[ext_resource type="Script" uid="uid://cq814ng40qelg" path="res://scripts/UI_Script/bg.gd" id="1_y54if"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y54if"]
+atlas = ExtResource("1_v77j7")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dep0d"]
+atlas = ExtResource("1_v77j7")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttlx8"]
+atlas = ExtResource("1_v77j7")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwipc"]
+atlas = ExtResource("1_v77j7")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r00j"]
+atlas = ExtResource("1_v77j7")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sstc1"]
+atlas = ExtResource("1_v77j7")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_twoho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y54if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dep0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttlx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwipc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r00j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sstc1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1583450229]
+script = ExtResource("1_y54if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410945029]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_pty6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=568042910]
+sprite_frames = SubResource("SpriteFrames_twoho")

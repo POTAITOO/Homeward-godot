@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://burq3yqc0vmrg"]
+
+[ext_resource type="Script" uid="uid://chphwyb8vh60g" path="res://scripts/Tile_Script/puddle.gd" id="1_awxcs"]
+[ext_resource type="Texture2D" uid="uid://da5tcxtxdqshn" path="res://assets/Tiles/Puddles-Sheet.png" id="1_yd7t8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awxcs"]
+atlas = ExtResource("1_yd7t8")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxk81"]
+atlas = ExtResource("1_yd7t8")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnx7d"]
+atlas = ExtResource("1_yd7t8")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqqjc"]
+atlas = ExtResource("1_yd7t8")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myb0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awxcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxk81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnx7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqqjc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1583450229]
+script = ExtResource("1_awxcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410945029]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_pty6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=350711654]
+sprite_frames = SubResource("SpriteFrames_myb0t")
