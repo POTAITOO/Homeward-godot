@@ -64,4 +64,5 @@ position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_pty6h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=568042910]
+position = Vector2(46, -21)
 sprite_frames = SubResource("SpriteFrames_twoho")

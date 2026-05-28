@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://blr11o6mtmu7s"]
+
+[ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_uh60o"]
+[ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_hy0vx"]
+
+[node name="PlayerSelect" type="Control" unique_id=2041017812]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area2D" parent="." unique_id=1583450229 instance=ExtResource("1_uh60o")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D" unique_id=2105061694]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Area2D/CanvasLayer" unique_id=970845371]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -575.0
+offset_bottom = -301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Choose" type="Label" parent="Area2D/CanvasLayer/VBoxContainer" unique_id=756131602]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hy0vx")
+theme_override_font_sizes/font_size = 100
+text = "Choose Number of Player"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Area2D/CanvasLayer/VBoxContainer/Choose" unique_id=1503846726]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Area2D/CanvasLayer/VBoxContainer/Choose/HBoxContainer" unique_id=1484093817]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Area2D/CanvasLayer/VBoxContainer/Choose/HBoxContainer" unique_id=833943033]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Area2D/CanvasLayer/VBoxContainer/Choose/HBoxContainer" unique_id=932543905]
+layout_mode = 2
