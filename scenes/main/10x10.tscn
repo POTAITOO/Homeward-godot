@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dikelnygdpiso" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="16_n0na8"]
 [ext_resource type="PackedScene" uid="uid://c7hvrqigheu71" path="res://scenes/Scene_Power/bus-stop-green.tscn" id="17_wyrdm"]
 [ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="18_c7inb"]
-[ext_resource type="Script" uid="uid://b7hox8s12f4ba" path="res://scripts/core/MapData_10x10.gd" id="19_mrib1"]
+[ext_resource type="Script" path="res://scripts/core/MapData_10x10.gd" id="18_j2pv1"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 metadata/_edit_vertical_guides_ = [1034.0]
@@ -466,4 +466,4 @@ position = Vector2(830, 256)
 tile_number = 10
 
 [node name="MapData" type="Node" parent="Board" unique_id=777519244]
-script = ExtResource("19_mrib1")
+script = ExtResource("18_j2pv1")
