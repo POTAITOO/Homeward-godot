@@ -1,6 +1,10 @@
 extends Node
 
-@export var player_scene: PackedScene
+@export var player_scene_1: PackedScene
+@export var player_scene_2: PackedScene
+@export var player_scene_3: PackedScene
+@export var player_scene_4: PackedScene
+
 var player_count := 3
 var turn_delay := 2.0
 
@@ -40,14 +44,17 @@ func set_player_count(count: int):
 	print("[CONFIG] Player count set to: " + str(count))
 
 func setup_players():
+	var scenes = [player_scene_1, player_scene_2, player_scene_3, player_scene_4]
 	print("[PLAYERS] Spawning " + str(player_count) + " players")
 	for i in range(player_count):
-		var player = player_scene.instantiate()
+		if scenes[i] == null:
+			push_error("[PLAYER] player_scene_" + str(i + 1) + " is not assigned!")
+			continue
+		var player = scenes[i].instantiate()
 		player.name = "Player" + str(i + 1)
-		player.board = current_board
-		if current_map_data != null:
-			player.max_tile = current_map_data.total_tiles
-		player.global_position = current_board.get_school_position()
+		player.set("board", current_board)
+		player.set("max_tile", current_map_data.total_tiles if current_map_data != null else 0)
+		player.global_position = current_board.get_school_position() + Vector2(0, 32)		
 		players_node.add_child(player)
 		players.append(player)
 		print("[PLAYER] " + player.name + " spawned at School")
@@ -66,7 +73,6 @@ func play_turn():
 
 	var player = players[current_player_index]
 
-	# Skip turn check
 	if player in skip_turn_players:
 		print("[TRAFFIC] " + player.name + " skipped turn")
 		skip_turn_players.erase(player)
@@ -75,20 +81,16 @@ func play_turn():
 		next_turn()
 		return
 
-	# Roll and move tile by tile
 	var roll = roll_dice()
 	print("[ROLL] " + player.name + " rolled " + str(roll))
-	player.take_turn(roll)
+	player.call("take_turn", roll)
 
-	# Wait for stepping movement to finish
 	await _wait_for_player(player)
-	print("[MOVE] " + player.name + " finished at tile " + str(player.grid_position))
+	print("[MOVE] " + player.name + " finished at tile " + str(player.get("grid_position")))
 
-	# Apply tile effect and wait for any effect movement
 	await resolve_tile_effect(player)
 
-	# Win check AFTER effect movement is done
-	if player.grid_position >= player.max_tile:
+	if player.get("grid_position") >= player.get("max_tile"):
 		win_game(player)
 		return
 
@@ -98,7 +100,7 @@ func play_turn():
 	next_turn()
 
 func _wait_for_player(player) -> void:
-	while player.is_moving:
+	while player.get("is_moving"):
 		await get_tree().process_frame
 
 func roll_dice() -> int:
@@ -113,59 +115,48 @@ func win_game(player):
 	game_over = true
 	processing_turn = false
 	print("[WIN] " + player.name + " WINS!")
-	player.is_moving = true
-	player.target_position = current_board.get_home_position()
+	player.set("is_moving", true)
+	player.set("target_position", current_board.get_home_position())
 
-# Returns after effect movement finishes
 func resolve_tile_effect(player) -> void:
-	var tile_type = current_map_data.tile_index.get(player.grid_position, "plain")
+	var tile_type = current_map_data.tile_index.get(player.get("grid_position"), "plain")
 	print("[TILE] Effect: " + tile_type)
 
 	match tile_type:
 		"bus_stop_green", "bus_stop_orange", "bus_stop_violet":
 			apply_bus_stop(player)
 			await _wait_for_player(player)
-
 		"vending":
 			await apply_vending(player)
-
 		"bike":
 			apply_bike(player)
 			await _wait_for_player(player)
-
 		"puddle":
 			apply_puddle(player)
 			await _wait_for_player(player)
-
 		"traffic":
 			apply_traffic(player)
-			# No movement to wait for
-
 		"dog":
 			apply_dog(player)
 			await _wait_for_player(player)
-
 		_:
 			pass
 
-# --- TILE EFFECTS ---
-
 func apply_bus_stop(player):
-	var tile = player.grid_position
+	var tile = player.get("grid_position")
 	if current_map_data.bus_pairs.has(tile):
 		var dest = current_map_data.bus_pairs[tile]
 		print("[BUS] " + str(tile) + " → " + str(dest))
-		player.grid_position = dest
-		player.target_position = current_board.get_tile_world_position(dest)
-		player.is_moving = true
+		player.set("grid_position", dest)
+		player.set("target_position", current_board.get_tile_world_position(dest))
+		player.set("is_moving", true)
 
 func apply_vending(player) -> void:
 	var roll = roll_dice()
 	print("[VENDING] Extra roll: " + str(roll))
-	# Step tile by tile for the bonus roll too
-	player.take_turn(roll)
+	player.call("take_turn", roll)
 	await _wait_for_player(player)
-	print("[VENDING] Landed on tile " + str(player.grid_position))
+	print("[VENDING] Landed on tile " + str(player.get("grid_position")))
 
 func apply_bike(player):
 	var front = get_player_in_front(player)
@@ -173,25 +164,28 @@ func apply_bike(player):
 		print("[BIKE] No player ahead")
 		return
 	print("[BIKE] Catching up to " + front.name)
-	player.grid_position = max(1, front.grid_position - 1)
-	player.target_position = current_board.get_tile_world_position(player.grid_position)
-	player.is_moving = true
+	var dest = max(1, front.get("grid_position") - 1)
+	player.set("grid_position", dest)
+	player.set("target_position", current_board.get_tile_world_position(dest))
+	player.set("is_moving", true)
 
 func apply_puddle(player):
-	player.grid_position = max(1, player.grid_position - 2)
-	player.target_position = current_board.get_tile_world_position(player.grid_position)
-	player.is_moving = true
-	print("[PUDDLE] Slipped to tile " + str(player.grid_position))
+	var dest = max(1, player.get("grid_position") - 2)
+	player.set("grid_position", dest)
+	player.set("target_position", current_board.get_tile_world_position(dest))
+	player.set("is_moving", true)
+	print("[PUDDLE] Slipped to tile " + str(dest))
 
 func apply_traffic(player):
 	print("[TRAFFIC] " + player.name + " will skip next turn")
 	skip_turn_players.append(player)
 
 func apply_dog(player):
-	print("[DOG] Sending " + player.name + " back to tile " + str(player.last_position))
-	player.grid_position = player.last_position
-	player.target_position = current_board.get_tile_world_position(player.grid_position)
-	player.is_moving = true
+	var dest = player.get("last_position")
+	print("[DOG] Sending " + player.name + " back to tile " + str(dest))
+	player.set("grid_position", dest)
+	player.set("target_position", current_board.get_tile_world_position(dest))
+	player.set("is_moving", true)
 
 func get_player_in_front(player):
 	var best = null
@@ -199,7 +193,7 @@ func get_player_in_front(player):
 	for p in players:
 		if p == player:
 			continue
-		if p.grid_position > player.grid_position and p.grid_position > highest:
-			highest = p.grid_position
+		if p.get("grid_position") > player.get("grid_position") and p.get("grid_position") > highest:
+			highest = p.get("grid_position")
 			best = p
 	return best

@@ -2,16 +2,22 @@
 
 [ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
 [ext_resource type="Script" uid="uid://du2agcfxpexxs" path="res://scenes/main/game_scene.gd" id="1_yaarb"]
-[ext_resource type="PackedScene" uid="uid://dd1bi6muvhq42" path="res://scenes/player.tscn" id="2_k2fmo"]
-[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/Board.gd" id="4_8gxuo"]
-[ext_resource type="PackedScene" uid="uid://2bcn3c7xb72w" path="res://scenes/main/6x6.tscn" id="5_8gxuo"]
+[ext_resource type="PackedScene" uid="uid://cnfxucqxei6rt" path="res://scenes/Scene_Players/p_1.tscn" id="3_wktqh"]
+[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/board.gd" id="4_8gxuo"]
+[ext_resource type="PackedScene" uid="uid://dmiti0njxvxa0" path="res://scenes/Scene_Players/p_2.tscn" id="4_tj35g"]
+[ext_resource type="PackedScene" uid="uid://bcns1kdh373t0" path="res://scenes/main/6x6.tscn" id="5_8gxuo"]
+[ext_resource type="PackedScene" uid="uid://yx5vd667ac0a" path="res://scenes/Scene_Players/p_3.tscn" id="5_jck2h"]
+[ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="6_17w4u"]
 
 [node name="GameScene" type="Node2D" unique_id=705321355]
 script = ExtResource("1_yaarb")
 
 [node name="GameManager" type="Node" parent="." unique_id=1287142068]
 script = ExtResource("1_sdya7")
-player_scene = ExtResource("2_k2fmo")
+player_scene_1 = ExtResource("3_wktqh")
+player_scene_2 = ExtResource("4_tj35g")
+player_scene_3 = ExtResource("5_jck2h")
+player_scene_4 = ExtResource("6_17w4u")
 
 [node name="Board" type="Node2D" parent="." unique_id=2081129005]
 script = ExtResource("4_8gxuo")
