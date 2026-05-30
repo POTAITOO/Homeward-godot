@@ -111,3 +111,15 @@ func move_to_tile(tile_num: int) -> void:
 		target_position = board.get_tile_world_position(tile_num) + TILE_OFFSET
 	is_moving = true
 	move_queue.clear()
+	
+func celebrate_win() -> void:
+	is_moving = false
+	move_queue.clear()
+	
+	_play_idle()
+	
+	# Optional animation if you have it
+	if sprite.sprite_frames and sprite.sprite_frames.has_animation("win"):
+		sprite.play("jump")
+	
+	print("[PLAYER] ", name, " is celebrating WIN!")

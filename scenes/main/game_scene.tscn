@@ -19,6 +19,7 @@ script = ExtResource("4_8gxuo")
 [node name="UI" type="CanvasLayer" parent="." unique_id=497433094]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=690373440]
+zoom = Vector2(0.6, 0.6)
 
 [node name="GameManager" type="Node" parent="." unique_id=657675942]
 script = ExtResource("1_sdya7")

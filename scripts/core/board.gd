@@ -48,3 +48,23 @@ func get_home_position() -> Vector2:
 
 	push_error("[BOARD] Home not found in group 'home'")
 	return Vector2.ZERO
+
+func get_board_size() -> Vector2:
+	var tiles = get_tree().get_nodes_in_group("tiles")
+
+	if tiles.is_empty():
+		return Vector2.ZERO
+
+	var min_x = INF
+	var max_x = -INF
+	var min_y = INF
+	var max_y = -INF
+
+	for t in tiles:
+		var p = t.global_position
+		min_x = min(min_x, p.x)
+		max_x = max(max_x, p.x)
+		min_y = min(min_y, p.y)
+		max_y = max(max_y, p.y)
+
+	return Vector2(max_x - min_x, max_y - min_y)
