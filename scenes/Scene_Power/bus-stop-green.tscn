@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c7hvrqigheu71"]
+
+[ext_resource type="Script" uid="uid://bo47yq5vgy4l0" path="res://scripts/Tile_Script/bus_stop_green.gd" id="1_qoxl2"]
+[ext_resource type="Texture2D" uid="uid://bpf8cpttagemc" path="res://assets/Tiles/Bus_Stop-Sheet.png" id="2_eajfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjqs8"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(0, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki2fb"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(128, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s5oy"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(256, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khdp5"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(384, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n3a5"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(512, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6smm"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(640, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0728a"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(768, 256, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgiap"]
+atlas = ExtResource("2_eajfa")
+region = Rect2(896, 256, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1g3ox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjqs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki2fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s5oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khdp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n3a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6smm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0728a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgiap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1583450229]
+script = ExtResource("1_qoxl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410945029]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_pty6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=406127756]
+sprite_frames = SubResource("SpriteFrames_1g3ox")

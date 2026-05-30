@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://dhl0wq3p80c45"]
+
+[ext_resource type="Script" uid="uid://buugfpqkchrx8" path="res://scripts/Tile_Script/dog_right.gd" id="1_nf666"]
+[ext_resource type="Texture2D" uid="uid://k08v3ickt141" path="res://assets/Tiles/Dog-Sheet.png" id="2_ighr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0qhi"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(0, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osjsj"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(128, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr0ls"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(256, 768, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe01r"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(0, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wvbf"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(128, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qor7e"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(256, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvd0s"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(384, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnga7"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(512, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nwd2"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(640, 1024, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7tia"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(0, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2xn7"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(128, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifdyf"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(256, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh2g8"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(384, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f85mc"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(512, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_885fk"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(640, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gckev"]
+atlas = ExtResource("2_ighr7")
+region = Rect2(768, 1280, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_imfuk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0qhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osjsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr0ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe01r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wvbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qor7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvd0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnga7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nwd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7tia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2xn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifdyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh2g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f85mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_885fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gckev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1583450229]
+script = ExtResource("1_nf666")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410945029]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_pty6h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1659912884]
+sprite_frames = SubResource("SpriteFrames_imfuk")

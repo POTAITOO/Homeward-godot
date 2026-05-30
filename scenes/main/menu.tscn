@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://xj4ka4kynxfv"]
+
+[ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_60r8b"]
+[ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_dqugj"]
+[ext_resource type="Script" uid="uid://3i5b4dkkgkij" path="res://scripts/UI_Script/start.gd" id="3_dqugj"]
+
+[node name="Menu" type="Node2D" unique_id=781491540]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1640745912]
+position = Vector2(478, 349)
+
+[node name="Area2D" parent="Node2D" unique_id=1583450229 instance=ExtResource("1_60r8b")]
+position = Vector2(59, -9)
+scale = Vector2(1.3, 1.3)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=1949227719]
+position = Vector2(129, -14)
+zoom = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1285054621]
+
+[node name="TitleScreen" type="Control" parent="CanvasLayer" unique_id=536771275]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 611.0
+offset_top = 314.0
+offset_right = 611.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/TitleScreen" unique_id=677090176]
+layout_mode = 1
+offset_left = -540.0
+offset_top = -120.0
+offset_right = 470.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.939503, 0.5521563, 0.2383334, 1)
+theme_override_fonts/font = ExtResource("2_dqugj")
+theme_override_font_sizes/font_size = 160
+text = "Homeward"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="CanvasLayer/TitleScreen/Title" unique_id=1059803918]
+layout_mode = 1
+offset_left = 9.0
+offset_top = -12.0
+offset_right = 1019.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_dqugj")
+theme_override_font_sizes/font_size = 160
+text = "Homeward"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Label" parent="CanvasLayer/TitleScreen" unique_id=173736268]
+layout_mode = 1
+offset_left = -256.0
+offset_top = 73.0
+offset_right = 783.0
+offset_bottom = 253.0
+theme_override_colors/font_color = Color(0.111571215, 0.47557253, 9.62615e-08, 1)
+theme_override_fonts/font = ExtResource("2_dqugj")
+theme_override_font_sizes/font_size = 60
+text = "\"Click to Start\""
+script = ExtResource("3_dqugj")
