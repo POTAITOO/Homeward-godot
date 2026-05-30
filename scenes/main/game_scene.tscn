@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://cwt0hvehi5lj1"]
 
 [ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
+[ext_resource type="Script" uid="uid://du2agcfxpexxs" path="res://scenes/main/game_scene.gd" id="1_yaarb"]
 [ext_resource type="PackedScene" uid="uid://dd1bi6muvhq42" path="res://scenes/player.tscn" id="2_k2fmo"]
+[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/Board.gd" id="4_8gxuo"]
+[ext_resource type="PackedScene" uid="uid://2bcn3c7xb72w" path="res://scenes/main/6x6.tscn" id="5_8gxuo"]
 
 [node name="GameScene" type="Node2D" unique_id=705321355]
+script = ExtResource("1_yaarb")
 
 [node name="GameManager" type="Node" parent="." unique_id=1287142068]
 script = ExtResource("1_sdya7")
 player_scene = ExtResource("2_k2fmo")
 
 [node name="Board" type="Node2D" parent="." unique_id=2081129005]
+script = ExtResource("4_8gxuo")
+
+[node name="Main" parent="Board" unique_id=352002498 instance=ExtResource("5_8gxuo")]
 
 [node name="Players" type="Node2D" parent="." unique_id=1115601463]
 

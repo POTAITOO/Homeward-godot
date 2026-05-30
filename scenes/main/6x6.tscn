@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="2_iuonh"]
-[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/Board.gd" id="3_iuq8w"]
+[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/Board.gd" id="3_iuq8w"]
 [ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://duu0cwsbj2jdn" path="res://scenes/Scene_Tiles/connector_left.tscn" id="3_raeie"]
 [ext_resource type="PackedScene" uid="uid://c6fyv57ah4u4r" path="res://scenes/Scene_Tiles/connector_right.tscn" id="4_hxu8e"]
@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dhl0wq3p80c45" path="res://scenes/Scene_Power/dog-right.tscn" id="9_r4lks"]
 [ext_resource type="PackedScene" uid="uid://dikelnygdpiso" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="11_pg34l"]
 [ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="14_m4h2d"]
-[ext_resource type="Script" uid="uid://bb43gihqef1td" path="res://scripts/MapData_6x6.gd" id="19_wh7xj"]
 [ext_resource type="PackedScene" uid="uid://camhlhmsilyiv" path="res://scenes/Interactions/dice.tscn" id="19_necax"]
+[ext_resource type="Script" uid="uid://bb43gihqef1td" path="res://scripts/core/MapData_6x6.gd" id="19_wh7xj"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 

@@ -1,17 +1,51 @@
-extends Node2D
+extends CharacterBody2D
 
-var player_id: int
-var player_name: String
-var position_index: int = 0
+# --- PLAYER STATE ---
+var grid_position := 1
+var last_position := 1
 
-#Future ready (optional for now)
-var energy: int = 100
-var money: int = 0
+var target_position := Vector2.ZERO   # Where the player should move (world position)
+var is_moving := false           # Is the player currently moving?
 
-func _init(id: int, name: String):
-	player_id = id
-	player_name = name
+# Reference to Board (assigned by GameManager)
+var board = null
+var max_tile := 0
+
+# --- TURN ACTION ---
+func take_turn(roll: int):
+
+	if board == null:
+		print("ERROR: Board not assigned!")
+		return
+		
+	# SAVE LAST POSITION (for DOG tile)
+	last_position = grid_position
 	
-func move(steps: int):
-	position_index += steps
-	print(player_name, "moved to Tile:", position_index)
+	print("[PLAYER] ", name, " rolled ", roll)
+	
+	grid_position += roll
+
+	# CLAMP ONLY TO LAST TILE
+	grid_position = clamp(grid_position, 1, max_tile)
+
+	target_position = board.get_tile_world_position(grid_position)
+
+	is_moving = true
+
+	print("[PLAYER] ", name, " rolled move to tile ", grid_position)
+
+func _process(delta):
+
+	if is_moving:
+
+		global_position = global_position.move_toward(
+			target_position,
+			300 * delta
+		)
+
+		if global_position.distance_to(target_position) < 2:
+
+			global_position = target_position
+			is_moving = false
+
+			print("[PLAYER] ", name, " arrived at tile ", grid_position)
