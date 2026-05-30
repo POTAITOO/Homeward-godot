@@ -22,6 +22,8 @@ GameManager="*uid://cjc3mdqkrauxn"
 [display]
 
 window/size/mode=3
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://5idw8d1ft5lm"
 
 [physics]
 
