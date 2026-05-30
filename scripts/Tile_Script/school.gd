@@ -1,6 +1,7 @@
-extends Area2D
+extends Node2D
 
-@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+# School is the start point — players spawn here
+# No tile_number needed, no group needed
 
-func _ready() -> void:
-	anim.play("default")
+func get_spawn_position() -> Vector2:
+	return global_position

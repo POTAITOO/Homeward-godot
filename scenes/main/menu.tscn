@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_60r8b"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_dqugj"]
 [ext_resource type="Script" uid="uid://3i5b4dkkgkij" path="res://scripts/UI_Script/start.gd" id="3_dqugj"]
+[ext_resource type="Script" uid="uid://51oyhckbfx5l" path="res://scripts/UI_Script/title.gd" id="3_nvrrj"]
 
 [node name="Menu" type="Node2D" unique_id=781491540]
 
@@ -21,6 +22,7 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer" unique_id=536771275]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 611.0
@@ -42,6 +44,7 @@ theme_override_font_sizes/font_size = 160
 text = "Homeward"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_nvrrj")
 
 [node name="Title2" type="Label" parent="CanvasLayer/TitleScreen/Title" unique_id=1059803918]
 layout_mode = 1
