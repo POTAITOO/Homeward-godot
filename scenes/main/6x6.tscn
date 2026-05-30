@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bcns1kdh373t0"]
 
-[ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/GameManager.gd" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Power/school.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_l3cfh"]
@@ -26,9 +25,6 @@
 zoom = Vector2(0.6, 0.6)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_iuonh")]
-
-[node name="GameManager" type="Node" parent="." unique_id=1135812573]
-script = ExtResource("1_hyk8p")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
