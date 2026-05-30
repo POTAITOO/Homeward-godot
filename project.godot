@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Homeward"
-run/main_scene="uid://bcns1kdh373t0"
+run/main_scene="uid://2bcn3c7xb72w"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [input]
 
