@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://crl6ut8hxltr3"]
 
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_j2pv1"]
-[ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/GameManager.gd" id="2_mrib1"]
 [ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_uy4or"]
 [ext_resource type="PackedScene" uid="uid://burq3yqc0vmrg" path="res://scenes/Scene_Power/puddle.tscn" id="4_sr55w"]
 [ext_resource type="PackedScene" uid="uid://b88l2sn52fkhk" path="res://scenes/Scene_Power/traffic.tscn" id="5_n8hh7"]
@@ -33,9 +32,6 @@ zoom = Vector2(0.43, 0.43)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_j2pv1")]
 scale = Vector2(1.5, 1.5)
-
-[node name="GameManager" type="Node" parent="." unique_id=1135812573]
-script = ExtResource("2_mrib1")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
