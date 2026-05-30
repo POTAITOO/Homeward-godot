@@ -15,8 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://c7hvrqigheu71" path="res://scenes/Scene_Power/bus-stop-green.tscn" id="14_jfdo5"]
 [ext_resource type="PackedScene" uid="uid://d35owlaadgwwt" path="res://scenes/Scene_Power/vending.tscn" id="15_kfork"]
 [ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="16_fwfc4"]
-[ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Power/school.tscn" id="17_kqs1i"]
+[ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="17_kqs1i"]
 [ext_resource type="PackedScene" uid="uid://cyb5vo3mt46ll" path="res://scenes/Scene_Power/bus-stop-violet.tscn" id="18_rafy3"]
+[ext_resource type="Script" path="res://scripts/core/MapData_8x8.gd" id="18_yqsby"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 
@@ -248,3 +249,6 @@ position = Vector2(447, 256)
 
 [node name="8-Bus-Violet-1" parent="Board/Layer1" unique_id=2045676394 instance=ExtResource("18_rafy3")]
 position = Vector2(574, 256)
+
+[node name="MapData" type="Node" parent="Board" unique_id=717873200]
+script = ExtResource("18_yqsby")

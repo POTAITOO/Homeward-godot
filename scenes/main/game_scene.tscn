@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cwt0hvehi5lj1"]
 
 [ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
-[ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_yaarb"]
 [ext_resource type="PackedScene" uid="uid://cnfxucqxei6rt" path="res://scenes/Scene_Players/p_1.tscn" id="3_wktqh"]
 [ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/board.gd" id="4_8gxuo"]
 [ext_resource type="PackedScene" uid="uid://dmiti0njxvxa0" path="res://scenes/Scene_Players/p_2.tscn" id="4_tj35g"]
@@ -9,8 +8,32 @@
 [ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="6_17w4u"]
 [ext_resource type="PackedScene" uid="uid://2bcn3c7xb72w" path="res://scenes/main/6x6.tscn" id="8_wktqh"]
 
+[sub_resource type="GDScript" id="GDScript_o41ig"]
+script/source = "extends Node2D
+
+@onready var game_manager = $GameManager
+@onready var board = $Board
+@onready var players = $Players
+
+func _ready():
+	print(\"[GameScene] Starting setup...\")
+	
+	game_manager.set_board(board)
+	game_manager.players_node = players
+	
+	var MapData = load(\"res://scripts/core/MapData_6x6.gd\")
+	var map_data = MapData.new()
+	game_manager.set_map_data(map_data)
+	game_manager.set_player_count(4)	
+	# ✅ Wait one frame so Board._ready() finishes and all @onready vars resolve
+	await get_tree().process_frame
+	
+	game_manager.initialize_game()
+	print(\"[GameScene] Ready\")
+"
+
 [node name="GameScene" type="Node2D" unique_id=705321355]
-script = ExtResource("1_yaarb")
+script = SubResource("GDScript_o41ig")
 
 [node name="GameManager" type="Node" parent="." unique_id=1287142068]
 script = ExtResource("1_sdya7")
