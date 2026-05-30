@@ -1,38 +1,50 @@
 extends Node2D
 
+var tile_map: Dictionary = {}
+var school_node: Node2D = null
+var home_node: Node2D = null
+
 func _ready():
-	print("[BOARD] Ready — " + str(get_tree().get_nodes_in_group("tiles").size()) + " tiles in group")
+	_cache_nodes()
+	print("[BOARD] Ready — " + str(tile_map.size()) + " tiles cached")
+
+
+func _cache_nodes():
+	# Cache tiles
+	for tile in get_tree().get_nodes_in_group("tiles"):
+		if tile.has_method("get") and tile.get("tile_number") != null:
+			tile_map[tile.get("tile_number")] = tile
+
+	# Cache School/Home using groups (RECOMMENDED)
+	var schools = get_tree().get_nodes_in_group("school")
+	if schools.size() > 0:
+		school_node = schools[0]
+
+	var homes = get_tree().get_nodes_in_group("home")
+	if homes.size() > 0:
+		home_node = homes[0]
+
 
 func get_tile_world_position(tile_num: int) -> Vector2:
-	for tile in get_tree().get_nodes_in_group("tiles"):
-		if tile.get("tile_number") == tile_num:
-			return tile.global_position
+	if tile_map.has(tile_num):
+		return tile_map[tile_num].global_position
+
 	push_error("[BOARD] Tile " + str(tile_num) + " not found!")
 	return Vector2.ZERO
+
 
 func get_school_position() -> Vector2:
 	for node in get_tree().get_nodes_in_group("tiles"):
 		if node.name == "School":
 			return node.global_position
-	# Fallback — search whole tree
-	var school = _find_by_name(get_tree().get_root(), "School")
-	if school == null:
-		push_error("[BOARD] School node not found!")
-		return Vector2.ZERO
-	return school.global_position
+
+	push_error("[BOARD] School not found!")
+	return Vector2.ZERO
+
 
 func get_home_position() -> Vector2:
-	var home = _find_by_name(get_tree().get_root(), "Home")
-	if home == null:
-		push_error("[BOARD] Home node not found!")
-		return Vector2.ZERO
-	return home.global_position
+	if home_node != null:
+		return home_node.global_position
 
-func _find_by_name(node: Node, target: String) -> Node2D:
-	if node.name == target:
-		return node as Node2D
-	for child in node.get_children():
-		var result = _find_by_name(child, target)
-		if result:
-			return result
-	return null
+	push_error("[BOARD] Home not found in group 'home'")
+	return Vector2.ZERO

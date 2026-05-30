@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="18_c7inb"]
 [ext_resource type="Script" path="res://scripts/core/MapData_10x10.gd" id="18_j2pv1"]
 
-[node name="Main" type="Node2D" unique_id=352002498]
+[node name="10x10" type="Node2D" unique_id=352002498]
 metadata/_edit_vertical_guides_ = [1034.0]
 
 [node name="UI-Screen" type="Node2D" parent="." unique_id=700528336]

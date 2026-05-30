@@ -25,11 +25,12 @@
 [ext_resource type="Script" path="res://scripts/core/MapData_6x6.gd" id="23_b7xp2"]
 [ext_resource type="Texture2D" uid="uid://c51r7vfmlc5eu" path="res://assets/UI/Side.png" id="24_b7xp2"]
 
-[node name="Main" type="Node2D" unique_id=352002498]
+[node name="6x6" type="Node2D" unique_id=352002498]
 
 [node name="UI-Screen" type="Node2D" parent="." unique_id=700528336]
 
 [node name="Camera2D" type="Camera2D" parent="UI-Screen" unique_id=1346983163]
+visible = false
 zoom = Vector2(0.65, 0.6)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_iuonh")]
