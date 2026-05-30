@@ -18,8 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://dhl0wq3p80c45" path="res://scenes/Scene_Power/dog-right.tscn" id="9_r4lks"]
 [ext_resource type="PackedScene" uid="uid://dikelnygdpiso" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="11_pg34l"]
 [ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="14_m4h2d"]
+[ext_resource type="PackedScene" uid="uid://b886hicstl1iu" path="res://scenes/Scene_Tiles/filler-tree.tscn" id="15_dljn3"]
+[ext_resource type="PackedScene" uid="uid://bvm5pcf6teyha" path="res://scenes/Scene_Tiles/filler-empty.tscn" id="18_55vpa"]
 [ext_resource type="PackedScene" uid="uid://camhlhmsilyiv" path="res://scenes/Interactions/dice.tscn" id="19_necax"]
-[ext_resource type="Script" uid="uid://bb43gihqef1td" path="res://scripts/core/MapData_6x6.gd" id="19_wh7xj"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 
@@ -32,13 +33,50 @@ zoom = Vector2(0.65, 0.6)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
+[node name="Dice" parent="." unique_id=453070204 instance=ExtResource("19_necax")]
+position = Vector2(576, 320)
+
 [node name="Board" type="Node2D" parent="." unique_id=156339385]
 script = ExtResource("3_iuq8w")
+
+[node name="Border-T" type="Node2D" parent="Board" unique_id=485836980]
+
+[node name="BorderB" type="Sprite2D" parent="Board/Border-T" unique_id=1020415634]
+position = Vector2(-320, -432)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB3" type="Sprite2D" parent="Board/Border-T" unique_id=1709477148]
+position = Vector2(-192, -432)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB4" type="Sprite2D" parent="Board/Border-T" unique_id=2059918156]
+position = Vector2(-64, -432)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB5" type="Sprite2D" parent="Board/Border-T" unique_id=148048779]
+position = Vector2(64, -432)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB6" type="Sprite2D" parent="Board/Border-T" unique_id=505242286]
+position = Vector2(192, -432)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB7" type="Sprite2D" parent="Board/Border-T" unique_id=2044610742]
+position = Vector2(320, -432)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB2" type="Sprite2D" parent="Board/Border-T" unique_id=880944492]
+position = Vector2(-448, -432)
+texture = ExtResource("22_55vpa")
 
 [node name="Layer6" type="Node2D" parent="Board" unique_id=993786857]
 position = Vector2(0, -640)
 
 [node name="36" parent="Board/Layer6" unique_id=901420643 instance=ExtResource("3_raeie")]
+position = Vector2(-320, 256)
+tile_number = 36
+
+[node name="37" parent="Board/Layer6" unique_id=1757504770 instance=ExtResource("3_raeie")]
 position = Vector2(-320, 256)
 tile_number = 36
 
@@ -92,6 +130,9 @@ tile_number = 29
 position = Vector2(320, 256)
 tile_number = 30
 
+[node name="Filler" parent="Board/Layer5" unique_id=1403316351 instance=ExtResource("15_dljn3")]
+position = Vector2(-512, 256)
+
 [node name="Layer4" type="Node2D" parent="Board" unique_id=200404372]
 position = Vector2(0, -384)
 
@@ -118,6 +159,9 @@ tile_number = 20
 [node name="19-Vending" parent="Board/Layer4" unique_id=957037078 instance=ExtResource("6_hujxm")]
 position = Vector2(320, 256)
 tile_number = 19
+
+[node name="Filler" parent="Board/Layer4" unique_id=332982464 instance=ExtResource("18_55vpa")]
+position = Vector2(-512, 256)
 
 [node name="Layer3" type="Node2D" parent="Board" unique_id=54317193]
 position = Vector2(0, -256)
@@ -146,6 +190,9 @@ tile_number = 17
 position = Vector2(320, 256)
 tile_number = 18
 
+[node name="Filler" parent="Board/Layer3" unique_id=1002769982 instance=ExtResource("18_55vpa")]
+position = Vector2(-512, 256)
+
 [node name="Layer2" type="Node2D" parent="Board" unique_id=996910031]
 position = Vector2(0, -128)
 
@@ -172,6 +219,9 @@ tile_number = 8
 [node name="7" parent="Board/Layer2" unique_id=462552422 instance=ExtResource("3_l3cfh")]
 position = Vector2(320, 256)
 tile_number = 7
+
+[node name="Filler" parent="Board/Layer2" unique_id=741723150 instance=ExtResource("15_dljn3")]
+position = Vector2(-512, 256)
 
 [node name="Layer1" type="Node2D" parent="Board" unique_id=855052811]
 
@@ -205,5 +255,86 @@ tile_number = 6
 [node name="MapData" type="Node" parent="Board" unique_id=2007233607]
 script = ExtResource("19_wh7xj")
 
-[node name="Area2D" parent="." unique_id=453070204 instance=ExtResource("19_necax")]
-position = Vector2(576, 320)
+[node name="Border-B" type="Node2D" parent="Board" unique_id=986700074]
+
+[node name="BorderB" type="Sprite2D" parent="Board/Border-B" unique_id=286272817]
+position = Vector2(-576, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB2" type="Sprite2D" parent="Board/Border-B" unique_id=701331861]
+position = Vector2(-448, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB3" type="Sprite2D" parent="Board/Border-B" unique_id=672688166]
+position = Vector2(-320, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB4" type="Sprite2D" parent="Board/Border-B" unique_id=1123589518]
+position = Vector2(-192, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB5" type="Sprite2D" parent="Board/Border-B" unique_id=813152964]
+position = Vector2(-64, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB6" type="Sprite2D" parent="Board/Border-B" unique_id=1766519819]
+position = Vector2(64, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB7" type="Sprite2D" parent="Board/Border-B" unique_id=1611090997]
+position = Vector2(192, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="BorderB8" type="Sprite2D" parent="Board/Border-B" unique_id=1210991673]
+position = Vector2(320, 400)
+texture = ExtResource("22_55vpa")
+
+[node name="Side" type="Node2D" parent="Board" unique_id=1159531923]
+
+[node name="Side" type="Sprite2D" parent="Board/Side" unique_id=763245407]
+position = Vector2(-656, 320)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side7" type="Sprite2D" parent="Board/Side" unique_id=579941299]
+position = Vector2(400, 320)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side8" type="Sprite2D" parent="Board/Side" unique_id=1157948690]
+position = Vector2(400, 192)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side9" type="Sprite2D" parent="Board/Side" unique_id=1920446743]
+position = Vector2(400, 64)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side10" type="Sprite2D" parent="Board/Side" unique_id=886013998]
+position = Vector2(400, -64)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side11" type="Sprite2D" parent="Board/Side" unique_id=864857452]
+position = Vector2(400, -192)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side12" type="Sprite2D" parent="Board/Side" unique_id=1603241157]
+position = Vector2(400, -320)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side3" type="Sprite2D" parent="Board/Side" unique_id=1303602324]
+position = Vector2(-656, 64)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side4" type="Sprite2D" parent="Board/Side" unique_id=768487617]
+position = Vector2(-656, -64)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side5" type="Sprite2D" parent="Board/Side" unique_id=658573337]
+position = Vector2(-656, -192)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side6" type="Sprite2D" parent="Board/Side" unique_id=625235704]
+position = Vector2(-656, -320)
+texture = ExtResource("24_b7xp2")
+
+[node name="Side2" type="Sprite2D" parent="Board/Side" unique_id=1375541775]
+position = Vector2(-656, 192)
+texture = ExtResource("24_b7xp2")
