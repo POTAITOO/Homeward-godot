@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/GameManager.gd" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_iuonh"]
-[ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Power/school.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://duu0cwsbj2jdn" path="res://scenes/Scene_Tiles/connector_left.tscn" id="3_raeie"]
 [ext_resource type="PackedScene" uid="uid://c6fyv57ah4u4r" path="res://scenes/Scene_Tiles/connector_right.tscn" id="4_hxu8e"]
@@ -14,9 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://b56kkvetcjf1e" path="res://scenes/Scene_Tiles/connector_middle_no_lamp.tscn" id="6_nvumn"]
 [ext_resource type="PackedScene" uid="uid://b88l2sn52fkhk" path="res://scenes/Scene_Power/traffic.tscn" id="6_ou6is"]
 [ext_resource type="PackedScene" uid="uid://b8ldx6erh5mfv" path="res://scenes/Scene_Power/bike.tscn" id="8_necax"]
+[ext_resource type="PackedScene" uid="uid://cpvpmtsfatc5m" path="res://scenes/Scene_Tiles/home.tscn" id="9_ou6is"]
 [ext_resource type="PackedScene" uid="uid://dhl0wq3p80c45" path="res://scenes/Scene_Power/dog-right.tscn" id="9_r4lks"]
 [ext_resource type="PackedScene" uid="uid://dikelnygdpiso" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="11_pg34l"]
 [ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="14_m4h2d"]
+[ext_resource type="PackedScene" uid="uid://camhlhmsilyiv" path="res://scenes/Interactions/dice.tscn" id="19_necax"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 
@@ -54,6 +56,9 @@ position = Vector2(192, 256)
 
 [node name="31-Traffic" parent="Board/Layer6" unique_id=555342692 instance=ExtResource("6_ou6is")]
 position = Vector2(320, 256)
+
+[node name="Home" parent="Board/Layer6" unique_id=1400683761 instance=ExtResource("9_ou6is")]
+position = Vector2(-512, 256)
 
 [node name="Layer5" type="Node2D" parent="Board" unique_id=1740387415]
 position = Vector2(0, -512)
@@ -161,3 +166,6 @@ position = Vector2(192, 256)
 
 [node name="6" parent="Board/Layer1" unique_id=112604846 instance=ExtResource("11_pg34l")]
 position = Vector2(320, 256)
+
+[node name="Area2D" parent="." unique_id=453070204 instance=ExtResource("19_necax")]
+position = Vector2(576, 320)
