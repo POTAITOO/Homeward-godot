@@ -29,11 +29,10 @@ func take_turn(roll: int):
 	print(name, " moving to tile ", grid_position)
 
 # --- MOVEMENT LOOP ---
-func _process(_delta):
+func _process(delta: float) -> void:
 	if is_moving:
-		# Smooth movement toward target
-		global_position = global_position.lerp(target_position, 0.2)
-		
+		# Frame-rate independent movement toward target
+		global_position = global_position.move_toward(target_position, 300.0 * delta)
 		# Stop when close enough
 		if global_position.distance_to(target_position) < 2:
 			global_position = target_position
