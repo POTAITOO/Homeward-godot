@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkt61scvp8la"
-path="res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"
+uid="uid://b33w5floo6ex6"
+path="res://.godot/imported/Dice-Sheet.png-b9f76539cd59b746c85b8df22ee44b7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Players/P2-Sheet.png"
-dest_files=["res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"]
+source_file="res://assets/Interactions/Dice-Sheet.png"
+dest_files=["res://.godot/imported/Dice-Sheet.png-b9f76539cd59b746c85b8df22ee44b7b.ctex"]
 
 [params]
 
