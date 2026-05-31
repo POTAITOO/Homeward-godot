@@ -25,15 +25,20 @@
 [ext_resource type="Script" uid="uid://bb43gihqef1td" path="res://scripts/MapData_6x6.gd" id="19_wh7xj"]
 [ext_resource type="Texture2D" uid="uid://w28v76vnxxtt" path="res://assets/UI/Border-B.png" id="22_55vpa"]
 [ext_resource type="Texture2D" uid="uid://c51r7vfmlc5eu" path="res://assets/UI/Side.png" id="24_b7xp2"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/Buttons.png" id="26_a2kmq"]
 
 [node name="Main" type="Node2D" unique_id=352002498]
 
 [node name="UI-Screen" type="Node2D" parent="." unique_id=700528336]
 
 [node name="Camera2D" type="Camera2D" parent="UI-Screen" unique_id=1346983163]
-zoom = Vector2(0.65, 0.6)
+offset = Vector2(48, -20)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_iuonh")]
+visible = false
+
+[node name="Area2D" parent="UI-Screen" unique_id=1664979870 instance=ExtResource("1_iuonh")]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
@@ -346,3 +351,7 @@ texture = ExtResource("24_b7xp2")
 [node name="Side2" type="Sprite2D" parent="Board/Side" unique_id=1375541775]
 position = Vector2(-656, 192)
 texture = ExtResource("24_b7xp2")
+
+[node name="Buttons" type="Sprite2D" parent="." unique_id=975846185]
+position = Vector2(928, -480)
+texture = ExtResource("26_a2kmq")
