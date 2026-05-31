@@ -6,6 +6,7 @@ var turn_order := []           # randomized, maps turn position → selection or
 var selected_map := "6x6"
 var winner_name := ""
 var selected_names := []      # human display names corresponding to selected_characters
+var winner_character := -1   # avatar index of the winning character
 
 func reset():
 	player_count = 2
@@ -14,6 +15,7 @@ func reset():
 	selected_map = "6x6"
 	winner_name = ""
 	selected_names.clear()
+	winner_character = -1
 
 func get_character_for_turn(turn_index: int) -> int:
 	# Returns the avatar character_id for a given turn position

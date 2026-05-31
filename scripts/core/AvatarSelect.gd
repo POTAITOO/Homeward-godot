@@ -23,7 +23,6 @@ var selection_complete := false
 var background_sprite: AnimatedSprite2D = null
 var preview_sprite: AnimatedSprite2D = null
 var back_button: TextureButton = null
-var help_button: TextureButton = null
 var continue_button: TextureButton = null
 
 # store path lists so we can resolve safely at runtime
@@ -86,10 +85,6 @@ func _ready():
 	if back_button == null:
 		print("[AVATAR_SELECT] Warning: Back button missing: Window/Back")
 
-	help_button = get_node_or_null("Window/Help")
-	if help_button == null:
-		print("[AVATAR_SELECT] Warning: Help button missing: Window/Help")
-
 	# resolve slot nodes/buttons/labels/sprites
 	for path in slot_node_paths:
 		var n = get_node_or_null(path)
@@ -120,8 +115,6 @@ func _ready():
 	# connect signals only for nodes that exist
 	if back_button:
 		back_button.pressed.connect(_on_back_pressed)
-	if help_button:
-		help_button.pressed.connect(_on_help_pressed)
 	if continue_button:
 		continue_button.pressed.connect(_on_continue_pressed)
 
@@ -267,6 +260,17 @@ func _finalize_selection():
 	GlobalData.turn_order = order
 	print("[SELECTION] Turn order: ", GlobalData.turn_order)
 	print("[SELECTION] Characters: ", GlobalData.selected_characters)
+
+	# Debug mapping: show explicit mapping turn -> selection_index -> avatar_index -> name
+	for t in range(GlobalData.turn_order.size()):
+		var sel_idx: int = GlobalData.turn_order[t]
+		var avatar_idx: int = -1
+		var avatar_name := "<unknown>"
+		if sel_idx >= 0 and sel_idx < GlobalData.selected_characters.size():
+			avatar_idx = GlobalData.selected_characters[sel_idx]
+			if sel_idx < GlobalData.selected_names.size():
+				avatar_name = GlobalData.selected_names[sel_idx]
+		print("[SELECTION_MAP] Turn %d -> selection_index %d -> avatar_index %d -> name %s" % [t, sel_idx, avatar_idx, avatar_name])
 	_update_turn_labels()
 	selection_complete = true
 	for button in slot_buttons:
@@ -281,11 +285,6 @@ func _finalize_selection():
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Scene_UI/select_number.tscn")
-
-
-func _on_help_pressed() -> void:
-	pass
-
 
 func _on_continue_pressed() -> void:
 	if not selection_complete:

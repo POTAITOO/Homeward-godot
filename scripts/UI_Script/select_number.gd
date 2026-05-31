@@ -39,6 +39,7 @@ func _set_player_count(count: int) -> void:
 	print("[SELECT_NUMBER] Button pressed for player count: ", count)
 	GlobalData.player_count = count
 	GlobalData.selected_characters.clear()
+	GlobalData.selected_names.clear()
 	GlobalData.turn_order.clear()
 	print("[SELECT_NUMBER] Saved to GlobalData -> player_count=", GlobalData.player_count, ", selected_characters cleared, turn_order cleared")
 	get_tree().change_scene_to_file("res://scenes/Scene_UI/select_avatar.tscn")

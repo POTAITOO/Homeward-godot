@@ -44,12 +44,6 @@ func _ready():
 	else:
 		print("[MAPSELECT] Back button not found")
 
-	var help_button = get_node_or_null("Window/Help")
-	if help_button:
-		help_button.pressed.connect(_on_help_pressed)
-		print("[MAPSELECT] Connected Help button")
-	else:
-		print("[MAPSELECT] Help button not found")
 
 
 func _on_easy_pressed():
@@ -58,13 +52,13 @@ func _on_easy_pressed():
 	start_game()
 
 func _on_chaotic_pressed():
-	GlobalData.selected_map = "8x8"
-	print("[MAPSELECT] Chaotic selected -> selected_map=8x8")
+	GlobalData.selected_map = "10x10"
+	print("[MAPSELECT] Chaotic selected -> selected_map=10x10")
 	start_game()
 
 func _on_fun_pressed():
-	GlobalData.selected_map = "10x10"
-	print("[MAPSELECT] Fun selected -> selected_map=10x10")
+	GlobalData.selected_map = "8x8"
+	print("[MAPSELECT] Fun selected -> selected_map=8x8")
 	start_game()
 
 func start_game():

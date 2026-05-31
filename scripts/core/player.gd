@@ -141,12 +141,17 @@ func play_sleep_reaction() -> void:
 
 func _wait_for_animation_or_timeout(anim_name: String, timeout: float) -> void:
 	var elapsed := 0.0
+	if not is_inside_tree():
+		return
+	var tree := get_tree()
+	if tree == null:
+		return
 	# If the animation is looping or very short, we fall back to the timer
-	while sprite.animation == anim_name and sprite.is_playing():
+	while is_instance_valid(sprite) and sprite.animation == anim_name and sprite.is_playing():
 		elapsed += get_process_delta_time()
 		if elapsed >= timeout:
 			break
-		await get_tree().process_frame
+		await tree.process_frame
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
 

@@ -8,6 +8,7 @@ const EMOTE_SKIP: Texture2D = preload("res://assets/UI/Emotes3.png")
 @onready var tile_subtitle: Label = get_node_or_null("Tile Preview/Subtitle")
 
 var game_manager: Node = null
+var exit_button: TextureButton = null
 var _last_player_index := -1
 var _last_tile_number := -999
 var _turn_rows: Array = []
@@ -67,7 +68,12 @@ func _ready() -> void:
 	_show_default_preview()
 	set_process(true)
 
+	exit_button = get_node_or_null("Buttons/Exit")
+	if exit_button == null:
+		print("[SIDEBAR] Warning: Back button missing: Sidebar/Buttons/Exit")
 
+	if exit_button:
+		exit_button.pressed.connect(_on_exit_pressed)
 func _process(_delta: float) -> void:
 	if game_manager == null or not is_instance_valid(game_manager):
 		_resolve_game_manager()
@@ -202,3 +208,6 @@ func _apply_tile_info(tile_type: String) -> void:
 
 	if tile_subtitle:
 		tile_subtitle.text = subtitle_text
+
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Scene_UI/select_map.tscn")

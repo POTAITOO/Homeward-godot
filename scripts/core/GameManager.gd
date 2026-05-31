@@ -109,9 +109,8 @@ func _play_turn():
 	print("[GAME] waiting_for_roll session", current_roll_session)
 	emit_signal("roll_requested", current_player_index)
 	# Wait for dice UI (dice.gd) to submit the roll after animation
-	var roll = await roll_submitted
+	var roll: int = await roll_submitted
 	waiting_for_roll = false
-
 	print("[GAME] %s rolled %d" % [player.name, roll])
 	player.take_turn(roll)
 
@@ -175,6 +174,11 @@ func _win_game(player):
 	if player.name != "":
 		GlobalData.winner_name = str(player.name)
 		print("[GAME] Winner saved to GlobalData.winner_name:", GlobalData.winner_name)
+	# Persist winner character id for winning scene
+	if player.has_method("get"):
+		var cid = player.get("character_id")
+		GlobalData.winner_character = int(cid) if cid != null else -1
+		print("[GAME] Winner character id saved to GlobalData.winner_character:", GlobalData.winner_character)
 	player.move_to_tile(player.max_tile)
 	await _wait_for_player(player)
 	player.target_position = current_board.get_home_position()
@@ -188,6 +192,21 @@ func _win_game(player):
 			p.play_sleep_reaction()
 
 	print("[WIN] ", player.name, " WINS!")
+
+	# Small pause to let celebration play, then fade out to black before loading the winning scene.
+	await get_tree().create_timer(1.0).timeout
+	var scene_tree := get_tree()
+	if scene_tree:
+		var fade := ColorRect.new()
+		fade.color = Color(0, 0, 0, 0)
+		fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+		fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		scene_tree.current_scene.add_child(fade)
+		fade.move_to_front()
+		var tween := scene_tree.create_tween()
+		tween.tween_property(fade, "color", Color(0, 0, 0, 1), 0.75)
+		await tween.finished
+	get_tree().change_scene_to_file("res://scenes/Scene_UI/Winning.tscn")
 
 func resolve_tile_effect(player) -> void:
 	# Allow chaining of multiple tile effects in the same turn (stacking), up to a safety limit

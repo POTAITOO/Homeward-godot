@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bja71c3cmyfo1"]
+[gd_scene format=3 uid="uid://301nis2ldopf"]
 
-[ext_resource type="Script" path="res://scripts/UI_Script/title_screen.gd" id="1_lrwlb"]
+[ext_resource type="Script" uid="uid://ci5kjg3j6bknt" path="res://scripts/UI_Script/winning.gd" id="1_lrwlb"]
 [ext_resource type="Texture2D" uid="uid://bo8lyqlleywhj" path="res://assets/UI/Backdrop_Night.png" id="2_um8ai"]
 [ext_resource type="Texture2D" uid="uid://cbkt61scvp8la" path="res://assets/Players/P2-Sheet.png" id="3_lw4hg"]
 [ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="5_jgty6"]
@@ -119,7 +119,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kalu4")
 }],
 "loop": true,
-"name": &"calem",
+"name": &"Calem",
 "speed": 5.0
 }, {
 "frames": [{
@@ -136,7 +136,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_d8yv7")
 }],
 "loop": true,
-"name": &"ethan",
+"name": &"Ethan",
 "speed": 5.0
 }, {
 "frames": [{
@@ -153,7 +153,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ja3df")
 }],
 "loop": true,
-"name": &"lucas",
+"name": &"Lucas",
 "speed": 5.0
 }, {
 "frames": [{
@@ -170,11 +170,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_c6mih")
 }],
 "loop": true,
-"name": &"serena",
+"name": &"Serena",
 "speed": 5.0
 }]
 
-[node name="Control" type="Control" unique_id=1607494155]
+[node name="Winning" type="Control" unique_id=1607494155]
 layout_mode = 3
 anchor_left = -0.77800006
 anchor_top = -0.85200006
@@ -191,12 +191,13 @@ zoom = Vector2(0.6, 0.6)
 
 [node name="BG" type="AnimatedSprite2D" parent="Camera2D" unique_id=717036306]
 sprite_frames = SubResource("SpriteFrames_cdjwx")
+frame_progress = 0.97372335
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=717995841]
 position = Vector2(4.7683716e-07, 288)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_7ewmc")
-animation = &"ethan"
+animation = &"Calem"
 
 [node name="Label" type="Label" parent="." unique_id=1469601046]
 layout_mode = 0

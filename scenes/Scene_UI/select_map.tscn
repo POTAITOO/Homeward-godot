@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7qda5fui7wqj"]
+[gd_scene format=3 uid="uid://dbp270alrqcns"]
 
 [ext_resource type="Script" uid="uid://ciej82pjk0qxr" path="res://scripts/core/MapSelect.gd" id="1_avuw4"]
 [ext_resource type="Texture2D" uid="uid://bw4uty5wdj2i1" path="res://assets/UI/Blue-Sky-Sheet-Sheet-export.png" id="2_q7dn1"]

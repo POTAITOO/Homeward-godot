@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="1_db18u"]
 [ext_resource type="Script" uid="uid://dpk76o27cdxw2" path="res://scripts/UI_Script/sidebar.gd" id="1_sidebar"]
-[ext_resource type="Texture2D" uid="uid://cpfg2fvrdu8k7" path="res://assets/Interactions/Buttons5.png" id="2_2os2i"]
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="3_hrf37"]
 [ext_resource type="Texture2D" uid="uid://drq6hr5ncap18" path="res://assets/Tiles/Plain-Tile-Sheet.png" id="4_lxmj5"]
 [ext_resource type="Texture2D" uid="uid://cbj6pmafrx0m7" path="res://assets/Tiles/Traffic-Sheet.png" id="5_8uxt0"]
@@ -406,13 +405,6 @@ texture = ExtResource("1_db18u")
 
 [node name="Buttons" type="Node2D" parent="." unique_id=683948255]
 position = Vector2(272, 24)
-
-[node name="Pause" type="TextureButton" parent="Buttons" unique_id=1765108748]
-offset_left = -48.0
-offset_top = 32.0
-offset_right = 16.0
-offset_bottom = 96.0
-texture_normal = ExtResource("2_2os2i")
 
 [node name="Exit" type="TextureButton" parent="Buttons" unique_id=287707166]
 offset_left = 16.0

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lwran6cihkgy" path="res://assets/Interactions/Play_Button-Sheet.png" id="2_wbkmu"]
 [ext_resource type="Texture2D" uid="uid://bw0eih3f41n6n" path="res://assets/UI/Loop.png" id="3_s3guc"]
 [ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="4_drftm"]
-[ext_resource type="Script" path="res://scripts/UI_Script/title_screen.gd" id="5_title_screen"]
+[ext_resource type="Script" uid="uid://cwkw7w5yvikxr" path="res://scripts/UI_Script/title_screen.gd" id="5_title_screen"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_131ok"]
 atlas = ExtResource("1_drftm")
