@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crgstvbhrls1f"]
 
-[ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="1_sav58"]
 [ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_onjc5"]
+[ext_resource type="Texture2D" uid="uid://bw4uty5wdj2i1" path="res://assets/UI/Blue-Sky-Sheet-Sheet-export.png" id="2_wip7v"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_2ts1u"]
 [ext_resource type="Texture2D" uid="uid://ctlnrjko2t2jw" path="res://assets/Interactions/Select_Button1.png" id="6_hwxah"]
 [ext_resource type="Texture2D" uid="uid://3bcqbbpbf2bt" path="res://assets/Players/P1-Sheet.png" id="6_jwefx"]
@@ -14,55 +14,53 @@
 [ext_resource type="Texture2D" uid="uid://dyrl3sevqqaxv" path="res://assets/Interactions/Select_Button5.png" id="11_ujna7"]
 [ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="11_xf0ch"]
 [ext_resource type="Texture2D" uid="uid://ddwchwrlcfbkp" path="res://assets/Interactions/Select_Button6.png" id="12_g2g1f"]
-[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="12_kqs65"]
 [ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="13_ujna7"]
-[ext_resource type="Texture2D" uid="uid://cj8fj636ori4x" path="res://assets/Interactions/Buttons4.png" id="13_wip7v"]
 [ext_resource type="Script" path="res://scripts/UI_Script/select_number.gd" id="14_select_number"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
-atlas = ExtResource("1_sav58")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwxah"]
+atlas = ExtResource("2_wip7v")
 region = Rect2(0, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjhe2"]
-atlas = ExtResource("1_sav58")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwefx"]
+atlas = ExtResource("2_wip7v")
 region = Rect2(1920, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktp34"]
-atlas = ExtResource("1_sav58")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyaud"]
+atlas = ExtResource("2_wip7v")
 region = Rect2(3840, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f36op"]
-atlas = ExtResource("1_sav58")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgbxg"]
+atlas = ExtResource("2_wip7v")
 region = Rect2(5760, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0mil0"]
-atlas = ExtResource("1_sav58")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujna7"]
+atlas = ExtResource("2_wip7v")
 region = Rect2(7680, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_he3ob"]
-atlas = ExtResource("1_sav58")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2g1f"]
+atlas = ExtResource("2_wip7v")
 region = Rect2(9600, 0, 1920, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ruihq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onjc5")
+"texture": SubResource("AtlasTexture_hwxah")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bjhe2")
+"texture": SubResource("AtlasTexture_jwefx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ktp34")
+"texture": SubResource("AtlasTexture_yyaud")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f36op")
+"texture": SubResource("AtlasTexture_bgbxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0mil0")
+"texture": SubResource("AtlasTexture_ujna7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_he3ob")
+"texture": SubResource("AtlasTexture_g2g1f")
 }],
 "loop": true,
 "name": &"idle",
@@ -236,21 +234,21 @@ offset_left = -720.0
 offset_top = -384.0
 offset_right = 720.0
 offset_bottom = 425.0
-texture = ExtResource("2_onjc5")
 mouse_filter = 2
+texture = ExtResource("2_onjc5")
 
 [node name="Title" type="Label" parent="Window" unique_id=1618748504]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 152.0
-offset_right = 1232.0
-offset_bottom = 343.0
+offset_left = 144.0
+offset_top = 144.0
+offset_right = 1304.0
+offset_bottom = 335.0
 theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
 theme_override_constants/shadow_offset_x = -5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_2ts1u")
-theme_override_font_sizes/font_size = 78
+theme_override_font_sizes/font_size = 92
 text = "Select Number of Players:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -357,22 +355,11 @@ animation = &"idle"
 
 [node name="Back" type="TextureButton" parent="Window" unique_id=1852697575]
 layout_mode = 0
-offset_left = 1256.0
+offset_left = 1232.0
 offset_top = 80.0
-offset_right = 1320.0
+offset_right = 1296.0
 offset_bottom = 144.0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture_normal = ExtResource("10_uk7mg")
 texture_pressed = ExtResource("11_xf0ch")
-stretch_mode = 0
-
-[node name="Help" type="TextureButton" parent="Window" unique_id=705464312]
-layout_mode = 0
-offset_left = 1160.0
-offset_top = 80.0
-offset_right = 1224.0
-offset_bottom = 144.0
-scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("12_kqs65")
-texture_pressed = ExtResource("13_wip7v")
 stretch_mode = 0

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="1_db18u"]
 [ext_resource type="Texture2D" uid="uid://cpfg2fvrdu8k7" path="res://assets/Interactions/Buttons5.png" id="2_2os2i"]
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="3_hrf37"]
-[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="4_8uxt0"]
 [ext_resource type="Texture2D" uid="uid://drq6hr5ncap18" path="res://assets/Tiles/Plain-Tile-Sheet.png" id="4_lxmj5"]
 [ext_resource type="Texture2D" uid="uid://cbj6pmafrx0m7" path="res://assets/Tiles/Traffic-Sheet.png" id="5_8uxt0"]
 [ext_resource type="Texture2D" uid="uid://cyela6uk57ylx" path="res://assets/Tiles/Bike-Sheet.png" id="5_fg3gm"]
@@ -419,13 +418,6 @@ offset_top = 32.0
 offset_right = 80.0
 offset_bottom = 96.0
 texture_normal = ExtResource("3_hrf37")
-
-[node name="Mute" type="TextureButton" parent="Buttons" unique_id=417457213]
-offset_left = -112.0
-offset_top = 32.0
-offset_right = -48.0
-offset_bottom = 96.0
-texture_normal = ExtResource("4_8uxt0")
 
 [node name="Tile Preview" type="Node2D" parent="." unique_id=1109529544]
 position = Vector2(192, 192)

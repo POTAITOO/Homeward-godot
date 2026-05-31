@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsup5k71ql67"]
 
-[ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="1_5txgc"]
 [ext_resource type="Script" uid="uid://blc5rmlmjqhy7" path="res://scripts/core/AvatarSelect.gd" id="1_7yq3t"]
+[ext_resource type="Texture2D" uid="uid://bw4uty5wdj2i1" path="res://assets/UI/Blue-Sky-Sheet-Sheet-export.png" id="2_7tx7q"]
 [ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_jj48s"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_7tx7q"]
 [ext_resource type="Texture2D" uid="uid://cffkwukrp2d8x" path="res://assets/Interactions/Select_Button8.png" id="6_uvaek"]
@@ -17,53 +17,53 @@
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="14_ol70m"]
 [ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="15_8qd3g"]
 [ext_resource type="Texture2D" uid="uid://t40ucx5xbxl4" path="res://assets/UI/Mascot-Sheet.png" id="15_i6s6m"]
-[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="16_yru3f"]
-[ext_resource type="Texture2D" uid="uid://cj8fj636ori4x" path="res://assets/Interactions/Buttons4.png" id="17_77wn5"]
+[ext_resource type="Texture2D" uid="uid://g0wljoi10uhp" path="res://assets/Interactions/Buttons9.png" id="18_7tx7q"]
+[ext_resource type="Texture2D" uid="uid://ctu63wq82d2xi" path="res://assets/Interactions/Buttons10.png" id="19_lmajf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
-atlas = ExtResource("1_5txgc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qekc1"]
+atlas = ExtResource("2_7tx7q")
 region = Rect2(0, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjhe2"]
-atlas = ExtResource("1_5txgc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yru3f"]
+atlas = ExtResource("2_7tx7q")
 region = Rect2(1920, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktp34"]
-atlas = ExtResource("1_5txgc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iunuv"]
+atlas = ExtResource("2_7tx7q")
 region = Rect2(3840, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f36op"]
-atlas = ExtResource("1_5txgc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ega"]
+atlas = ExtResource("2_7tx7q")
 region = Rect2(5760, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0mil0"]
-atlas = ExtResource("1_5txgc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5xp7"]
+atlas = ExtResource("2_7tx7q")
 region = Rect2(7680, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_he3ob"]
-atlas = ExtResource("1_5txgc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2um0e"]
+atlas = ExtResource("2_7tx7q")
 region = Rect2(9600, 0, 1920, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ruihq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onjc5")
+"texture": SubResource("AtlasTexture_qekc1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bjhe2")
+"texture": SubResource("AtlasTexture_yru3f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ktp34")
+"texture": SubResource("AtlasTexture_iunuv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f36op")
+"texture": SubResource("AtlasTexture_a4ega")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0mil0")
+"texture": SubResource("AtlasTexture_g5xp7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_he3ob")
+"texture": SubResource("AtlasTexture_2um0e")
 }],
 "loop": true,
 "name": &"idle",
@@ -288,30 +288,19 @@ texture = ExtResource("2_jj48s")
 [node name="Title" type="Label" parent="Window" unique_id=1618748504]
 layout_mode = 0
 offset_left = 208.0
-offset_top = 96.0
+offset_top = 88.0
 offset_right = 1232.0
-offset_bottom = 287.0
+offset_bottom = 279.0
 theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
 theme_override_constants/shadow_offset_x = -5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_7tx7q")
-theme_override_font_sizes/font_size = 78
-text = "Select your Avatar:"
+theme_override_font_sizes/font_size = 92
+text = "Who's your avatar"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="Help" type="TextureButton" parent="Window" unique_id=137562144]
-layout_mode = 0
-offset_left = 1160.0
-offset_top = 80.0
-offset_right = 1224.0
-offset_bottom = 144.0
-scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("16_yru3f")
-texture_pressed = ExtResource("17_77wn5")
-stretch_mode = 0
 
 [node name="P1" type="Area2D" parent="Window" unique_id=1305494026]
 position = Vector2(720, 384)
@@ -391,7 +380,7 @@ animation = &"idle"
 position = Vector2(720, 384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P3" unique_id=71792023]
-position = Vector2(152, 224)
+position = Vector2(160, 224)
 shape = SubResource("RectangleShape2D_wip7v")
 
 [node name="TextureButton" type="TextureButton" parent="Window/P3/CollisionShape2D" unique_id=1577047432]
@@ -492,32 +481,21 @@ autowrap_mode = 2
 
 [node name="Back" type="TextureButton" parent="Window" unique_id=1826102251]
 layout_mode = 0
-offset_left = 1256.0
+offset_left = 1232.0
 offset_top = 80.0
-offset_right = 1320.0
+offset_right = 1296.0
 offset_bottom = 144.0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture_normal = ExtResource("14_ol70m")
 texture_pressed = ExtResource("15_8qd3g")
 stretch_mode = 0
 
-[node name="Continue" type="TextureButton" parent="Window" unique_id=1999900001]
-visible = false
+[node name="Continue" type="TextureButton" parent="Window" unique_id=692786949]
 layout_mode = 0
-offset_left = 560.0
-offset_top = 592.0
-offset_right = 880.0
-offset_bottom = 656.0
-texture_normal = ExtResource("16_yru3f")
-texture_pressed = ExtResource("17_77wn5")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Window/Continue" unique_id=1999900002]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 64.0
-theme_override_fonts/font = ExtResource("3_7tx7q")
-theme_override_font_sizes/font_size = 28
-text = "CONTINUE"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 672.0
+offset_top = 664.0
+offset_right = 736.0
+offset_bottom = 728.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("18_7tx7q")
+texture_pressed = ExtResource("19_lmajf")

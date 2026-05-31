@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfshfm5n551v"
-path="res://.godot/imported/Blue-Sky-Sheet.png-1bc05a30f6003678b78b59b388ce8f1e.ctex"
+uid="uid://ctu63wq82d2xi"
+path="res://.godot/imported/Buttons10.png-58e541e0c899c3fe3d438cfc753d6b14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Blue-Sky-Sheet.png"
-dest_files=["res://.godot/imported/Blue-Sky-Sheet.png-1bc05a30f6003678b78b59b388ce8f1e.ctex"]
+source_file="res://assets/Interactions/Buttons10.png"
+dest_files=["res://.godot/imported/Buttons10.png-58e541e0c899c3fe3d438cfc753d6b14.ctex"]
 
 [params]
 
