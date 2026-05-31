@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://dsup5k71ql67"]
+
+[ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="1_5txgc"]
+[ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_jj48s"]
+[ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_7tx7q"]
+[ext_resource type="PackedScene" uid="uid://cnfxucqxei6rt" path="res://scenes/Scene_Players/p_1.tscn" id="4_lmajf"]
+[ext_resource type="Texture2D" uid="uid://bsdfejblmy36y" path="res://assets/Interactions/Select_Button7.png" id="5_7yq3t"]
+[ext_resource type="PackedScene" uid="uid://dmiti0njxvxa0" path="res://scenes/Scene_Players/p_2.tscn" id="5_nss3d"]
+[ext_resource type="Texture2D" uid="uid://dva4s4whbggak" path="res://assets/Interactions/Select_Button8.png" id="6_uvaek"]
+[ext_resource type="PackedScene" uid="uid://yx5vd667ac0a" path="res://scenes/Scene_Players/p_3.tscn" id="10_4ebeu"]
+[ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="13_ebfl6"]
+[ext_resource type="Texture2D" uid="uid://dtxjtw7sqkeej" path="res://assets/UI/Dialog2.png" id="14_evyiq"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-1.png" id="14_ol70m"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-2.png" id="15_8qd3g"]
+[ext_resource type="Texture2D" uid="uid://t40ucx5xbxl4" path="res://assets/UI/Mascot-Sheet.png" id="15_i6s6m"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-1.png" id="16_yru3f"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-2.png" id="17_77wn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
+atlas = ExtResource("1_5txgc")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjhe2"]
+atlas = ExtResource("1_5txgc")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktp34"]
+atlas = ExtResource("1_5txgc")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f36op"]
+atlas = ExtResource("1_5txgc")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mil0"]
+atlas = ExtResource("1_5txgc")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he3ob"]
+atlas = ExtResource("1_5txgc")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruihq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onjc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjhe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktp34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f36op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mil0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he3ob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wip7v"]
+size = Vector2(175.25, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5txgc"]
+size = Vector2(896, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj48s"]
+atlas = ExtResource("15_i6s6m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tx7q"]
+atlas = ExtResource("15_i6s6m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmajf"]
+atlas = ExtResource("15_i6s6m")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nss3d"]
+atlas = ExtResource("15_i6s6m")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eongw"]
+atlas = ExtResource("15_i6s6m")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opupe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj48s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tx7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmajf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nss3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eongw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control" unique_id=1166207099]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1861311612]
+zoom = Vector2(0.6, 0.6)
+
+[node name="BG" type="AnimatedSprite2D" parent="." unique_id=1376145592]
+sprite_frames = SubResource("SpriteFrames_ruihq")
+
+[node name="Window" type="TextureRect" parent="." unique_id=877991671]
+layout_mode = 0
+offset_left = -720.0
+offset_top = -384.0
+offset_right = 720.0
+offset_bottom = 425.0
+texture = ExtResource("2_jj48s")
+
+[node name="Title" type="Label" parent="Window" unique_id=1618748504]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 96.0
+offset_right = 1232.0
+offset_bottom = 287.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_7tx7q")
+theme_override_font_sizes/font_size = 78
+text = "Select your Avatar:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="P1" type="Area2D" parent="Window" unique_id=1305494026]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P1" unique_id=414199307]
+position = Vector2(-480, 224)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="P1" parent="Window/P1/CollisionShape2D" unique_id=1186178461 instance=ExtResource("4_lmajf")]
+position = Vector2(0, -56)
+scale = Vector2(2, 2)
+
+[node name="TextureButton" type="TextureButton" parent="Window/P1/CollisionShape2D" unique_id=632119365]
+offset_left = -96.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 120.0
+texture_normal = ExtResource("5_7yq3t")
+texture_pressed = ExtResource("6_uvaek")
+
+[node name="P2" type="Area2D" parent="Window" unique_id=1155692649]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P2" unique_id=2103945158]
+position = Vector2(-168, 232)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="TextureButton" type="TextureButton" parent="Window/P2/CollisionShape2D" unique_id=524929021]
+offset_left = -96.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 120.0
+texture_normal = ExtResource("5_7yq3t")
+texture_pressed = ExtResource("6_uvaek")
+
+[node name="P5" parent="Window/P2/CollisionShape2D" unique_id=568122415 instance=ExtResource("5_nss3d")]
+position = Vector2(8, -56)
+scale = Vector2(2, 2)
+
+[node name="P3" type="Area2D" parent="Window" unique_id=1179305178]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P3" unique_id=71792023]
+position = Vector2(152, 224)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="TextureButton" type="TextureButton" parent="Window/P3/CollisionShape2D" unique_id=1577047432]
+offset_left = -96.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 120.0
+texture_normal = ExtResource("5_7yq3t")
+texture_pressed = ExtResource("6_uvaek")
+
+[node name="P3" parent="Window/P3/CollisionShape2D" unique_id=1574974646 instance=ExtResource("10_4ebeu")]
+position = Vector2(0, -56)
+scale = Vector2(2, 2)
+
+[node name="P4" type="Area2D" parent="Window" unique_id=686966308]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P4" unique_id=1465287241]
+position = Vector2(480, 224)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="TextureButton" type="TextureButton" parent="Window/P4/CollisionShape2D" unique_id=951009963]
+offset_left = -96.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 120.0
+texture_normal = ExtResource("5_7yq3t")
+texture_pressed = ExtResource("6_uvaek")
+
+[node name="P4" parent="Window/P4/CollisionShape2D" unique_id=851507044 instance=ExtResource("13_ebfl6")]
+position = Vector2(0, -56)
+scale = Vector2(2, 2)
+
+[node name="Back" type="TextureButton" parent="Window" unique_id=1852697575]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 80.0
+offset_right = 1320.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("14_ol70m")
+texture_pressed = ExtResource("15_8qd3g")
+stretch_mode = 0
+
+[node name="Help" type="TextureButton" parent="Window" unique_id=705464312]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 80.0
+offset_right = 1224.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("16_yru3f")
+texture_pressed = ExtResource("17_77wn5")
+stretch_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window" unique_id=13001993]
+position = Vector2(720, 360)
+shape = SubResource("RectangleShape2D_5txgc")
+
+[node name="TextureRect" type="TextureRect" parent="Window/CollisionShape2D" unique_id=94433477]
+offset_left = -376.0
+offset_top = -104.0
+offset_right = 104.0
+offset_bottom = 24.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_evyiq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/CollisionShape2D/TextureRect" unique_id=1050773005]
+position = Vector2(64, 64)
+sprite_frames = SubResource("SpriteFrames_opupe")
+
+[node name="Title2" type="Label" parent="Window/CollisionShape2D" unique_id=1473636504]
+offset_left = -168.0
+offset_top = -32.0
+offset_right = 296.0
+offset_bottom = 39.0
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_7tx7q")
+theme_override_font_sizes/font_size = 28
+text = "Chooose your Avatar Player <Variable>"
+vertical_alignment = 1
+autowrap_mode = 2

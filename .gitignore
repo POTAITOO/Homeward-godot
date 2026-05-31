@@ -1,3 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+assets/Players/P1-Sheet.png.import
+assets/players/P1-Sheet.png.import
+assets/Players/P2-Sheet.png.import
+assets/players/P2-Sheet.png.import
+assets/Players/P3-Sheet.png.import
+assets/players/P3-Sheet.png.import
+assets/Players/P4-Sheet.png.import
+assets/players/P4-Sheet.png.import
+assets/players/Student_1.tres
