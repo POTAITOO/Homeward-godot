@@ -11,7 +11,7 @@ func _ready():
 		child.queue_free()
 		
 	var map_scene_path = "res://scenes/main/" + GlobalData.selected_map + ".tscn"
-	var map_scene = load(map_scene_path)
+	var map_scene = ResourceLoader.load(map_scene_path, "", ResourceLoader.CACHE_MODE_IGNORE)
 	if map_scene:
 		var map_instance = map_scene.instantiate()
 		board.add_child(map_instance)
