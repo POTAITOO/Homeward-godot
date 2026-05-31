@@ -14,7 +14,7 @@ var tile_index: Dictionary = {
 	7:  "plain",
 	8:  "bus_stop_violet",
 	9:  "plain",
-	10: "dog",
+	10: "plain",
 	11: "plain",
 	12: "bike",
 	13: "plain",
@@ -44,7 +44,7 @@ var tile_index: Dictionary = {
 	37: "plain",
 	38: "puddle",
 	39: "plain",
-	40: "bus_stop_orange",
+	40: "plain",
 	41: "plain",
 	42: "bike",
 	43: "plain",
@@ -54,7 +54,7 @@ var tile_index: Dictionary = {
 	47: "bus_stop_green",
 	48: "plain",
 	49: "puddle",
-	50: "vending",
+	50: "plain",
 	51: "plain",
 	52: "plain",
 	53: "plain",
@@ -86,7 +86,7 @@ var tile_index: Dictionary = {
 	79: "puddle",
 	80: "plain",
 	81: "plain",
-	82: "plain",
+	82: "bus_stop_orange",
 	83: "plain",
 	84: "dog",
 	85: "plain",
@@ -94,7 +94,7 @@ var tile_index: Dictionary = {
 	87: "plain",
 	88: "traffic",
 	89: "plain",
-	90: "puddle",
+	90: "plain",
 	91: "puddle",
 	92: "plain",
 	93: "dog",
@@ -112,6 +112,6 @@ var bus_pairs: Dictionary = {
 	26: 8,
 	16: 47,   # bus_stop_green (green 1 ↔ green 2)
 	47: 16,
-	21: 40,   # bus_stop_orange (orange 1 ↔ orange 2)
-	40: 21,
+	21: 82,   # bus_stop_orange (orange 1 ↔ orange 2)
+	82: 21,
 }

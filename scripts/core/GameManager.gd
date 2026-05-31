@@ -172,6 +172,13 @@ func _win_game(player):
 	await _wait_for_player(player)
 	player.celebrate_win()
 
+	# All other players do sleep animation
+	for p in players:
+		if p != player:
+			p.play_sleep_reaction()
+
+	print("[WIN] ", player.name, " WINS!")
+
 func resolve_tile_effect(player) -> void:
 	# Allow chaining of multiple tile effects in the same turn (stacking), up to a safety limit
 	var max_chains := 12
