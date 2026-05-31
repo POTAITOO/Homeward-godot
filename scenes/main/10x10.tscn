@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cyb5vo3mt46ll" path="res://scenes/Scene_Power/bus-stop-violet.tscn" id="7_lwvb7"]
 [ext_resource type="PackedScene" uid="uid://cpvpmtsfatc5m" path="res://scenes/Scene_Tiles/home.tscn" id="8_5m5m6"]
 [ext_resource type="PackedScene" uid="uid://breuxngyopotc" path="res://scenes/Scene_Power/bus-stop-orange.tscn" id="8_7bjjl"]
-[ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="8_lwvb7"]
 [ext_resource type="PackedScene" uid="uid://duu0cwsbj2jdn" path="res://scenes/Scene_Tiles/connector_left.tscn" id="9_ywpbu"]
 [ext_resource type="PackedScene" uid="uid://iav6altltmwr" path="res://scenes/Scene_Tiles/connector_middle_lamp.tscn" id="10_i6vbd"]
 [ext_resource type="PackedScene" uid="uid://c6fyv57ah4u4r" path="res://scenes/Scene_Tiles/connector_right.tscn" id="11_cepe8"]
@@ -29,28 +28,19 @@
 metadata/_edit_vertical_guides_ = [1034.0]
 
 [node name="UI-Screen" type="Node2D" parent="." unique_id=700528336]
-position = Vector2(135, -321)
-scale = Vector2(1.5, 1.5)
 
 [node name="Camera2D" type="Camera2D" parent="UI-Screen" unique_id=1346983163]
 position = Vector2(0, 7.3333335)
-zoom = Vector2(0.43, 0.43)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_j2pv1")]
-scale = Vector2(1.5, 1.5)
+position = Vector2(-48, 24)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
 [node name="Board" type="Node2D" parent="." unique_id=156339385]
-position = Vector2(-128, -49)
-
-[node name="Sidebar" type="TextureRect" parent="Board" unique_id=1902544544]
-offset_left = 1055.0001
-offset_top = -998.99994
-offset_right = 1455.0002
-offset_bottom = 81.00006
-scale = Vector2(1.38, 1.38)
-texture = ExtResource("8_lwvb7")
+position = Vector2(-257, 185.99997)
+scale = Vector2(0.73, 0.73)
 
 [node name="Border-T" type="Node2D" parent="Board" unique_id=1104656686]
 position = Vector2(126, -510)

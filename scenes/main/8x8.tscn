@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bdl8dq1t64uyd"]
+[gd_scene format=3 uid="uid://10dkdw384rlo"]
 
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_shqao"]
 [ext_resource type="PackedScene" uid="uid://cpvpmtsfatc5m" path="res://scenes/Scene_Tiles/home.tscn" id="2_3omwu"]
@@ -23,24 +23,23 @@
 [ext_resource type="Script" uid="uid://4skx3extv73w" path="res://scripts/core/MapData_8x8.gd" id="18_yqsby"]
 [ext_resource type="Texture2D" uid="uid://c51r7vfmlc5eu" path="res://assets/UI/Side.png" id="20_1t3p2"]
 [ext_resource type="Texture2D" uid="uid://w28v76vnxxtt" path="res://assets/UI/Border-B.png" id="22_i4wni"]
-[ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="23_636a4"]
 
 [node name="8x8" type="Node2D" unique_id=352002498]
 
 [node name="UI-Screen" type="Node2D" parent="." unique_id=700528336]
-position = Vector2(32, -173)
 
 [node name="Camera2D" type="Camera2D" parent="UI-Screen" unique_id=1346983163]
-zoom = Vector2(0.5, 0.5)
+position = Vector2(-2, 2)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_shqao")]
-position = Vector2(115, 61)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-48, 24)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
 [node name="Board" type="Node2D" parent="." unique_id=156339385]
-position = Vector2(-125, -48)
+position = Vector2(-149, 103.00001)
+scale = Vector2(0.8, 0.8)
 
 [node name="Side" type="Node2D" parent="Board" unique_id=423446909]
 
@@ -154,7 +153,7 @@ texture = ExtResource("22_i4wni")
 [node name="Layer 8" type="Node2D" parent="Board" unique_id=654868000]
 
 [node name="Home" parent="Board/Layer 8" unique_id=736707593 instance=ExtResource("2_3omwu")]
-position = Vector2(-511, -634)
+position = Vector2(-513, -634)
 
 [node name="64" parent="Board/Layer 8" unique_id=1444096029 instance=ExtResource("3_yqsby")]
 position = Vector2(-319, -636)
@@ -497,11 +496,3 @@ texture = ExtResource("22_i4wni")
 [node name="BorderB10" type="Sprite2D" parent="Board/Border-B" unique_id=1305398237]
 position = Vector2(577, 400)
 texture = ExtResource("22_i4wni")
-
-[node name="Sidebar" type="TextureRect" parent="Board" unique_id=207346967]
-offset_left = 825.0
-offset_top = -773.0
-offset_right = 1225.0
-offset_bottom = 307.0
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("23_636a4")

@@ -50,13 +50,22 @@ func _setup_players():
 	var count = GlobalData.player_count
 	for i in range(count):
 		var player = player_scene.instantiate()
-		player.name = "Player " + str(i + 1)
+		# Determine which selection index is assigned to this turn slot (turn_order maps turn->selection_index)
+		var selection_index := -1
+		if GlobalData.turn_order.size() == count:
+			selection_index = GlobalData.turn_order[i]
 
-		# Spawn players in turn order using selected avatar IDs from GlobalData.
+		# Default character id (fallback)
 		var character_id := i
-		if GlobalData.turn_order.size() == count and GlobalData.selected_characters.size() == count:
-			character_id = GlobalData.get_character_for_turn(i)
+		if selection_index != -1 and GlobalData.selected_characters.size() == count:
+			character_id = GlobalData.selected_characters[selection_index]
 		player.set("character_id", character_id)
+
+		# Use the chosen display name if available; otherwise fall back to Player N
+		var display_name := "Player " + str(i + 1)
+		if selection_index != -1 and GlobalData.selected_names.size() > selection_index:
+			display_name = GlobalData.selected_names[selection_index]
+		player.name = display_name
 
 		player.set("board", current_board)
 		player.set("max_tile", current_map_data.total_tiles if current_map_data != null else 0)
@@ -91,7 +100,8 @@ func _play_turn():
 
 	# Wait for user input to roll (Space by default via input action 'roll_dice').
 	# Log turn start (use player.name so logs match displayed names)
-	print("[GAME] Turn %d - %s starting at tile %d" % [current_turn, player.name, player.get("grid_position")])
+	# Display turns as 1-based for readability
+	print("[GAME] Turn %d - %s starting at tile %d" % [current_turn + 1, player.name, player.get("grid_position")])
 
 	# Start a fresh roll session so only rolls produced during this window are accepted
 	current_roll_session += 1
@@ -184,6 +194,7 @@ func resolve_tile_effect(player) -> void:
 	var max_chains := 12
 	var visited := {}
 	var visited_tiles := []
+	var bus_stop_used := false
 	for i in range(max_chains):
 		var pos = player.get("grid_position")
 		var tile_type = current_map_data.tile_index.get(pos, "plain")
@@ -194,49 +205,54 @@ func resolve_tile_effect(player) -> void:
 			break
 		visited_tiles.append(pos)
 
-		print("[CHAIN] Iteration", i, "Player", players.find(player), "at tile", pos, "type", tile_type)
+		print("[CHAIN] Iteration %d - %s at tile %d type %s" % [i, player.name, pos, tile_type])
 		visited[pos] = true
 
 		var did_move := false
 
 		match tile_type:
 			"bus_stop_green", "bus_stop_orange", "bus_stop_violet":
-				print("[CHAIN] apply_bus_stop for player", players.find(player), "on tile", pos)
+				if bus_stop_used:
+					# Bus stop is one-use per resolution chain: destination bus stop is only a landing tile.
+					print("[CHAIN] bus stop already used this chain; %s stays on tile %d" % [player.name, pos])
+					break
+				bus_stop_used = true
+				print("[CHAIN] apply_bus_stop for %s on tile %d" % [player.name, pos])
 				await apply_bus_stop(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after bus_stop player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after bus_stop %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"vending":
-				print("[CHAIN] apply_vending for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_vending for %s on tile %d" % [player.name, pos])
 				await apply_vending(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after vending player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after vending %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"bike":
-				print("[CHAIN] apply_bike for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_bike for %s on tile %d" % [player.name, pos])
 				await apply_bike(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after bike player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after bike %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"puddle":
-				print("[CHAIN] apply_puddle for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_puddle for %s on tile %d" % [player.name, pos])
 				await apply_puddle(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after puddle player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after puddle %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"traffic":
-				print("[CHAIN] apply_traffic for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_traffic for %s on tile %d" % [player.name, pos])
 				await apply_traffic(player)
-				print("[CHAIN] after traffic (no move) player", players.find(player), "on", player.get("grid_position"))
+				print("[CHAIN] after traffic (no move) %s on %d" % [player.name, player.get("grid_position")])
 			"dog":
-				print("[CHAIN] apply_dog for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_dog for %s on tile %d" % [player.name, pos])
 				await apply_dog(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after dog player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after dog %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			_:
 				# plain or unrecognized tile -> nothing to do
-				print("[CHAIN] no special tile at", pos)
+				print("[CHAIN] no special tile at %d" % pos)
 				pass
 
 		# If the player moved as part of this effect, loop again to resolve the new tile.
@@ -248,16 +264,21 @@ func resolve_tile_effect(player) -> void:
 
 # ─── Bus Stop: jump reaction → tile-by-tile travel ───────────────────────────
 func apply_bus_stop(player) -> void:
-	var tile = player.get("grid_position")
+	var tile: int = int(player.get("grid_position"))
 	if current_map_data.bus_pairs.has(tile):
-		var dest = current_map_data.bus_pairs[tile]
+		var dest: int = int(current_map_data.bus_pairs[tile])
+		var second_tile: int = max(tile, dest)
 
-		# 1. Jump animation first (advantage reaction)
-		await player.play_jump_reaction()
+		# First bus-stop tile: jump and go up to the paired stop.
+		# Second bus-stop tile: sleep and go down to the paired stop.
+		if tile == second_tile:
+			await player.play_sleep_reaction()
+		else:
+			await player.play_jump_reaction()
 
-		# 2. Move tile-by-tile to destination
+		# Move tile-by-tile to destination stop.
 		player.move_to_tile_stepwise(dest)
-		# movement is awaited by the central resolver
+		# Movement is awaited by the central resolver.
 
 # ─── Vending: jump → extra roll ──────────────────────────────────────────────
 func apply_vending(player) -> void:
