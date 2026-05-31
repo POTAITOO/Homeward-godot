@@ -6,7 +6,6 @@ var home_node: Node2D = null
 
 func _ready():
 	_cache_nodes()
-	print("[BOARD] Ready — " + str(tile_map.size()) + " tiles cached")
 
 
 func _cache_nodes():
@@ -47,7 +46,7 @@ func get_tile_world_position(tile_num: int) -> Vector2:
 	if tile_map.has(tile_num):
 		return tile_map[tile_num].global_position
 
-	push_error("[BOARD] Tile " + str(tile_num) + " not found!")
+	push_error("Tile " + str(tile_num) + " not found!")
 	return Vector2.ZERO
 
 
@@ -64,7 +63,7 @@ func get_school_position() -> Vector2:
 		if node.name == "School" or (node.name == "Home" and node.get_parent() != null and node.get_parent().name == "Layer1"):
 			return node.global_position
 
-	push_error("[BOARD] School not found!")
+	push_error("School not found!")
 	return Vector2.ZERO
 
 
@@ -83,7 +82,7 @@ func get_home_position() -> Vector2:
 	if tile_map.has(last_tile_num):
 		return tile_map[last_tile_num].global_position
 
-	push_error("[BOARD] Home not found in group 'home' and no fallback tile!")
+	push_error("Home not found in group 'home' and no fallback tile!")
 	return Vector2.ZERO
 
 func get_board_size() -> Vector2:
