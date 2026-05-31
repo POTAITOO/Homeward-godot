@@ -25,6 +25,7 @@ GlobalData="*uid://dgbqel37he8u0"
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep"
+mouse_cursor/custom_image="res://assets/Interactions/Catpaw-Mouse-cursor.png"
 
 [input]
 
