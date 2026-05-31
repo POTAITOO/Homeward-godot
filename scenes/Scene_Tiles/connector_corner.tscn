@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dikelnygdpiso"]
 
-[ext_resource type="Script" uid="uid://ujg43j4ls7vp" path="res://scripts/Tile_Script/plain.gd" id="1_wfdga"]
-[ext_resource type="Texture2D" uid="uid://bn5x4rmc5j0si" path="res://assets/Tiles/Plain-Tile-Sheet.png" id="2_g16qw"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/plain.gd" id="1_wfdga"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Plain-Tile-Sheet.png" id="2_g16qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

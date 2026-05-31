@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://s3kjp54w1fhe"]
 
-[ext_resource type="Script" uid="uid://cmhnind3hglcs" path="res://scripts/Tile_Script/school.gd" id="1_dxckd"]
-[ext_resource type="Texture2D" uid="uid://y38fnw0u4eqr" path="res://assets/Tiles/Schools-Sheet.png" id="2_udanf"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/school.gd" id="1_dxckd"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Schools-Sheet.png" id="2_udanf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

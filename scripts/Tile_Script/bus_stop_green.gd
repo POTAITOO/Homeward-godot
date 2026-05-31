@@ -7,5 +7,5 @@ func _ready() -> void:
 	anim.play("default")
 	add_to_group("tiles")
 
-func on_player_landed(player: Dictionary) -> void:
+func _on_player_landed(_player: Dictionary) -> void:
 	pass

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://rv0gbd3gwbs0"]
 
+[ext_resource type="Script" uid="uid://ciej82pjk0qxr" path="res://scripts/core/MapSelect.gd" id="1_avuw4"]
 [ext_resource type="Texture2D" uid="uid://cdlv06p5g1pss" path="res://assets/UI/Backdrop_Sky-Sheet.png" id="1_xqb3h"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_4inkp"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_avuw4")
 
 [node name="Background" type="TextureRect" parent="." unique_id=691131222]
 layout_mode = 1

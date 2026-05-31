@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://burq3yqc0vmrg"]
 
-[ext_resource type="Script" uid="uid://chphwyb8vh60g" path="res://scripts/Tile_Script/puddle.gd" id="1_awxcs"]
-[ext_resource type="Texture2D" uid="uid://da5tcxtxdqshn" path="res://assets/Tiles/Puddles-Sheet.png" id="1_yd7t8"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/puddle.gd" id="1_awxcs"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Puddles-Sheet.png" id="1_yd7t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)
