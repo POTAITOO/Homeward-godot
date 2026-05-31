@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://cwt0hvehi5lj1"]
 
-[ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
-[ext_resource type="PackedScene" uid="uid://dd1bi6muvhq42" path="res://scenes/player.tscn" id="2_k2fmo"]
+[ext_resource type="Script" path="res://scripts/core/game_scene.gd" id="1_5odut"]
+[ext_resource type="Script" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
+[ext_resource type="PackedScene" path="res://scenes/main/6x6.tscn" id="3_5odut"]
+[ext_resource type="Script" path="res://scripts/core/board.gd" id="4_8gxuo"]
+[ext_resource type="PackedScene" path="res://scenes/main/player.tscn" id="5_8gxuo"]
 
 [node name="GameScene" type="Node2D" unique_id=705321355]
-
-[node name="GameManager" type="Node" parent="." unique_id=1287142068]
-script = ExtResource("1_sdya7")
-player_scene = ExtResource("2_k2fmo")
+script = ExtResource("1_5odut")
 
 [node name="Board" type="Node2D" parent="." unique_id=2081129005]
+script = ExtResource("4_8gxuo")
+
+[node name="6x6" parent="Board" unique_id=352002498 instance=ExtResource("3_5odut")]
 
 [node name="Players" type="Node2D" parent="." unique_id=1115601463]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=497433094]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=690373440]
+zoom = Vector2(0.6, 0.6)
+
+[node name="GameManager" type="Node" parent="." unique_id=657675942]
+script = ExtResource("1_sdya7")
+player_scene = ExtResource("5_8gxuo")

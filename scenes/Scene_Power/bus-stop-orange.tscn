@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://breuxngyopotc"]
 
-[ext_resource type="Script" uid="uid://bkll11telhph6" path="res://scripts/Tile_Script/bus_stop_orange.gd" id="1_bjvfj"]
-[ext_resource type="Texture2D" uid="uid://bpf8cpttagemc" path="res://assets/Tiles/Bus_Stop-Sheet.png" id="2_3xlip"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/bus_stop_orange.gd" id="1_bjvfj"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Bus_Stop-Sheet.png" id="2_3xlip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

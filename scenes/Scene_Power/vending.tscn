@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d35owlaadgwwt"]
 
-[ext_resource type="Script" uid="uid://cx4k4nngiaqw7" path="res://scripts/Tile_Script/vending.gd" id="1_qw87w"]
-[ext_resource type="Texture2D" uid="uid://b3b8pew6h4lu5" path="res://assets/Tiles/Vending-Sheet.png" id="2_cs05a"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/vending.gd" id="1_qw87w"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Vending-Sheet.png" id="2_cs05a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

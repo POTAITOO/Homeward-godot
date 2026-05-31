@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://27i7g12pofgr"]
 
-[ext_resource type="Script" uid="uid://ctoj4cg53reyb" path="res://scripts/Player_Script/p_4.gd" id="1_2hubm"]
-[ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="1_er5m7"]
+[ext_resource type="Script" path="res://scripts/Player_Script/p_4.gd" id="1_2hubm"]
+[ext_resource type="Texture2D" path="res://assets/Players/P4-Sheet.png" id="1_er5m7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgo23"]
 size = Vector2(48, 64)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b88l2sn52fkhk"]
 
-[ext_resource type="Script" uid="uid://y65g8qwp8tbi" path="res://scripts/Tile_Script/traffic.gd" id="1_0gvuf"]
-[ext_resource type="Texture2D" uid="uid://c5ndp5egfvmnq" path="res://assets/Tiles/Traffic-Sheet.png" id="2_a7dkm"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/traffic.gd" id="1_0gvuf"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Traffic-Sheet.png" id="2_a7dkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

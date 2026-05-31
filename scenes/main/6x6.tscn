@@ -2,37 +2,37 @@
 
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_iuonh"]
 [ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="2_15rs1"]
-[ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="2_iuonh"]
-[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/Board.gd" id="3_iuq8w"]
-[ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_l3cfh"]
-[ext_resource type="PackedScene" uid="uid://duu0cwsbj2jdn" path="res://scenes/Scene_Tiles/connector_left.tscn" id="3_raeie"]
-[ext_resource type="PackedScene" uid="uid://c6fyv57ah4u4r" path="res://scenes/Scene_Tiles/connector_right.tscn" id="4_hxu8e"]
-[ext_resource type="PackedScene" uid="uid://iav6altltmwr" path="res://scenes/Scene_Tiles/connector_middle_lamp.tscn" id="4_nvumn"]
-[ext_resource type="PackedScene" uid="uid://breuxngyopotc" path="res://scenes/Scene_Power/bus-stop-orange.tscn" id="4_ow5a4"]
-[ext_resource type="PackedScene" uid="uid://c7hvrqigheu71" path="res://scenes/Scene_Power/bus-stop-green.tscn" id="5_hujxm"]
-[ext_resource type="PackedScene" uid="uid://burq3yqc0vmrg" path="res://scenes/Scene_Power/puddle.tscn" id="5_nvumn"]
-[ext_resource type="PackedScene" uid="uid://d35owlaadgwwt" path="res://scenes/Scene_Power/vending.tscn" id="6_hujxm"]
-[ext_resource type="PackedScene" uid="uid://b56kkvetcjf1e" path="res://scenes/Scene_Tiles/connector_middle_no_lamp.tscn" id="6_nvumn"]
-[ext_resource type="PackedScene" uid="uid://b88l2sn52fkhk" path="res://scenes/Scene_Power/traffic.tscn" id="6_ou6is"]
-[ext_resource type="PackedScene" uid="uid://b8ldx6erh5mfv" path="res://scenes/Scene_Power/bike.tscn" id="8_necax"]
-[ext_resource type="PackedScene" uid="uid://cpvpmtsfatc5m" path="res://scenes/Scene_Tiles/home.tscn" id="9_ou6is"]
-[ext_resource type="PackedScene" uid="uid://dhl0wq3p80c45" path="res://scenes/Scene_Power/dog-right.tscn" id="9_r4lks"]
-[ext_resource type="PackedScene" uid="uid://dikelnygdpiso" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="11_pg34l"]
-[ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="14_m4h2d"]
-[ext_resource type="PackedScene" uid="uid://b886hicstl1iu" path="res://scenes/Scene_Tiles/filler-tree.tscn" id="15_dljn3"]
-[ext_resource type="PackedScene" uid="uid://bvm5pcf6teyha" path="res://scenes/Scene_Tiles/filler-empty.tscn" id="18_55vpa"]
-[ext_resource type="PackedScene" uid="uid://camhlhmsilyiv" path="res://scenes/Interactions/dice.tscn" id="19_necax"]
-[ext_resource type="Script" uid="uid://bb43gihqef1td" path="res://scripts/MapData_6x6.gd" id="19_wh7xj"]
-[ext_resource type="Texture2D" uid="uid://w28v76vnxxtt" path="res://assets/UI/Border-B.png" id="22_55vpa"]
-[ext_resource type="Texture2D" uid="uid://c51r7vfmlc5eu" path="res://assets/UI/Side.png" id="24_b7xp2"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/school.tscn" id="2_iuonh"]
+[ext_resource type="Script" path="res://scripts/core/board.gd" id="3_iuq8w"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_l3cfh"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_left.tscn" id="3_raeie"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_right.tscn" id="4_hxu8e"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_middle_lamp.tscn" id="4_nvumn"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bus-stop-orange.tscn" id="4_ow5a4"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bus-stop-green.tscn" id="5_hujxm"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/puddle.tscn" id="5_nvumn"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/vending.tscn" id="6_hujxm"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_middle_no_lamp.tscn" id="6_nvumn"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/traffic.tscn" id="6_ou6is"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bike.tscn" id="8_necax"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/home.tscn" id="9_ou6is"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/dog-right.tscn" id="9_r4lks"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="11_pg34l"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Power/dog-left.tscn" id="14_m4h2d"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/filler-tree.tscn" id="15_dljn3"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/filler-empty.tscn" id="18_55vpa"]
+[ext_resource type="PackedScene" path="res://scenes/Interactions/dice.tscn" id="19_necax"]
+[ext_resource type="Texture2D" path="res://assets/UI/Border-B.png" id="22_55vpa"]
+[ext_resource type="Script" path="res://scripts/core/MapData_6x6.gd" id="23_b7xp2"]
+[ext_resource type="Texture2D" path="res://assets/UI/Side.png" id="24_b7xp2"]
 
-[node name="Main" type="Node2D" unique_id=352002498]
+[node name="6x6" type="Node2D" unique_id=352002498]
 
 [node name="UI-Screen" type="Node2D" parent="." unique_id=700528336]
 
 [node name="Camera2D" type="Camera2D" parent="UI-Screen" unique_id=1346983163]
-offset = Vector2(48, -20)
-zoom = Vector2(0.6, 0.6)
+visible = false
+zoom = Vector2(0.65, 0.6)
 
 [node name="Background" parent="UI-Screen" unique_id=1583450229 instance=ExtResource("1_iuonh")]
 visible = false
@@ -261,7 +261,7 @@ position = Vector2(320, 256)
 tile_number = 6
 
 [node name="MapData" type="Node" parent="Board" unique_id=2007233607]
-script = ExtResource("19_wh7xj")
+script = ExtResource("23_b7xp2")
 
 [node name="Border-B" type="Node2D" parent="Board" unique_id=986700074]
 

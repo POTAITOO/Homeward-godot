@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8ldx6erh5mfv"]
 
-[ext_resource type="Script" uid="uid://b0x2ibuydiy7n" path="res://scripts/Tile_Script/bike.gd" id="1_mn4ha"]
-[ext_resource type="Texture2D" uid="uid://dc70cim84bjt6" path="res://assets/Tiles/Bike-Sheet.png" id="2_h5wtr"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/bike.gd" id="1_mn4ha"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Bike-Sheet.png" id="2_h5wtr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)
