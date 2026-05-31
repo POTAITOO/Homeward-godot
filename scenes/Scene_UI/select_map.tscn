@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c7qda5fui7wqj"]
+[gd_scene format=3 uid="uid://dbp270alrqcns"]
 
-[ext_resource type="Script" uid="uid://blc5rmlmjqhy7" path="res://scripts/core/AvatarSelect.gd" id="1_446iv"]
+[ext_resource type="Script" uid="uid://ciej82pjk0qxr" path="res://scripts/core/MapSelect.gd" id="1_avuw4"]
 [ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="2_7ysf2"]
 [ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="3_kq0ue"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="4_a0c53"]
@@ -174,12 +174,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AvatarSelect" type="Control" unique_id=1166207099]
+[node name="AvatarSelect2" type="Control" unique_id=1166207099]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_446iv")
+script = ExtResource("1_avuw4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1861311612]
 zoom = Vector2(0.6, 0.6)

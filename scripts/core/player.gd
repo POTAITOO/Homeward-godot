@@ -37,20 +37,22 @@ func setup(p_board, p_school_pos: Vector2, p_home_pos: Vector2 = Vector2.ZERO) -
 
 func take_turn(roll: int) -> void:
 	if board == null:
-		print("ERROR: Board not assigned!")
+		push_error("Board not assigned!")
 		return
 
 	last_position = grid_position
-	print("[PLAYER] ", name, " rolled ", roll)
 
 	move_queue.clear()
 	_step_direction = 1
 
 	var current = grid_position
+	print("[PLAYER] starting take_turn. grid_position:", grid_position, "roll:", roll)
 	for i in range(roll):
 		current += 1
 		current = min(current, max_tile)
 		move_queue.append(current)
+
+	print("[PLAYER] move_queue:", move_queue)
 
 	is_moving = true
 	_move_next()
@@ -60,16 +62,15 @@ func _move_next() -> void:
 		is_moving = false
 		_step_direction = 0
 		_play_idle()
-		print("[PLAYER] ", name, " arrived at tile ", grid_position)
 		return
 
 	var next_tile = move_queue.pop_front()
 	grid_position = next_tile
 
 	var new_pos = board.get_tile_world_position(grid_position) + TILE_OFFSET
+	print("[PLAYER] moving to tile", grid_position, "world pos", new_pos)
 	_update_walk_animation(new_pos)
 	target_position = new_pos
-	print("[PLAYER] ", name, " stepping to tile ", grid_position)
 
 func _update_walk_animation(new_target: Vector2) -> void:
 	var dir = (new_target - global_position).normalized()
@@ -178,5 +179,3 @@ func celebrate_win() -> void:
 		sprite.play("jump")
 	else:
 		_play_idle()
-
-	print("[PLAYER] ", name, " is celebrating WIN!")

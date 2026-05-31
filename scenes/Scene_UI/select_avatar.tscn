@@ -482,8 +482,8 @@ offset_right = 296.0
 offset_bottom = 39.0
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_7tx7q")
-theme_override_font_sizes/font_size = 28
-text = "Chooose your Avatar Player <Variable>"
+theme_override_font_sizes/font_size = 32
+text = "Chooose your Avatar Player"
 vertical_alignment = 1
 autowrap_mode = 2
 

@@ -132,7 +132,7 @@ zoom = Vector2(0.6, 0.6)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1917620578]
 sprite_frames = SubResource("SpriteFrames_1sgju")
 animation = &"idle"
-frame_progress = 0.81894916
+frame_progress = 0.10127022
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=936747978]
 layout_mode = 0
@@ -163,6 +163,6 @@ position = Vector2(392, 272)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jduia")
 animation = &"idle"
-frame_progress = 0.64453405
+frame_progress = 0.34610787
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_play_button_pressed"]

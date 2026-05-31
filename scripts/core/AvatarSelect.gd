@@ -16,67 +16,177 @@ var confirmed_count := 0
 var selection_complete := false
 @export var deterministic_seed: int = -1
 
-@onready var background_sprite: AnimatedSprite2D = $BG
-@onready var preview_sprite: AnimatedSprite2D = $Window/Mascot/TextureRect/AnimatedSprite2D
-@onready var back_button: TextureButton = $Window/Back
-@onready var help_button: TextureButton = $Window/Help
-@onready var continue_button: TextureButton = $Window/Continue
-@onready var slot_nodes = [
-	$Window/P1,
-	$Window/P2,
-	$Window/P3,
-	$Window/P4,
+
+var background_sprite: AnimatedSprite2D = null
+var preview_sprite: AnimatedSprite2D = null
+var back_button: TextureButton = null
+var help_button: TextureButton = null
+var continue_button: TextureButton = null
+
+# store path lists so we can resolve safely at runtime
+var slot_node_paths := [
+	"Window/P1",
+	"Window/P2",
+	"Window/P3",
+	"Window/P4",
+]
+var slot_button_paths := [
+	"Window/P1/CollisionShape2D/TextureButton",
+	"Window/P2/CollisionShape2D/TextureButton",
+	"Window/P3/CollisionShape2D/TextureButton",
+	"Window/P4/CollisionShape2D/TextureButton",
+]
+var slot_label_paths := [
+	"Window/P1/CollisionShape2D/Order",
+	"Window/P2/CollisionShape2D/Order",
+	"Window/P3/CollisionShape2D/Order",
+	"Window/P4/CollisionShape2D/Order",
+]
+var slot_sprite_paths := [
+	"Window/P1/CollisionShape2D/AnimatedSprite2D",
+	"Window/P2/CollisionShape2D/AnimatedSprite2D",
+	"Window/P3/CollisionShape2D/AnimatedSprite2D",
+	"Window/P4/CollisionShape2D/AnimatedSprite2D",
 ]
 
-@onready var slot_buttons = [
-	$Window/P1/CollisionShape2D/TextureButton,
-	$Window/P2/CollisionShape2D/TextureButton,
-	$Window/P3/CollisionShape2D/TextureButton,
-	$Window/P4/CollisionShape2D/TextureButton,
-]
-
-@onready var slot_labels = [
-	$Window/P1/CollisionShape2D/Order,
-	$Window/P2/CollisionShape2D/Order,
-	$Window/P3/CollisionShape2D/Order,
-	$Window/P4/CollisionShape2D/Order,
-]
-
-@onready var slot_sprites = [
-	$Window/P1/CollisionShape2D/AnimatedSprite2D,
-	$Window/P2/CollisionShape2D/AnimatedSprite2D,
-	$Window/P3/CollisionShape2D/AnimatedSprite2D,
-	$Window/P4/CollisionShape2D/AnimatedSprite2D,
-]
+# resolved node refs (may contain nulls if missing in scene)
+var slot_nodes := []
+var slot_buttons := []
+var slot_labels := []
+var slot_sprites := []
 
 func _ready():
 	print("[AVATAR_SELECT] Ready. player_count=", GlobalData.player_count)
 	selections.resize(4)
 	selections.fill(-1)
-	background_sprite.play("idle")
-	preview_sprite.play("idle")
-	continue_button.visible = false
-	continue_button.disabled = true
+	# Resolve nodes safely (use get_node_or_null to survive scene edits/merges)
+	background_sprite = get_node_or_null("BG")
+	if background_sprite:
+		background_sprite.play("idle")
+	else:
+		print("[AVATAR_SELECT] Warning: BG node missing")
 
-	back_button.pressed.connect(_on_back_pressed)
-	help_button.pressed.connect(_on_help_pressed)
-	continue_button.pressed.connect(_on_continue_pressed)
+	preview_sprite = get_node_or_null("Window/Mascot/TextureRect/AnimatedSprite2D")
+	if preview_sprite:
+		preview_sprite.play("idle")
+	else:
+		print("[AVATAR_SELECT] Warning: preview sprite node missing: Window/Mascot/TextureRect/AnimatedSprite2D")
+
+	continue_button = get_node_or_null("Window/Continue")
+	if continue_button:
+		continue_button.visible = false
+		continue_button.disabled = true
+	else:
+		print("[AVATAR_SELECT] Warning: Continue button node missing: Window/Continue")
+
+	back_button = get_node_or_null("Window/Back")
+	if back_button == null:
+		print("[AVATAR_SELECT] Warning: Back button missing: Window/Back")
+
+	help_button = get_node_or_null("Window/Help")
+	if help_button == null:
+		print("[AVATAR_SELECT] Warning: Help button missing: Window/Help")
+
+	# resolve slot nodes/buttons/labels/sprites
+	for path in slot_node_paths:
+		var n = get_node_or_null(path)
+		slot_nodes.append(n)
+		if n == null:
+			print("[AVATAR_SELECT] Warning: missing slot node: ", path)
+
+	for path in slot_button_paths:
+		var b = get_node_or_null(path)
+		slot_buttons.append(b)
+		if b == null:
+			print("[AVATAR_SELECT] Warning: missing slot button: ", path)
+
+	for path in slot_label_paths:
+		var l = get_node_or_null(path)
+		slot_labels.append(l)
+		if l == null:
+			print("[AVATAR_SELECT] Warning: missing slot label: ", path)
+
+	for path in slot_sprite_paths:
+		var s = get_node_or_null(path)
+		slot_sprites.append(s)
+		if s == null:
+			print("[AVATAR_SELECT] Warning: missing slot sprite: ", path)
+		else:
+			s.play("idle")
+
+	# connect signals only for nodes that exist
+	if back_button:
+		back_button.pressed.connect(_on_back_pressed)
+	if help_button:
+		help_button.pressed.connect(_on_help_pressed)
+	if continue_button:
+		continue_button.pressed.connect(_on_continue_pressed)
+
 	for i in range(slot_buttons.size()):
-		slot_buttons[i].pressed.connect(_on_slot_pressed.bind(i))
-	
+		if slot_buttons[i]:
+			slot_buttons[i].pressed.connect(_on_slot_pressed.bind(i))
+
 	_update_slots_visibility()
+	_restore_selection_state()
+	print("[AVATAR_SELECT] Avatar slots ready: ", slot_nodes.size(), " checked; order labels hidden until complete")
+
+
+func _restore_selection_state() -> void:
+	# Rebuild local selection cache from GlobalData so returning from map select keeps state.
+	selections.fill(-1)
+	confirmed_count = 0
+	selection_complete = false
 	_hide_turn_labels()
-	print("[AVATAR_SELECT] Avatar slots ready: 4 visible, order labels hidden until complete")
+
+	for button in slot_buttons:
+		if button:
+			button.disabled = false
+
+	if continue_button:
+		continue_button.visible = false
+		continue_button.disabled = true
+
+	for selection_index in range(GlobalData.selected_characters.size()):
+		var avatar_index = GlobalData.selected_characters[selection_index]
+		if avatar_index >= 0 and avatar_index < selections.size():
+			selections[avatar_index] = selection_index
+			if avatar_index < slot_buttons.size() and slot_buttons[avatar_index]:
+				slot_buttons[avatar_index].disabled = true
+
+	confirmed_count = GlobalData.selected_characters.size()
+
+	if confirmed_count >= GlobalData.player_count and GlobalData.turn_order.size() == GlobalData.player_count:
+		selection_complete = true
+		_update_turn_labels()
+		for button in slot_buttons:
+			if button:
+				button.disabled = true
+		if continue_button:
+			continue_button.visible = true
+			continue_button.disabled = false
+		print("[AVATAR_SELECT] Restored completed selection state")
+	else:
+		print("[AVATAR_SELECT] Restored partial selection state")
 
 func _update_slots_visibility():
 	for i in range(4):
-		slot_nodes[i].visible = true
-		print("[AVATAR_SELECT] Slot ", i + 1, " visible")
+		var node = null
+		if i < slot_nodes.size():
+			node = slot_nodes[i]
+		if node:
+			node.visible = true
+			print("[AVATAR_SELECT] Slot ", i + 1, " visible")
+		else:
+			print("[AVATAR_SELECT] Slot node missing for index ", i)
 
 
 func _hide_turn_labels() -> void:
 	for label in slot_labels:
-		label.visible = false
+		if label:
+			label.visible = false
+		else:
+			# silently skip missing labels
+			pass
 
 
 func _on_slot_pressed(avatar_index: int) -> void:
@@ -99,16 +209,15 @@ func on_select_pressed(avatar_index: int):
 	selections[avatar_index] = confirmed_count
 	confirmed_count += 1
 
-	# Show preview of selected avatar
-	preview_sprite.sprite_frames = avatar_frames[avatar_index]
-	preview_sprite.play("idle")
+	# Keep mascot preview static in this scene (do not switch on selection)
 
 	# Save to GlobalData
 	GlobalData.selected_characters.append(avatar_index)
 	print("[AVATAR_SELECT] GlobalData.selected_characters=", GlobalData.selected_characters)
 
 	# Disable select button for this slot
-	slot_buttons[avatar_index].disabled = true
+	if avatar_index < slot_buttons.size() and slot_buttons[avatar_index]:
+		slot_buttons[avatar_index].disabled = true
 	print("[AVATAR_SELECT] Disabled avatar button for slot ", avatar_index)
 
 	# Check if all players have selected
@@ -117,13 +226,15 @@ func on_select_pressed(avatar_index: int):
 
 func _update_turn_labels() -> void:
 	for label in slot_labels:
-		label.visible = false
+		if label:
+			label.visible = false
 
 	for turn_pos in range(GlobalData.turn_order.size()):
 		var selection_index = GlobalData.turn_order[turn_pos]
 		var avatar_index = GlobalData.selected_characters[selection_index]
-		slot_labels[avatar_index].text = "P%d" % (turn_pos + 1)
-		slot_labels[avatar_index].visible = true
+		if avatar_index < slot_labels.size() and slot_labels[avatar_index]:
+			slot_labels[avatar_index].text = "P%d" % (turn_pos + 1)
+			slot_labels[avatar_index].visible = true
 
 	print("[AVATAR_SELECT] Turn order labels shown")
 
@@ -151,10 +262,12 @@ func _finalize_selection():
 	_update_turn_labels()
 	selection_complete = true
 	for button in slot_buttons:
-		button.disabled = true
+		if button:
+			button.disabled = true
 	print("[AVATAR_SELECT] All avatar buttons disabled")
-	continue_button.visible = true
-	continue_button.disabled = false
+	if continue_button:
+		continue_button.visible = true
+		continue_button.disabled = false
 	print("[AVATAR_SELECT] Continue button enabled")
 
 
@@ -171,4 +284,4 @@ func _on_continue_pressed() -> void:
 		print("[AVATAR_SELECT] Continue pressed before selection complete; ignored")
 		return
 	print("[AVATAR_SELECT] Continue pressed. Loading MapSelect")
-	get_tree().change_scene_to_file("res://scenes/main/MapSelect.tscn")
+	get_tree().change_scene_to_file("res://scenes/Scene_UI/select_map.tscn")
