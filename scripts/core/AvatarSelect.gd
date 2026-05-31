@@ -8,6 +8,9 @@ var avatar_frames := [
 	preload("res://assets/Players/Student_4.tres")
 ]
 
+# Human-readable names for avatars (index matches the avatar resource order)
+var avatar_names := ["Serena", "Calem", "Lucas", "Ethan"]
+
 # Tracks which avatar each slot has selected (-1 = not yet selected)
 var selections := []
 
@@ -213,7 +216,12 @@ func on_select_pressed(avatar_index: int):
 
 	# Save to GlobalData
 	GlobalData.selected_characters.append(avatar_index)
-	print("[AVATAR_SELECT] GlobalData.selected_characters=", GlobalData.selected_characters)
+	# Save the human display name for this avatar selection (keeps order consistent with selected_characters)
+	var display_name = "Player %d" % (confirmed_count)
+	if avatar_index >= 0 and avatar_index < avatar_names.size():
+		display_name = avatar_names[avatar_index]
+	GlobalData.selected_names.append(display_name)
+	print("[AVATAR_SELECT] GlobalData.selected_characters=", GlobalData.selected_characters, " names=", GlobalData.selected_names)
 
 	# Disable select button for this slot
 	if avatar_index < slot_buttons.size() and slot_buttons[avatar_index]:

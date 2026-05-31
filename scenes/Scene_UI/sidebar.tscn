@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://6gng15b80o6d"]
+[gd_scene format=3 uid="uid://b168fc62y0c4a"]
 
 [ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="1_db18u"]
+[ext_resource type="Script" uid="uid://dpk76o27cdxw2" path="res://scripts/UI_Script/sidebar.gd" id="1_sidebar"]
 [ext_resource type="Texture2D" uid="uid://cpfg2fvrdu8k7" path="res://assets/Interactions/Buttons5.png" id="2_2os2i"]
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="3_hrf37"]
 [ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="4_8uxt0"]
@@ -396,6 +397,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 1080.0
+script = ExtResource("1_sidebar")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1488212861]
 layout_mode = 0
@@ -445,7 +447,6 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_x5ke7")
 theme_override_font_sizes/font_size = 36
-text = "<Tile Name>"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="Tile Preview" unique_id=1328596817]
@@ -456,8 +457,8 @@ offset_bottom = 278.0
 theme_override_colors/font_outline_color = Color(0.4041717, 0.16772348, 0, 1)
 theme_override_fonts/font = ExtResource("6_x5ke7")
 theme_override_font_sizes/font_size = 20
-text = "<Actions on the Tile>"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Stack" type="Node2D" parent="." unique_id=1159089485]
 position = Vector2(192, 520)
@@ -475,59 +476,55 @@ theme_override_font_sizes/font_size = 36
 text = "Player Turns"
 horizontal_alignment = 1
 
-[node name="List" type="VBoxContainer" parent="Stack" unique_id=1767165730]
+[node name="Player Turn List" type="VBoxContainer" parent="Stack" unique_id=1767165730]
 offset_left = -128.0
 offset_top = 80.0
 offset_right = 128.0
 offset_bottom = 192.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Stack/List" unique_id=339226816]
+[node name="Turn 1" type="HBoxContainer" parent="Stack/Player Turn List" unique_id=339226816]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Stack/List/HBoxContainer" unique_id=457804735]
+[node name="Player 1" type="Label" parent="Stack/Player Turn List/Turn 1" unique_id=457804735]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_x5ke7")
 theme_override_font_sizes/font_size = 20
-text = "Ethan"
 
-[node name="TextureRect" type="TextureRect" parent="Stack/List/HBoxContainer" unique_id=1554598232]
+[node name="TextureRect" type="TextureRect" parent="Stack/Player Turn List/Turn 1" unique_id=1554598232]
 layout_mode = 2
 texture = ExtResource("8_0iy14")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Stack/List" unique_id=2080103476]
+[node name="Turn 2" type="HBoxContainer" parent="Stack/Player Turn List" unique_id=2080103476]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Stack/List/HBoxContainer2" unique_id=446477147]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_x5ke7")
-theme_override_font_sizes/font_size = 20
-text = "Serena"
-
-[node name="TextureRect" type="TextureRect" parent="Stack/List/HBoxContainer2" unique_id=325803552]
-layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Stack/List" unique_id=599894626]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Stack/List/HBoxContainer3" unique_id=523300468]
+[node name="Player 2" type="Label" parent="Stack/Player Turn List/Turn 2" unique_id=446477147]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_x5ke7")
 theme_override_font_sizes/font_size = 20
-text = "Calem"
 
-[node name="TextureRect" type="TextureRect" parent="Stack/List/HBoxContainer3" unique_id=200902524]
+[node name="TextureRect" type="TextureRect" parent="Stack/Player Turn List/Turn 2" unique_id=325803552]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Stack/List" unique_id=1981846582]
+[node name="Turn 3" type="HBoxContainer" parent="Stack/Player Turn List" unique_id=599894626]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Stack/List/HBoxContainer4" unique_id=721537701]
+[node name="Player 3" type="Label" parent="Stack/Player Turn List/Turn 3" unique_id=523300468]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_x5ke7")
 theme_override_font_sizes/font_size = 20
-text = "Lucas"
 
-[node name="TextureRect" type="TextureRect" parent="Stack/List/HBoxContainer4" unique_id=566486396]
+[node name="TextureRect" type="TextureRect" parent="Stack/Player Turn List/Turn 3" unique_id=200902524]
+layout_mode = 2
+
+[node name="Turn 4" type="HBoxContainer" parent="Stack/Player Turn List" unique_id=1981846582]
+layout_mode = 2
+
+[node name="Player 4" type="Label" parent="Stack/Player Turn List/Turn 4" unique_id=721537701]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_x5ke7")
+theme_override_font_sizes/font_size = 20
+
+[node name="TextureRect" type="TextureRect" parent="Stack/Player Turn List/Turn 4" unique_id=566486396]
 layout_mode = 2
 
 [node name="Dice" type="Node2D" parent="." unique_id=1038159911]

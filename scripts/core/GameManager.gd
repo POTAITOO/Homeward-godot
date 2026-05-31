@@ -50,13 +50,22 @@ func _setup_players():
 	var count = GlobalData.player_count
 	for i in range(count):
 		var player = player_scene.instantiate()
-		player.name = "Player " + str(i + 1)
+		# Determine which selection index is assigned to this turn slot (turn_order maps turn->selection_index)
+		var selection_index := -1
+		if GlobalData.turn_order.size() == count:
+			selection_index = GlobalData.turn_order[i]
 
-		# Spawn players in turn order using selected avatar IDs from GlobalData.
+		# Default character id (fallback)
 		var character_id := i
-		if GlobalData.turn_order.size() == count and GlobalData.selected_characters.size() == count:
-			character_id = GlobalData.get_character_for_turn(i)
+		if selection_index != -1 and GlobalData.selected_characters.size() == count:
+			character_id = GlobalData.selected_characters[selection_index]
 		player.set("character_id", character_id)
+
+		# Use the chosen display name if available; otherwise fall back to Player N
+		var display_name := "Player " + str(i + 1)
+		if selection_index != -1 and GlobalData.selected_names.size() > selection_index:
+			display_name = GlobalData.selected_names[selection_index]
+		player.name = display_name
 
 		player.set("board", current_board)
 		player.set("max_tile", current_map_data.total_tiles if current_map_data != null else 0)
@@ -185,6 +194,7 @@ func resolve_tile_effect(player) -> void:
 	var max_chains := 12
 	var visited := {}
 	var visited_tiles := []
+	var bus_stop_used := false
 	for i in range(max_chains):
 		var pos = player.get("grid_position")
 		var tile_type = current_map_data.tile_index.get(pos, "plain")
@@ -202,6 +212,11 @@ func resolve_tile_effect(player) -> void:
 
 		match tile_type:
 			"bus_stop_green", "bus_stop_orange", "bus_stop_violet":
+				if bus_stop_used:
+					# Bus stop is one-use per resolution chain: destination bus stop is only a landing tile.
+					print("[CHAIN] bus stop already used this chain; %s stays on tile %d" % [player.name, pos])
+					break
+				bus_stop_used = true
 				print("[CHAIN] apply_bus_stop for %s on tile %d" % [player.name, pos])
 				await apply_bus_stop(player)
 				await _wait_for_player(player)
@@ -249,16 +264,21 @@ func resolve_tile_effect(player) -> void:
 
 # ─── Bus Stop: jump reaction → tile-by-tile travel ───────────────────────────
 func apply_bus_stop(player) -> void:
-	var tile = player.get("grid_position")
+	var tile: int = int(player.get("grid_position"))
 	if current_map_data.bus_pairs.has(tile):
-		var dest = current_map_data.bus_pairs[tile]
+		var dest: int = int(current_map_data.bus_pairs[tile])
+		var second_tile: int = max(tile, dest)
 
-		# 1. Jump animation first (advantage reaction)
-		await player.play_jump_reaction()
+		# First bus-stop tile: jump and go up to the paired stop.
+		# Second bus-stop tile: sleep and go down to the paired stop.
+		if tile == second_tile:
+			await player.play_sleep_reaction()
+		else:
+			await player.play_jump_reaction()
 
-		# 2. Move tile-by-tile to destination
+		# Move tile-by-tile to destination stop.
 		player.move_to_tile_stepwise(dest)
-		# movement is awaited by the central resolver
+		# Movement is awaited by the central resolver.
 
 # ─── Vending: jump → extra roll ──────────────────────────────────────────────
 func apply_vending(player) -> void:
