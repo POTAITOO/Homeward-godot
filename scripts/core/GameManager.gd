@@ -50,7 +50,7 @@ func _setup_players():
 		
 		var player = player_scene.instantiate()
 		player.name = "Player " + str(i + 1)
-		player.set("character_id", i)
+		player.set("character_id", GlobalData.get_character_for_turn(i))
 		
 		player.set("board", current_board)
 		player.set("max_tile", current_map_data.total_tiles if current_map_data != null else 0)

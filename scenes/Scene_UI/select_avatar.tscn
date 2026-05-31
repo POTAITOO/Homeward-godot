@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dsup5k71ql67"]
 
 [ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="1_5txgc"]
+[ext_resource type="Script" uid="uid://blc5rmlmjqhy7" path="res://scripts/core/AvatarSelect.gd" id="1_7yq3t"]
 [ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_jj48s"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_7tx7q"]
 [ext_resource type="Texture2D" uid="uid://bsdfejblmy36y" path="res://assets/Interactions/Select_Button7.png" id="5_7yq3t"]
+[ext_resource type="PackedScene" uid="uid://dd1bi6muvhq42" path="res://scenes/main/player.tscn" id="6_px3la"]
 [ext_resource type="Texture2D" uid="uid://dva4s4whbggak" path="res://assets/Interactions/Select_Button8.png" id="6_uvaek"]
 [ext_resource type="Texture2D" uid="uid://dtxjtw7sqkeej" path="res://assets/UI/Dialog2.png" id="14_evyiq"]
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="14_ol70m"]
@@ -108,11 +110,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Control" type="Control" unique_id=1166207099]
+[node name="AvatarSelect" type="Control" unique_id=1166207099]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_7yq3t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1861311612]
 zoom = Vector2(0.6, 0.6)
@@ -163,11 +166,40 @@ position = Vector2(720, 384)
 position = Vector2(-480, 224)
 shape = SubResource("RectangleShape2D_wip7v")
 
+[node name="Order" type="Label" parent="Window/P1" unique_id=954185891]
+offset_left = -552.0
+offset_top = 48.0
+offset_right = -408.0
+offset_bottom = 144.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_7tx7q")
+theme_override_font_sizes/font_size = 56
+text = "P1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="P1" parent="Window/P1" unique_id=1109358877 instance=ExtResource("6_px3la")]
+position = Vector2(-480, 200)
+scale = Vector2(2, 2)
+
+[node name="TextureButton" type="TextureButton" parent="Window/P1" unique_id=632119365]
+offset_left = -576.0
+offset_top = 280.0
+offset_right = -384.0
+offset_bottom = 344.0
+texture_normal = ExtResource("5_7yq3t")
+texture_pressed = ExtResource("6_uvaek")
+texture_disabled = ExtResource("6_uvaek")
+
 [node name="P2" type="Area2D" parent="Window" unique_id=1155692649]
 position = Vector2(720, 384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P2" unique_id=2103945158]
-position = Vector2(-168, 232)
+position = Vector2(-168, 224)
 shape = SubResource("RectangleShape2D_wip7v")
 
 [node name="TextureButton" type="TextureButton" parent="Window/P2/CollisionShape2D" unique_id=524929021]
@@ -177,6 +209,23 @@ offset_right = 96.0
 offset_bottom = 120.0
 texture_normal = ExtResource("5_7yq3t")
 texture_pressed = ExtResource("6_uvaek")
+texture_disabled = ExtResource("6_uvaek")
+
+[node name="Order" type="Label" parent="Window/P2/CollisionShape2D" unique_id=465150570]
+offset_left = -72.0
+offset_top = -176.0
+offset_right = 72.0
+offset_bottom = -80.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_7tx7q")
+theme_override_font_sizes/font_size = 56
+text = "P2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="P3" type="Area2D" parent="Window" unique_id=1179305178]
 position = Vector2(720, 384)
@@ -192,6 +241,23 @@ offset_right = 96.0
 offset_bottom = 120.0
 texture_normal = ExtResource("5_7yq3t")
 texture_pressed = ExtResource("6_uvaek")
+texture_disabled = ExtResource("6_uvaek")
+
+[node name="Order" type="Label" parent="Window/P3/CollisionShape2D" unique_id=1823104535]
+offset_left = -72.0
+offset_top = -176.0
+offset_right = 72.0
+offset_bottom = -80.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_7tx7q")
+theme_override_font_sizes/font_size = 56
+text = "P3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="P4" type="Area2D" parent="Window" unique_id=686966308]
 position = Vector2(720, 384)
@@ -207,6 +273,23 @@ offset_right = 96.0
 offset_bottom = 120.0
 texture_normal = ExtResource("5_7yq3t")
 texture_pressed = ExtResource("6_uvaek")
+texture_disabled = ExtResource("6_uvaek")
+
+[node name="Order" type="Label" parent="Window/P4/CollisionShape2D" unique_id=1894008369]
+offset_left = -72.0
+offset_top = -176.0
+offset_right = 72.0
+offset_bottom = -80.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_7tx7q")
+theme_override_font_sizes/font_size = 56
+text = "P4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="CollisionShape2D" type="Node2D" parent="Window" unique_id=860383751]
 position = Vector2(720, 352)
@@ -245,12 +328,3 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("14_ol70m")
 texture_pressed = ExtResource("15_8qd3g")
 stretch_mode = 0
-
-[node name="TextureButton" type="TextureButton" parent="Window" unique_id=632119365]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 664.0
-offset_right = 336.0
-offset_bottom = 728.0
-texture_normal = ExtResource("5_7yq3t")
-texture_pressed = ExtResource("6_uvaek")
