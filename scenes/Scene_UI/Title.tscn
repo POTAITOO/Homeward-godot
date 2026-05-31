@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lwran6cihkgy" path="res://assets/Interactions/Play_Button-Sheet.png" id="2_wbkmu"]
 [ext_resource type="Texture2D" uid="uid://bw0eih3f41n6n" path="res://assets/UI/Loop.png" id="3_s3guc"]
 [ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="4_drftm"]
+[ext_resource type="Script" uid="uid://cwkw7w5yvikxr" path="res://scripts/UI_Script/title_screen.gd" id="5_title_screen"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_131ok"]
 atlas = ExtResource("1_drftm")
@@ -66,10 +67,10 @@ region = Rect2(384, 0, 384, 128)
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhmrd"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_jduia")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_ju1eq")
 }],
 "loop": true,
@@ -99,13 +100,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wbkmu")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_s3guc")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mub7h")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_1sgju")
 }],
 "loop": true,
@@ -121,8 +122,9 @@ anchor_right = 0.87500006
 anchor_bottom = 0.80200005
 offset_left = 896.25604
 offset_top = 552.096
-offset_right = -136.00006
-offset_bottom = -159.69604
+offset_right = -971.00006
+offset_bottom = -408.69604
+script = ExtResource("5_title_screen")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1712636544]
 zoom = Vector2(0.6, 0.6)
@@ -130,23 +132,30 @@ zoom = Vector2(0.6, 0.6)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1917620578]
 sprite_frames = SubResource("SpriteFrames_1sgju")
 animation = &"idle"
+frame_progress = 0.81894916
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=936747978]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -204.0
+offset_top = 306.0
+offset_right = 203.0
+offset_bottom = 464.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureButton" unique_id=1706467740]
-position = Vector2(0, 392)
+position = Vector2(206, 85.5)
+scale = Vector2(1, 1.0546875)
 sprite_frames = SubResource("SpriteFrames_yhmrd")
 animation = &"idle"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=250959722]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.78800005
+anchor_bottom = -0.78800005
 offset_left = -384.0
-offset_top = -48.0
+offset_top = 39.468002
 offset_right = 316.0
-offset_bottom = 352.0
+offset_bottom = 439.46802
 texture = ExtResource("3_s3guc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect" unique_id=740313075]
@@ -154,3 +163,6 @@ position = Vector2(392, 272)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jduia")
 animation = &"idle"
+frame_progress = 0.64453405
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_play_button_pressed"]

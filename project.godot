@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Homeward"
-run/main_scene="uid://cwt0hvehi5lj1"
+run/main_scene="uid://ri7hp8h2tgeg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,8 +24,6 @@ GlobalData="*uid://dgbqel37he8u0"
 
 window/size/mode=3
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="uid://5idw8d1ft5lm"
-window/stretch/aspect="keep"
 mouse_cursor/custom_image="res://assets/Interactions/Catpaw-Mouse-cursor.png"
 
 [input]
