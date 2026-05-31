@@ -44,21 +44,16 @@ func set_player_count(count: int):
 	print("[CONFIG] Player count set to: " + str(count))
 
 func _setup_players():
-	
 	print("[PLAYERS] Spawning " + str(player_count) + " players")
 	for i in range(player_count):
-		
 		var player = player_scene.instantiate()
 		player.name = "Player " + str(i + 1)
 		player.set("character_id", i)
-		
 		player.set("board", current_board)
 		player.set("max_tile", current_map_data.total_tiles if current_map_data != null else 0)
-		
 		players_node.add_child(player)
 		player.setup(current_board, current_board.get_school_position())
 		players.append(player)
-		
 		print("[PLAYER] " + player.name + " spawned at School")
 	print("[PLAYERS] Total spawned: " + str(players.size()))
 
@@ -114,91 +109,102 @@ func _next_turn():
 	_play_turn()
 
 func _win_game(player):
-
 	game_over = true
-
 	player.move_to_tile(player.max_tile)
-
 	await _wait_for_player(player)
-
 	player.target_position = current_board.get_home_position()
-
 	player.is_moving = true
-
 	await _wait_for_player(player)
-
 	player.celebrate_win()
-
 	print("[WIN] ", player.name, " WINS!")
-	
+
 func resolve_tile_effect(player) -> void:
 	var tile_type = current_map_data.tile_index.get(player.get("grid_position"), "plain")
 	print("[TILE] Effect: " + tile_type)
 
 	match tile_type:
 		"bus_stop_green", "bus_stop_orange", "bus_stop_violet":
-			apply_bus_stop(player)
+			await apply_bus_stop(player)
 			await _wait_for_player(player)
 		"vending":
 			await apply_vending(player)
 		"bike":
-			apply_bike(player)
+			await apply_bike(player)
 			await _wait_for_player(player)
 		"puddle":
-			apply_puddle(player)
+			await apply_puddle(player)
 			await _wait_for_player(player)
 		"traffic":
-			apply_traffic(player)
+			await apply_traffic(player)
 		"dog":
-			apply_dog(player)
+			await apply_dog(player)
 			await _wait_for_player(player)
 		_:
 			pass
 
-func apply_bus_stop(player):
+# ─── Bus Stop: jump reaction → tile-by-tile travel ───────────────────────────
+func apply_bus_stop(player) -> void:
 	var tile = player.get("grid_position")
 	if current_map_data.bus_pairs.has(tile):
 		var dest = current_map_data.bus_pairs[tile]
 		print("[BUS] " + str(tile) + " → " + str(dest))
-		player.move_to_tile(dest)
-		player.set("target_position", current_board.get_tile_world_position(dest))
-		player.set("is_moving", true)
 
+		# 1. Jump animation first (advantage reaction)
+		await player.play_jump_reaction()
+
+		# 2. Move tile-by-tile to destination
+		player.move_to_tile_stepwise(dest)
+
+# ─── Vending: jump → extra roll ──────────────────────────────────────────────
 func apply_vending(player) -> void:
+	await player.play_jump_reaction()
+
 	var roll = _roll_dice()
 	print("[VENDING] Extra roll: " + str(roll))
 	player.take_turn(roll)
 	await _wait_for_player(player)
 	print("[VENDING] Landed on tile " + str(player.get("grid_position")))
 
-func apply_bike(player):
+	# Re-resolve whatever tile the extra roll landed on
+	await resolve_tile_effect(player)
+# ─── Bike: jump → catch up ───────────────────────────────────────────────────
+func apply_bike(player) -> void:
 	var front = get_player_in_front(player)
 	if front == null:
 		print("[BIKE] No player ahead")
 		return
+
+	await player.play_jump_reaction()
+
 	print("[BIKE] Catching up to " + front.name)
 	var dest = max(1, front.get("grid_position") - 1)
-	player.set("grid_position", dest)
-	player.set("target_position", current_board.get_tile_world_position(dest))
-	player.set("is_moving", true)
+	player.move_to_tile_stepwise(dest)
+	await _wait_for_player(player)
 
-func apply_puddle(player):
+	# Re-resolve whatever tile the bike landed on
+	await resolve_tile_effect(player)
+
+# ─── Puddle: sleep → step back 2 tiles ───────────────────────────────────────
+func apply_puddle(player) -> void:
+	await player.play_sleep_reaction()
+
 	var dest = max(1, player.get("grid_position") - 2)
-	player.set("grid_position", dest)
-	player.set("target_position", current_board.get_tile_world_position(dest))
-	player.set("is_moving", true)
 	print("[PUDDLE] Slipped to tile " + str(dest))
+	player.move_backward_stepwise(dest)
 
-func apply_traffic(player):
+# ─── Traffic: sleep → skip next turn ─────────────────────────────────────────
+func apply_traffic(player) -> void:
+	await player.play_sleep_reaction()
 	print("[TRAFFIC] " + player.name + " will skip next turn")
 	skip_turn_players.append(player)
 
-func apply_dog(player):
+# ─── Dog: sleep → sent back to last position ─────────────────────────────────
+func apply_dog(player) -> void:
+	await player.play_sleep_reaction()
+
 	var dest = player.get("last_position")
 	print("[DOG] Sending " + player.name + " back to tile " + str(dest))
-	player.set("grid_position", dest)
-	player.set("target_position", current_board.get_tile_world_position(dest))
-	player.set("is_moving", true)
+	player.move_backward_stepwise(dest)
 
 func get_player_in_front(player):
 	var best = null
