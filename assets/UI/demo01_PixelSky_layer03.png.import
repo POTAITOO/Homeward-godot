@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkt61scvp8la"
-path="res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"
+uid="uid://bmcagqb5t0ev0"
+path="res://.godot/imported/demo01_PixelSky_layer03.png-a3e1a133f2d256b1f5b37f46bdc8d500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Players/P2-Sheet.png"
-dest_files=["res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"]
+source_file="res://assets/UI/demo01_PixelSky_layer03.png"
+dest_files=["res://.godot/imported/demo01_PixelSky_layer03.png-a3e1a133f2d256b1f5b37f46bdc8d500.ctex"]
 
 [params]
 

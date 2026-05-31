@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkt61scvp8la"
-path="res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"
+uid="uid://ii406e60oggn"
+path="res://.godot/imported/Select_Button4.png-f885c5e1e45e30a0d5402483cb51638a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Players/P2-Sheet.png"
-dest_files=["res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"]
+source_file="res://assets/Interactions/Select_Button4.png"
+dest_files=["res://.godot/imported/Select_Button4.png-f885c5e1e45e30a0d5402483cb51638a.ctex"]
 
 [params]
 

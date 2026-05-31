@@ -79,16 +79,19 @@ animations = [{
 
 [node name="Control" type="Control" unique_id=1607494155]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 872.0
-offset_bottom = 360.0
+anchor_left = -0.77800006
+anchor_top = -0.85200006
+anchor_right = 0.87500006
+anchor_bottom = 0.80200005
+offset_left = 896.25604
+offset_top = 552.096
+offset_right = -136.00006
+offset_bottom = -159.69604
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1712636544]
-offset = Vector2(48, -20)
 zoom = Vector2(0.6, 0.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1917620578]
-position = Vector2(40, -16)
 sprite_frames = SubResource("SpriteFrames_1sgju")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=936747978]

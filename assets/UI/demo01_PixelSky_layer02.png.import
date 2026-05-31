@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjs7pvofvq5ik"
-path="res://.godot/imported/Buttons-Sheet.png-2c08eff7f6f163432103fa4f01fc7e63.ctex"
+uid="uid://cnfb5yiqm2mdv"
+path="res://.godot/imported/demo01_PixelSky_layer02.png-ef3615cd5fdcef0b1a45fac34d3188f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Interactions/Buttons-Sheet.png"
-dest_files=["res://.godot/imported/Buttons-Sheet.png-2c08eff7f6f163432103fa4f01fc7e63.ctex"]
+source_file="res://assets/UI/demo01_PixelSky_layer02.png"
+dest_files=["res://.godot/imported/demo01_PixelSky_layer02.png-ef3615cd5fdcef0b1a45fac34d3188f8.ctex"]
 
 [params]
 

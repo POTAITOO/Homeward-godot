@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkt61scvp8la"
-path="res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"
+uid="uid://thorhihkk2b0"
+path="res://.godot/imported/Window.png-21bbba37d474aec9c6c361e5c08e3fa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Players/P2-Sheet.png"
-dest_files=["res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"]
+source_file="res://assets/UI/Window.png"
+dest_files=["res://.godot/imported/Window.png-21bbba37d474aec9c6c361e5c08e3fa0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkt61scvp8la"
-path="res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"
+uid="uid://bp1hygrcmxy18"
+path="res://.godot/imported/Premade dialog box medium.png-37d9e39cce260d9f6221d0af1785449b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Players/P2-Sheet.png"
-dest_files=["res://.godot/imported/P2-Sheet.png-99aef5e4a4c5f2ea3bdc7cbacda147ab.ctex"]
+source_file="res://assets/UI/Premade dialog box medium.png"
+dest_files=["res://.godot/imported/Premade dialog box medium.png-37d9e39cce260d9f6221d0af1785449b.ctex"]
 
 [params]
 
