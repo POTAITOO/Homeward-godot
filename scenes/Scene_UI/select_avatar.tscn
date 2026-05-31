@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://blc5rmlmjqhy7" path="res://scripts/core/AvatarSelect.gd" id="1_7yq3t"]
 [ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_jj48s"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_7tx7q"]
-[ext_resource type="Texture2D" uid="uid://bsdfejblmy36y" path="res://assets/Interactions/Select_Button7.png" id="5_7yq3t"]
-[ext_resource type="Texture2D" uid="uid://dva4s4whbggak" path="res://assets/Interactions/Select_Button8.png" id="6_uvaek"]
+[ext_resource type="Texture2D" uid="uid://cffkwukrp2d8x" path="res://assets/Interactions/Select_Button8.png" id="6_uvaek"]
+[ext_resource type="Texture2D" uid="uid://w6fr2tj426hy" path="res://assets/Interactions/Select_Button9.png" id="7_7tx7q"]
 [ext_resource type="Texture2D" uid="uid://3bcqbbpbf2bt" path="res://assets/Players/P1-Sheet.png" id="9_i6s6m"]
 [ext_resource type="Texture2D" uid="uid://cbkt61scvp8la" path="res://assets/Players/P2-Sheet.png" id="10_5txgc"]
+[ext_resource type="Texture2D" uid="uid://5imiyyx7jepq" path="res://assets/Interactions/Select_Button10.png" id="10_lmajf"]
 [ext_resource type="Texture2D" uid="uid://cqn4dbcefn5yu" path="res://assets/Players/P3-Sheet.png" id="11_jj48s"]
 [ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="12_7tx7q"]
+[ext_resource type="Texture2D" uid="uid://bvx6mwjfixaa8" path="res://assets/Interactions/Select_Button11.png" id="12_nss3d"]
+[ext_resource type="Texture2D" uid="uid://dyb1ts6lk6u86" path="res://assets/Interactions/Select_Button12.png" id="14_eongw"]
 [ext_resource type="Texture2D" uid="uid://dtxjtw7sqkeej" path="res://assets/UI/Dialog2.png" id="14_evyiq"]
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="14_ol70m"]
 [ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="15_8qd3g"]
@@ -337,7 +340,7 @@ offset_left = -96.0
 offset_top = 56.0
 offset_right = 96.0
 offset_bottom = 120.0
-texture_normal = ExtResource("5_7yq3t")
+texture_normal = ExtResource("7_7tx7q")
 texture_pressed = ExtResource("6_uvaek")
 texture_disabled = ExtResource("6_uvaek")
 
@@ -359,7 +362,7 @@ offset_left = -96.0
 offset_top = 56.0
 offset_right = 96.0
 offset_bottom = 120.0
-texture_normal = ExtResource("5_7yq3t")
+texture_normal = ExtResource("10_lmajf")
 texture_pressed = ExtResource("6_uvaek")
 texture_disabled = ExtResource("6_uvaek")
 
@@ -396,7 +399,7 @@ offset_left = -96.0
 offset_top = 56.0
 offset_right = 96.0
 offset_bottom = 120.0
-texture_normal = ExtResource("5_7yq3t")
+texture_normal = ExtResource("12_nss3d")
 texture_pressed = ExtResource("6_uvaek")
 texture_disabled = ExtResource("6_uvaek")
 
@@ -433,7 +436,7 @@ offset_left = -96.0
 offset_top = 56.0
 offset_right = 96.0
 offset_bottom = 120.0
-texture_normal = ExtResource("5_7yq3t")
+texture_normal = ExtResource("14_eongw")
 texture_pressed = ExtResource("6_uvaek")
 texture_disabled = ExtResource("6_uvaek")
 

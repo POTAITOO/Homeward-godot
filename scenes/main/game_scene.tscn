@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
 [ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/board.gd" id="4_8gxuo"]
 [ext_resource type="PackedScene" uid="uid://dd1bi6muvhq42" path="res://scenes/main/player.tscn" id="5_8gxuo"]
+[ext_resource type="PackedScene" uid="uid://6gng15b80o6d" path="res://scenes/Scene_UI/sidebar.tscn" id="5_ynmmy"]
 
 [node name="GameScene" type="Node2D" unique_id=705321355]
 script = ExtResource("1_5odut")
@@ -21,3 +22,17 @@ zoom = Vector2(0.6, 0.6)
 [node name="GameManager" type="Node" parent="." unique_id=657675942]
 script = ExtResource("1_sdya7")
 player_scene = ExtResource("5_8gxuo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=166692637]
+
+[node name="Sidebar" parent="CanvasLayer" unique_id=57812593 instance=ExtResource("5_ynmmy")]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_right = 144.0
+offset_bottom = 432.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
