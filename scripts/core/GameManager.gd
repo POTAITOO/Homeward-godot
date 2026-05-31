@@ -91,7 +91,8 @@ func _play_turn():
 
 	# Wait for user input to roll (Space by default via input action 'roll_dice').
 	# Log turn start (use player.name so logs match displayed names)
-	print("[GAME] Turn %d - %s starting at tile %d" % [current_turn, player.name, player.get("grid_position")])
+	# Display turns as 1-based for readability
+	print("[GAME] Turn %d - %s starting at tile %d" % [current_turn + 1, player.name, player.get("grid_position")])
 
 	# Start a fresh roll session so only rolls produced during this window are accepted
 	current_roll_session += 1
@@ -194,49 +195,49 @@ func resolve_tile_effect(player) -> void:
 			break
 		visited_tiles.append(pos)
 
-		print("[CHAIN] Iteration", i, "Player", players.find(player), "at tile", pos, "type", tile_type)
+		print("[CHAIN] Iteration %d - %s at tile %d type %s" % [i, player.name, pos, tile_type])
 		visited[pos] = true
 
 		var did_move := false
 
 		match tile_type:
 			"bus_stop_green", "bus_stop_orange", "bus_stop_violet":
-				print("[CHAIN] apply_bus_stop for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_bus_stop for %s on tile %d" % [player.name, pos])
 				await apply_bus_stop(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after bus_stop player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after bus_stop %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"vending":
-				print("[CHAIN] apply_vending for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_vending for %s on tile %d" % [player.name, pos])
 				await apply_vending(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after vending player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after vending %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"bike":
-				print("[CHAIN] apply_bike for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_bike for %s on tile %d" % [player.name, pos])
 				await apply_bike(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after bike player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after bike %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"puddle":
-				print("[CHAIN] apply_puddle for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_puddle for %s on tile %d" % [player.name, pos])
 				await apply_puddle(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after puddle player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after puddle %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			"traffic":
-				print("[CHAIN] apply_traffic for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_traffic for %s on tile %d" % [player.name, pos])
 				await apply_traffic(player)
-				print("[CHAIN] after traffic (no move) player", players.find(player), "on", player.get("grid_position"))
+				print("[CHAIN] after traffic (no move) %s on %d" % [player.name, player.get("grid_position")])
 			"dog":
-				print("[CHAIN] apply_dog for player", players.find(player), "on tile", pos)
+				print("[CHAIN] apply_dog for %s on tile %d" % [player.name, pos])
 				await apply_dog(player)
 				await _wait_for_player(player)
-				print("[CHAIN] after dog player", players.find(player), "now on", player.get("grid_position"))
+				print("[CHAIN] after dog %s now on %d" % [player.name, player.get("grid_position")])
 				did_move = true
 			_:
 				# plain or unrecognized tile -> nothing to do
-				print("[CHAIN] no special tile at", pos)
+				print("[CHAIN] no special tile at %d" % pos)
 				pass
 
 		# If the player moved as part of this effect, loop again to resolve the new tile.
