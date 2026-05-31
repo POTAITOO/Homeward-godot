@@ -1,0 +1,314 @@
+[gd_scene format=3 uid="uid://c7qda5fui7wqj"]
+
+[ext_resource type="Script" uid="uid://blc5rmlmjqhy7" path="res://scripts/core/AvatarSelect.gd" id="1_446iv"]
+[ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="2_7ysf2"]
+[ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="3_kq0ue"]
+[ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="4_a0c53"]
+[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="5_ia5cl"]
+[ext_resource type="Texture2D" uid="uid://cj8fj636ori4x" path="res://assets/Interactions/Buttons4.png" id="6_a5wtf"]
+[ext_resource type="Texture2D" uid="uid://bsdfejblmy36y" path="res://assets/Interactions/Select_Button7.png" id="7_33qnd"]
+[ext_resource type="Texture2D" uid="uid://dva4s4whbggak" path="res://assets/Interactions/Select_Button8.png" id="8_st3w0"]
+[ext_resource type="Texture2D" uid="uid://bkwovulehc036" path="res://assets/UI/Label-layered-Sheet.png" id="9_ci275"]
+[ext_resource type="Texture2D" uid="uid://djhfw0ltdq66f" path="res://assets/Interactions/Board-Preview.png" id="10_2sxfp"]
+[ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="15_3j01w"]
+[ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="16_enifb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
+atlas = ExtResource("2_7ysf2")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjhe2"]
+atlas = ExtResource("2_7ysf2")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktp34"]
+atlas = ExtResource("2_7ysf2")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f36op"]
+atlas = ExtResource("2_7ysf2")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mil0"]
+atlas = ExtResource("2_7ysf2")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he3ob"]
+atlas = ExtResource("2_7ysf2")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruihq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onjc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjhe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktp34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f36op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mil0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he3ob")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dolf7"]
+size = Vector2(337, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogcp4"]
+atlas = ExtResource("9_ci275")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_446iv"]
+atlas = ExtResource("9_ci275")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ysf2"]
+atlas = ExtResource("9_ci275")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq0ue"]
+atlas = ExtResource("9_ci275")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0c53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogcp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_446iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ysf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq0ue")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia5cl"]
+atlas = ExtResource("9_ci275")
+region = Rect2(0, 256, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5wtf"]
+atlas = ExtResource("9_ci275")
+region = Rect2(192, 256, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33qnd"]
+atlas = ExtResource("9_ci275")
+region = Rect2(384, 256, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st3w0"]
+atlas = ExtResource("9_ci275")
+region = Rect2(576, 256, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqg0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia5cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5wtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33qnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st3w0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3daww"]
+atlas = ExtResource("9_ci275")
+region = Rect2(0, 128, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxdeg"]
+atlas = ExtResource("9_ci275")
+region = Rect2(192, 128, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bqiq"]
+atlas = ExtResource("9_ci275")
+region = Rect2(384, 128, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02u0i"]
+atlas = ExtResource("9_ci275")
+region = Rect2(576, 128, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lsbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3daww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxdeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bqiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02u0i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="AvatarSelect" type="Control" unique_id=1166207099]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_446iv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1861311612]
+zoom = Vector2(0.6, 0.6)
+
+[node name="BG" type="AnimatedSprite2D" parent="." unique_id=1376145592]
+sprite_frames = SubResource("SpriteFrames_ruihq")
+animation = &"idle"
+
+[node name="Window" type="TextureRect" parent="." unique_id=877991671]
+layout_mode = 0
+offset_left = -720.0
+offset_top = -384.0
+offset_right = 720.0
+offset_bottom = 425.0
+texture = ExtResource("3_kq0ue")
+
+[node name="Title" type="Label" parent="Window" unique_id=1618748504]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 80.0
+offset_right = 1232.0
+offset_bottom = 271.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_a0c53")
+theme_override_font_sizes/font_size = 78
+text = "Select the Map:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Help" type="TextureButton" parent="Window" unique_id=137562144]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 80.0
+offset_right = 1224.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("5_ia5cl")
+texture_pressed = ExtResource("6_a5wtf")
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="Window" unique_id=1826102251]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 80.0
+offset_right = 1320.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("15_3j01w")
+texture_pressed = ExtResource("16_enifb")
+stretch_mode = 0
+
+[node name="Easy" type="CollisionShape2D" parent="Window" unique_id=709596087]
+position = Vector2(720, 496)
+shape = SubResource("RectangleShape2D_dolf7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/Easy" unique_id=2125816360]
+position = Vector2(0, -171.5)
+sprite_frames = SubResource("SpriteFrames_a0c53")
+animation = &"idle"
+
+[node name="Board_6" type="TextureRect" parent="Window/Easy" unique_id=872805157]
+offset_left = -136.0
+offset_top = -107.5
+offset_right = 948.0
+offset_bottom = 880.5
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_2sxfp")
+
+[node name="TextureButton" type="TextureButton" parent="Window/Easy" unique_id=1770471040]
+offset_left = -96.0
+offset_top = 156.5
+offset_right = 96.0
+offset_bottom = 220.5
+texture_normal = ExtResource("7_33qnd")
+texture_pressed = ExtResource("8_st3w0")
+texture_disabled = ExtResource("8_st3w0")
+
+[node name="Chaotic" type="CollisionShape2D" parent="Window" unique_id=1641095274]
+position = Vector2(1144, 496)
+shape = SubResource("RectangleShape2D_dolf7")
+
+[node name="Board_6" type="TextureRect" parent="Window/Chaotic" unique_id=2099780464]
+offset_left = -136.0
+offset_top = -107.5
+offset_right = 948.0
+offset_bottom = 880.5
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_2sxfp")
+
+[node name="TextureButton" type="TextureButton" parent="Window/Chaotic" unique_id=1712925126]
+offset_left = -96.0
+offset_top = 156.5
+offset_right = 96.0
+offset_bottom = 220.5
+texture_normal = ExtResource("7_33qnd")
+texture_pressed = ExtResource("8_st3w0")
+texture_disabled = ExtResource("8_st3w0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/Chaotic" unique_id=1237305532]
+position = Vector2(0, -171.5)
+sprite_frames = SubResource("SpriteFrames_yqg0t")
+animation = &"idle"
+
+[node name="Fun" type="CollisionShape2D" parent="Window" unique_id=1343908753]
+position = Vector2(296, 496)
+shape = SubResource("RectangleShape2D_dolf7")
+
+[node name="Board_6" type="TextureRect" parent="Window/Fun" unique_id=618061025]
+offset_left = -136.0
+offset_top = -107.5
+offset_right = 948.0
+offset_bottom = 880.5
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_2sxfp")
+
+[node name="TextureButton" type="TextureButton" parent="Window/Fun" unique_id=97053205]
+offset_left = -96.0
+offset_top = 156.5
+offset_right = 96.0
+offset_bottom = 220.5
+texture_normal = ExtResource("7_33qnd")
+texture_pressed = ExtResource("8_st3w0")
+texture_disabled = ExtResource("8_st3w0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/Fun" unique_id=1658441204]
+position = Vector2(-8, -171.5)
+sprite_frames = SubResource("SpriteFrames_4lsbc")
+animation = &"idle"
