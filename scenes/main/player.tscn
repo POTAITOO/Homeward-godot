@@ -2,6 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://uj0mbxxhvaxs" path="res://assets/players/Student_1.tres" id="1_4p73j"]
 [ext_resource type="Script" uid="uid://xiy3h4vj6388" path="res://scripts/core/player.gd" id="1_g2els"]
+[ext_resource type="SpriteFrames" uid="uid://cp8gghykt7ej3" path="res://assets/Players/Student_2.tres" id="2_tpytq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hnj63"]
 radius = 19.0

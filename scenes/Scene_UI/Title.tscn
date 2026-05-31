@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8cpduank32ni" path="res://assets/UI/Title.png" id="1_drftm"]
 [ext_resource type="Texture2D" uid="uid://lwran6cihkgy" path="res://assets/Interactions/Play_Button-Sheet.png" id="2_wbkmu"]
 [ext_resource type="Texture2D" uid="uid://bw0eih3f41n6n" path="res://assets/UI/Loop.png" id="3_s3guc"]
-[ext_resource type="SpriteFrames" uid="uid://bopfq4pexra01" path="res://assets/Players/Student_3.tres" id="4_mub7h"]
+[ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="4_drftm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_131ok"]
 atlas = ExtResource("1_drftm")
@@ -51,7 +51,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5wjyd")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -73,7 +73,43 @@ animations = [{
 "texture": SubResource("AtlasTexture_ju1eq")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbkmu"]
+atlas = ExtResource("4_drftm")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3guc"]
+atlas = ExtResource("4_drftm")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mub7h"]
+atlas = ExtResource("4_drftm")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sgju"]
+atlas = ExtResource("4_drftm")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jduia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbkmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3guc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mub7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sgju")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -93,6 +129,7 @@ zoom = Vector2(0.6, 0.6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1917620578]
 sprite_frames = SubResource("SpriteFrames_1sgju")
+animation = &"idle"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=936747978]
 layout_mode = 0
@@ -102,6 +139,7 @@ offset_bottom = 40.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureButton" unique_id=1706467740]
 position = Vector2(0, 392)
 sprite_frames = SubResource("SpriteFrames_yhmrd")
+animation = &"idle"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=250959722]
 layout_mode = 0
@@ -111,8 +149,8 @@ offset_right = 316.0
 offset_bottom = 352.0
 texture = ExtResource("3_s3guc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect" unique_id=23418797]
-position = Vector2(384, 264)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect" unique_id=740313075]
+position = Vector2(392, 272)
 scale = Vector2(2, 2)
-sprite_frames = ExtResource("4_mub7h")
-animation = &"right walk"
+sprite_frames = SubResource("SpriteFrames_jduia")
+animation = &"idle"

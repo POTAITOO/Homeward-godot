@@ -3,20 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="1_sav58"]
 [ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_onjc5"]
 [ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_2ts1u"]
-[ext_resource type="PackedScene" uid="uid://cnfxucqxei6rt" path="res://scenes/Scene_Players/p_1.tscn" id="4_v185v"]
-[ext_resource type="PackedScene" uid="uid://dmiti0njxvxa0" path="res://scenes/Scene_Players/p_2.tscn" id="5_nmri4"]
 [ext_resource type="Texture2D" uid="uid://ctlnrjko2t2jw" path="res://assets/Interactions/Select_Button1.png" id="6_hwxah"]
+[ext_resource type="Texture2D" uid="uid://3bcqbbpbf2bt" path="res://assets/Players/P1-Sheet.png" id="6_jwefx"]
 [ext_resource type="Texture2D" uid="uid://d3kudpmth0kv2" path="res://assets/Interactions/Select_Button2.png" id="7_jwefx"]
-[ext_resource type="PackedScene" uid="uid://yx5vd667ac0a" path="res://scenes/Scene_Players/p_3.tscn" id="8_xf0ch"]
+[ext_resource type="Texture2D" uid="uid://cbkt61scvp8la" path="res://assets/Players/P2-Sheet.png" id="7_yyaud"]
 [ext_resource type="Texture2D" uid="uid://csh6aab5laqaf" path="res://assets/Interactions/Select_Button3.png" id="8_yyaud"]
 [ext_resource type="Texture2D" uid="uid://ii406e60oggn" path="res://assets/Interactions/Select_Button4.png" id="9_bgbxg"]
-[ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="9_kqs65"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-1.png" id="10_uk7mg"]
+[ext_resource type="Texture2D" uid="uid://cqn4dbcefn5yu" path="res://assets/Players/P3-Sheet.png" id="10_bgbxg"]
+[ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="10_uk7mg"]
 [ext_resource type="Texture2D" uid="uid://dyrl3sevqqaxv" path="res://assets/Interactions/Select_Button5.png" id="11_ujna7"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-2.png" id="11_xf0ch"]
+[ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="11_xf0ch"]
 [ext_resource type="Texture2D" uid="uid://ddwchwrlcfbkp" path="res://assets/Interactions/Select_Button6.png" id="12_g2g1f"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-1.png" id="12_kqs65"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-2.png" id="13_wip7v"]
+[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="12_kqs65"]
+[ext_resource type="Texture2D" uid="uid://bqscgi6cqgtrf" path="res://assets/Players/P4-Sheet.png" id="13_ujna7"]
+[ext_resource type="Texture2D" uid="uid://cj8fj636ori4x" path="res://assets/Interactions/Buttons4.png" id="13_wip7v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
 atlas = ExtResource("1_sav58")
@@ -64,12 +64,156 @@ animations = [{
 "texture": SubResource("AtlasTexture_he3ob")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wip7v"]
 size = Vector2(318.5, 382.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opupe"]
+atlas = ExtResource("6_jwefx")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkw3q"]
+atlas = ExtResource("6_jwefx")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxkcv"]
+atlas = ExtResource("6_jwefx")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ebeu"]
+atlas = ExtResource("6_jwefx")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2g1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opupe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkw3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxkcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ebeu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32s8l"]
+atlas = ExtResource("7_yyaud")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebfl6"]
+atlas = ExtResource("7_yyaud")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol70m"]
+atlas = ExtResource("7_yyaud")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qd3g"]
+atlas = ExtResource("7_yyaud")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa3us"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32s8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebfl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol70m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qd3g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77wn5"]
+atlas = ExtResource("10_bgbxg")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oahwr"]
+atlas = ExtResource("10_bgbxg")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obiyd"]
+atlas = ExtResource("10_bgbxg")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrtek"]
+atlas = ExtResource("10_bgbxg")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4m8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77wn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oahwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obiyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrtek")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65x3w"]
+atlas = ExtResource("13_ujna7")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mumjs"]
+atlas = ExtResource("13_ujna7")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_125dj"]
+atlas = ExtResource("13_ujna7")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_711di"]
+atlas = ExtResource("13_ujna7")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjigl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65x3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mumjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_125dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_711di")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control" unique_id=1166207099]
 layout_mode = 3
@@ -82,6 +226,7 @@ zoom = Vector2(0.6, 0.6)
 
 [node name="BG" type="AnimatedSprite2D" parent="." unique_id=1376145592]
 sprite_frames = SubResource("SpriteFrames_ruihq")
+animation = &"idle"
 
 [node name="Window" type="TextureRect" parent="." unique_id=877991671]
 layout_mode = 0
@@ -115,14 +260,6 @@ position = Vector2(720, 384)
 position = Vector2(-416, 128)
 shape = SubResource("RectangleShape2D_wip7v")
 
-[node name="P1" parent="Window/Duo/CollisionShape2D" unique_id=1186178461 instance=ExtResource("4_v185v")]
-position = Vector2(63.25, 0.75)
-scale = Vector2(2, 2)
-
-[node name="P2" parent="Window/Duo/CollisionShape2D" unique_id=568122415 instance=ExtResource("5_nmri4")]
-position = Vector2(-64.75, 0.75)
-scale = Vector2(2, 2)
-
 [node name="TextureButton" type="TextureButton" parent="Window/Duo/CollisionShape2D" unique_id=632119365]
 offset_left = -96.0
 offset_top = 120.0
@@ -131,20 +268,24 @@ offset_bottom = 184.0
 texture_normal = ExtResource("6_hwxah")
 texture_pressed = ExtResource("7_jwefx")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/Duo/CollisionShape2D" unique_id=1400404973]
+position = Vector2(-64, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g2g1f")
+animation = &"idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Window/Duo/CollisionShape2D" unique_id=1049535442]
+position = Vector2(64, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wa3us")
+animation = &"idle"
+
 [node name="Trio" type="Area2D" parent="Window" unique_id=1206701802]
 position = Vector2(720, 384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Trio" unique_id=1787998339]
 position = Vector2(8, 128)
 shape = SubResource("RectangleShape2D_wip7v")
-
-[node name="P1" parent="Window/Trio/CollisionShape2D" unique_id=1287442068 instance=ExtResource("4_v185v")]
-position = Vector2(48, 40)
-scale = Vector2(2, 2)
-
-[node name="P2" parent="Window/Trio/CollisionShape2D" unique_id=1078678306 instance=ExtResource("5_nmri4")]
-position = Vector2(-64, 40)
-scale = Vector2(2, 2)
 
 [node name="TextureButton" type="TextureButton" parent="Window/Trio/CollisionShape2D" unique_id=1156782197]
 offset_left = -104.0
@@ -154,9 +295,23 @@ offset_bottom = 184.0
 texture_normal = ExtResource("8_yyaud")
 texture_pressed = ExtResource("9_bgbxg")
 
-[node name="P3" parent="Window/Trio/CollisionShape2D" unique_id=1574974646 instance=ExtResource("8_xf0ch")]
-position = Vector2(-8, -112)
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Window/Trio/CollisionShape2D" unique_id=63126178]
+position = Vector2(-72, 24)
 scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g2g1f")
+animation = &"idle"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Window/Trio/CollisionShape2D" unique_id=278785436]
+position = Vector2(56, 24)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wa3us")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/Trio/CollisionShape2D" unique_id=1650611944]
+position = Vector2(-8, -96)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_u4m8g")
+animation = &"idle"
 
 [node name="Quad" type="Area2D" parent="Window" unique_id=1016491790]
 position = Vector2(720, 384)
@@ -164,14 +319,6 @@ position = Vector2(720, 384)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Quad" unique_id=56333920]
 position = Vector2(416, 128)
 shape = SubResource("RectangleShape2D_wip7v")
-
-[node name="P1" parent="Window/Quad/CollisionShape2D" unique_id=1681080331 instance=ExtResource("4_v185v")]
-position = Vector2(48, 40)
-scale = Vector2(2, 2)
-
-[node name="P2" parent="Window/Quad/CollisionShape2D" unique_id=505631299 instance=ExtResource("5_nmri4")]
-position = Vector2(-64, 40)
-scale = Vector2(2, 2)
 
 [node name="TextureButton" type="TextureButton" parent="Window/Quad/CollisionShape2D" unique_id=1759733817]
 offset_left = -96.0
@@ -181,13 +328,29 @@ offset_bottom = 184.0
 texture_normal = ExtResource("11_ujna7")
 texture_pressed = ExtResource("12_g2g1f")
 
-[node name="P3" parent="Window/Quad/CollisionShape2D" unique_id=1148197306 instance=ExtResource("8_xf0ch")]
-position = Vector2(48, -112)
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Window/Quad/CollisionShape2D" unique_id=13761769]
+position = Vector2(-64, 24)
 scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g2g1f")
+animation = &"idle"
 
-[node name="P4" parent="Window/Quad/CollisionShape2D" unique_id=851507044 instance=ExtResource("9_kqs65")]
-position = Vector2(-64, -112)
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Window/Quad/CollisionShape2D" unique_id=527230037]
+position = Vector2(72, 24)
 scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wa3us")
+animation = &"idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Window/Quad/CollisionShape2D" unique_id=2138071865]
+position = Vector2(-64, -104)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_u4m8g")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window/Quad/CollisionShape2D" unique_id=1973943835]
+position = Vector2(64, -104)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wjigl")
+animation = &"idle"
 
 [node name="Back" type="TextureButton" parent="Window" unique_id=1852697575]
 layout_mode = 0
