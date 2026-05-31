@@ -1,23 +1,29 @@
 [gd_scene format=3 uid="uid://crl6ut8hxltr3"]
 
-[ext_resource type="PackedScene" path="res://scenes/Scene_UI/bg.tscn" id="1_j2pv1"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_uy4or"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/puddle.tscn" id="4_sr55w"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/traffic.tscn" id="5_n8hh7"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/dog-left.tscn" id="6_5m5m6"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bus-stop-violet.tscn" id="7_lwvb7"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bus-stop-orange.tscn" id="8_7bjjl"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_left.tscn" id="9_ywpbu"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_middle_lamp.tscn" id="10_i6vbd"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_right.tscn" id="11_cepe8"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/vending.tscn" id="12_sfdbo"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_middle_no_lamp.tscn" id="13_1sg76"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bike.tscn" id="14_aqlqd"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/dog-right.tscn" id="15_ngpes"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="16_n0na8"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Power/bus-stop-green.tscn" id="17_wyrdm"]
-[ext_resource type="PackedScene" path="res://scenes/Scene_Tiles/school.tscn" id="18_c7inb"]
-[ext_resource type="Script" path="res://scripts/core/MapData_10x10.gd" id="18_j2pv1"]
+[ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_j2pv1"]
+[ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_uy4or"]
+[ext_resource type="PackedScene" uid="uid://burq3yqc0vmrg" path="res://scenes/Scene_Power/puddle.tscn" id="4_sr55w"]
+[ext_resource type="PackedScene" uid="uid://b88l2sn52fkhk" path="res://scenes/Scene_Power/traffic.tscn" id="5_n8hh7"]
+[ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="6_5m5m6"]
+[ext_resource type="PackedScene" uid="uid://cyb5vo3mt46ll" path="res://scenes/Scene_Power/bus-stop-violet.tscn" id="7_lwvb7"]
+[ext_resource type="PackedScene" uid="uid://cpvpmtsfatc5m" path="res://scenes/Scene_Tiles/home.tscn" id="8_5m5m6"]
+[ext_resource type="PackedScene" uid="uid://breuxngyopotc" path="res://scenes/Scene_Power/bus-stop-orange.tscn" id="8_7bjjl"]
+[ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="8_lwvb7"]
+[ext_resource type="PackedScene" uid="uid://duu0cwsbj2jdn" path="res://scenes/Scene_Tiles/connector_left.tscn" id="9_ywpbu"]
+[ext_resource type="PackedScene" uid="uid://iav6altltmwr" path="res://scenes/Scene_Tiles/connector_middle_lamp.tscn" id="10_i6vbd"]
+[ext_resource type="PackedScene" uid="uid://c6fyv57ah4u4r" path="res://scenes/Scene_Tiles/connector_right.tscn" id="11_cepe8"]
+[ext_resource type="PackedScene" uid="uid://d35owlaadgwwt" path="res://scenes/Scene_Power/vending.tscn" id="12_sfdbo"]
+[ext_resource type="PackedScene" uid="uid://b56kkvetcjf1e" path="res://scenes/Scene_Tiles/connector_middle_no_lamp.tscn" id="13_1sg76"]
+[ext_resource type="PackedScene" uid="uid://b8ldx6erh5mfv" path="res://scenes/Scene_Power/bike.tscn" id="14_aqlqd"]
+[ext_resource type="PackedScene" uid="uid://b886hicstl1iu" path="res://scenes/Scene_Tiles/filler-tree.tscn" id="14_lwvb7"]
+[ext_resource type="PackedScene" uid="uid://bvm5pcf6teyha" path="res://scenes/Scene_Tiles/filler-empty.tscn" id="15_7bjjl"]
+[ext_resource type="PackedScene" uid="uid://dhl0wq3p80c45" path="res://scenes/Scene_Power/dog-right.tscn" id="15_ngpes"]
+[ext_resource type="PackedScene" uid="uid://dikelnygdpiso" path="res://scenes/Scene_Tiles/connector_corner.tscn" id="16_n0na8"]
+[ext_resource type="PackedScene" uid="uid://c7hvrqigheu71" path="res://scenes/Scene_Power/bus-stop-green.tscn" id="17_wyrdm"]
+[ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="18_c7inb"]
+[ext_resource type="Script" uid="uid://b7hox8s12f4ba" path="res://scripts/core/MapData_10x10.gd" id="18_j2pv1"]
+[ext_resource type="Texture2D" uid="uid://w28v76vnxxtt" path="res://assets/UI/Border-B.png" id="19_mrib1"]
+[ext_resource type="Texture2D" uid="uid://c51r7vfmlc5eu" path="res://assets/UI/Side.png" id="20_uy4or"]
 
 [node name="10x10" type="Node2D" unique_id=352002498]
 metadata/_edit_vertical_guides_ = [1034.0]
@@ -36,15 +42,75 @@ scale = Vector2(1.5, 1.5)
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
 
 [node name="Board" type="Node2D" parent="." unique_id=156339385]
+position = Vector2(-128, -49)
+
+[node name="Sidebar" type="TextureRect" parent="Board" unique_id=1902544544]
+offset_left = 1055.0001
+offset_top = -998.99994
+offset_right = 1455.0002
+offset_bottom = 81.00006
+scale = Vector2(1.38, 1.38)
+texture = ExtResource("8_lwvb7")
+
+[node name="Border-T" type="Node2D" parent="Board" unique_id=1104656686]
+position = Vector2(126, -510)
+
+[node name="BorderB" type="Sprite2D" parent="Board/Border-T" unique_id=1929816090]
+position = Vector2(-320, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB3" type="Sprite2D" parent="Board/Border-T" unique_id=1829786106]
+position = Vector2(-192, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB4" type="Sprite2D" parent="Board/Border-T" unique_id=1342091649]
+position = Vector2(-64, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB5" type="Sprite2D" parent="Board/Border-T" unique_id=1062527920]
+position = Vector2(64, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB6" type="Sprite2D" parent="Board/Border-T" unique_id=443060785]
+position = Vector2(192, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB7" type="Sprite2D" parent="Board/Border-T" unique_id=758112572]
+position = Vector2(320, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB8" type="Sprite2D" parent="Board/Border-T" unique_id=1410692903]
+position = Vector2(448, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB9" type="Sprite2D" parent="Board/Border-T" unique_id=1515736382]
+position = Vector2(577, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB10" type="Sprite2D" parent="Board/Border-T" unique_id=1361095750]
+position = Vector2(704, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB2" type="Sprite2D" parent="Board/Border-T" unique_id=1998234525]
+position = Vector2(-448, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB11" type="Sprite2D" parent="Board/Border-T" unique_id=486349160]
+position = Vector2(-576, -432)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB12" type="Sprite2D" parent="Board/Border-T" unique_id=873127238]
+position = Vector2(-703, -432)
+texture = ExtResource("19_mrib1")
 
 [node name="Layer 10" type="Node2D" parent="Board" unique_id=2044526232]
 
 [node name="91-Puddle" parent="Board/Layer 10" unique_id=1648662125 instance=ExtResource("4_sr55w")]
-position = Vector2(825, -896)
+position = Vector2(825, -894)
 tile_number = 91
 
 [node name="92" parent="Board/Layer 10" unique_id=2022468540 instance=ExtResource("9_ywpbu")]
-position = Vector2(698, -896)
+position = Vector2(698, -895)
 tile_number = 92
 
 [node name="93-Dog" parent="Board/Layer 10" unique_id=954767327 instance=ExtResource("6_5m5m6")]
@@ -79,14 +145,17 @@ tile_number = 99
 position = Vector2(-324, -894)
 tile_number = 100
 
+[node name="Home" parent="Board/Layer 10" unique_id=1372811151 instance=ExtResource("8_5m5m6")]
+position = Vector2(-512, -891)
+
 [node name="Layer 9" type="Node2D" parent="Board" unique_id=838554684]
 
 [node name="81" parent="Board/Layer 9" unique_id=725215040 instance=ExtResource("9_ywpbu")]
-position = Vector2(-322, -766)
+position = Vector2(-322, -765)
 tile_number = 81
 
-[node name="82" parent="Board/Layer 9" unique_id=1679460491 instance=ExtResource("13_1sg76")]
-position = Vector2(-194, -766)
+[node name="82-Bus-Stop-Orange" parent="Board/Layer 9" unique_id=1395955333 instance=ExtResource("8_7bjjl")]
+position = Vector2(-195, -767)
 tile_number = 82
 
 [node name="83" parent="Board/Layer 9" unique_id=1773628996 instance=ExtResource("11_cepe8")]
@@ -101,7 +170,7 @@ tile_number = 84
 position = Vector2(187, -769)
 tile_number = 85
 
-[node name="86-Bike" parent="Board/Layer 9" unique_id=48997362 instance=ExtResource("14_aqlqd")]
+[node name="86-Nike" parent="Board/Layer 9" unique_id=48997362 instance=ExtResource("14_aqlqd")]
 position = Vector2(315, -768)
 tile_number = 86
 
@@ -110,21 +179,24 @@ position = Vector2(442, -767)
 tile_number = 87
 
 [node name="88-Traffic" parent="Board/Layer 9" unique_id=1610444091 instance=ExtResource("5_n8hh7")]
-position = Vector2(571, -765)
+position = Vector2(570, -765)
 tile_number = 88
 
 [node name="89" parent="Board/Layer 9" unique_id=1416587359 instance=ExtResource("9_ywpbu")]
-position = Vector2(699, -767)
+position = Vector2(699, -765)
 tile_number = 89
 
-[node name="90-Puddle" parent="Board/Layer 9" unique_id=1086528521 instance=ExtResource("4_sr55w")]
-position = Vector2(826, -766)
+[node name="90" parent="Board/Layer 9" unique_id=1557765959 instance=ExtResource("16_n0na8")]
+position = Vector2(824, -766)
 tile_number = 90
+
+[node name="Filler" parent="Board/Layer 9" unique_id=1271135640 instance=ExtResource("15_7bjjl")]
+position = Vector2(-511, -763)
 
 [node name="Layer 8" type="Node2D" parent="Board" unique_id=654868000]
 
-[node name="80" parent="Board/Layer 8" unique_id=622446402 instance=ExtResource("3_uy4or")]
-position = Vector2(-321, -638)
+[node name="80" parent="Board/Layer 8" unique_id=1969175385 instance=ExtResource("16_n0na8")]
+position = Vector2(-320, -638)
 tile_number = 80
 
 [node name="79-Puddle" parent="Board/Layer 8" unique_id=690137634 instance=ExtResource("4_sr55w")]
@@ -160,8 +232,11 @@ position = Vector2(700, -639)
 tile_number = 72
 
 [node name="71-Bike" parent="Board/Layer 8" unique_id=782792799 instance=ExtResource("14_aqlqd")]
-position = Vector2(826, -637)
+position = Vector2(826, -638)
 tile_number = 71
+
+[node name="Filler" parent="Board/Layer 8" unique_id=309080018 instance=ExtResource("15_7bjjl")]
+position = Vector2(-511, -635)
 
 [node name="Layer 7" type="Node2D" parent="Board" unique_id=1931627105]
 
@@ -201,15 +276,18 @@ tile_number = 68
 position = Vector2(699, -510)
 tile_number = 69
 
-[node name="70" parent="Board/Layer 7" unique_id=1612270567 instance=ExtResource("11_cepe8")]
-position = Vector2(826, -508)
+[node name="70" parent="Board/Layer 7" unique_id=692805214 instance=ExtResource("16_n0na8")]
+position = Vector2(825, -510)
 tile_number = 70
+
+[node name="Filler" parent="Board/Layer 7" unique_id=1840779752 instance=ExtResource("14_lwvb7")]
+position = Vector2(-511, -510)
 
 [node name="Layer6" type="Node2D" parent="Board" unique_id=993786857]
 position = Vector2(0, -640)
 
-[node name="60" parent="Board/Layer6" unique_id=901420643 instance=ExtResource("9_ywpbu")]
-position = Vector2(-320, 256)
+[node name="60" parent="Board/Layer6" unique_id=44451062 instance=ExtResource("16_n0na8")]
+position = Vector2(-320, 255)
 tile_number = 60
 
 [node name="59" parent="Board/Layer6" unique_id=1767920330 instance=ExtResource("10_i6vbd")]
@@ -244,15 +322,18 @@ tile_number = 53
 position = Vector2(699, 259)
 tile_number = 52
 
-[node name="51" parent="Board/Layer6" unique_id=44451062 instance=ExtResource("16_n0na8")]
-position = Vector2(826, 259)
+[node name="51" parent="Board/Layer6" unique_id=1900926935 instance=ExtResource("11_cepe8")]
+position = Vector2(825, 260)
 tile_number = 51
+
+[node name="Filler" parent="Board/Layer6" unique_id=618616582 instance=ExtResource("15_7bjjl")]
+position = Vector2(-512, 256)
 
 [node name="Layer5" type="Node2D" parent="Board" unique_id=1740387415]
 position = Vector2(0, -512)
 
 [node name="41" parent="Board/Layer5" unique_id=2059835276 instance=ExtResource("3_uy4or")]
-position = Vector2(-320, 256)
+position = Vector2(-320, 255)
 tile_number = 41
 
 [node name="42-Bike" parent="Board/Layer5" unique_id=411288560 instance=ExtResource("14_aqlqd")]
@@ -264,7 +345,7 @@ position = Vector2(-63, 257)
 tile_number = 43
 
 [node name="44-Dog" parent="Board/Layer5" unique_id=734561579 instance=ExtResource("15_ngpes")]
-position = Vector2(64, 256)
+position = Vector2(64, 257)
 tile_number = 44
 
 [node name="45" parent="Board/Layer5" unique_id=1090645528 instance=ExtResource("9_ywpbu")]
@@ -287,15 +368,18 @@ tile_number = 48
 position = Vector2(702, 261)
 tile_number = 49
 
-[node name="50-Vending" parent="Board/Layer5" unique_id=1431603841 instance=ExtResource("12_sfdbo")]
+[node name="50" parent="Board/Layer5" unique_id=458167076 instance=ExtResource("16_n0na8")]
 position = Vector2(826, 260)
 tile_number = 50
+
+[node name="Filler" parent="Board/Layer5" unique_id=960447109 instance=ExtResource("14_lwvb7")]
+position = Vector2(-511, 257)
 
 [node name="Layer4" type="Node2D" parent="Board" unique_id=200404372]
 position = Vector2(0, -384)
 
-[node name="40-Bus-Orange-2" parent="Board/Layer4" unique_id=373541353 instance=ExtResource("8_7bjjl")]
-position = Vector2(-320, 255)
+[node name="40" parent="Board/Layer4" unique_id=294852016 instance=ExtResource("16_n0na8")]
+position = Vector2(-320, 256)
 tile_number = 40
 
 [node name="39" parent="Board/Layer4" unique_id=1035118626 instance=ExtResource("11_cepe8")]
@@ -334,6 +418,9 @@ tile_number = 32
 position = Vector2(827, 259)
 tile_number = 31
 
+[node name="Filler" parent="Board/Layer4" unique_id=1823368129 instance=ExtResource("15_7bjjl")]
+position = Vector2(-512, 256)
+
 [node name="Layer3" type="Node2D" parent="Board" unique_id=54317193]
 position = Vector2(0, -256)
 
@@ -358,7 +445,7 @@ position = Vector2(192, 256)
 tile_number = 25
 
 [node name="26-Bus-Violet-2" parent="Board/Layer3" unique_id=40591216 instance=ExtResource("7_lwvb7")]
-position = Vector2(318, 257)
+position = Vector2(319, 256)
 tile_number = 26
 
 [node name="27" parent="Board/Layer3" unique_id=315844247 instance=ExtResource("10_i6vbd")]
@@ -369,13 +456,16 @@ tile_number = 27
 position = Vector2(573, 257)
 tile_number = 28
 
-[node name="29" parent="Board/Layer3" unique_id=110621086 instance=ExtResource("16_n0na8")]
-position = Vector2(701, 258)
+[node name="29" parent="Board/Layer3" unique_id=1352830485 instance=ExtResource("11_cepe8")]
+position = Vector2(700, 258)
 tile_number = 29
 
-[node name="30" parent="Board/Layer3" unique_id=1352830485 instance=ExtResource("11_cepe8")]
-position = Vector2(828, 258)
+[node name="30" parent="Board/Layer3" unique_id=110621086 instance=ExtResource("16_n0na8")]
+position = Vector2(828, 259)
 tile_number = 30
+
+[node name="Filler" parent="Board/Layer3" unique_id=881633611 instance=ExtResource("15_7bjjl")]
+position = Vector2(-512, 256)
 
 [node name="Layer2" type="Node2D" parent="Board" unique_id=996910031]
 position = Vector2(-1, -128)
@@ -417,16 +507,19 @@ position = Vector2(701, 262)
 tile_number = 12
 
 [node name="11" parent="Board/Layer2" unique_id=689780329 instance=ExtResource("11_cepe8")]
-position = Vector2(830, 259)
+position = Vector2(829, 259)
 tile_number = 11
+
+[node name="Filler" parent="Board/Layer2" unique_id=555488619 instance=ExtResource("14_lwvb7")]
+position = Vector2(-511, 256)
 
 [node name="Layer1" type="Node2D" parent="Board" unique_id=855052811]
 
-[node name="Home" parent="Board/Layer1" unique_id=396584189 instance=ExtResource("18_c7inb")]
-position = Vector2(-512, 256)
+[node name="School" parent="Board/Layer1" unique_id=396584189 instance=ExtResource("18_c7inb")]
+position = Vector2(-511, 256)
 
 [node name="1" parent="Board/Layer1" unique_id=1975790550 instance=ExtResource("9_ywpbu")]
-position = Vector2(-320, 256)
+position = Vector2(-319, 256)
 tile_number = 1
 
 [node name="2" parent="Board/Layer1" unique_id=373743207 instance=ExtResource("11_cepe8")]
@@ -461,9 +554,143 @@ tile_number = 8
 position = Vector2(702, 256)
 tile_number = 9
 
-[node name="10-Dog" parent="Board/Layer1" unique_id=1141429592 instance=ExtResource("6_5m5m6")]
-position = Vector2(830, 256)
+[node name="10" parent="Board/Layer1" unique_id=685987049 instance=ExtResource("16_n0na8")]
+position = Vector2(829, 255)
 tile_number = 10
 
 [node name="MapData" type="Node" parent="Board" unique_id=777519244]
 script = ExtResource("18_j2pv1")
+
+[node name="Border-B" type="Node2D" parent="Board" unique_id=1642024283]
+position = Vector2(1, -2)
+
+[node name="BorderB" type="Sprite2D" parent="Board/Border-B" unique_id=1340451193]
+position = Vector2(-575, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB2" type="Sprite2D" parent="Board/Border-B" unique_id=302920250]
+position = Vector2(-447, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB3" type="Sprite2D" parent="Board/Border-B" unique_id=200025731]
+position = Vector2(-319, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB4" type="Sprite2D" parent="Board/Border-B" unique_id=1589115250]
+position = Vector2(-191, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB5" type="Sprite2D" parent="Board/Border-B" unique_id=114126084]
+position = Vector2(-63, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB6" type="Sprite2D" parent="Board/Border-B" unique_id=2132294260]
+position = Vector2(65, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB7" type="Sprite2D" parent="Board/Border-B" unique_id=1726375028]
+position = Vector2(193, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB8" type="Sprite2D" parent="Board/Border-B" unique_id=1863063227]
+position = Vector2(321, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB9" type="Sprite2D" parent="Board/Border-B" unique_id=1351138889]
+position = Vector2(449, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB10" type="Sprite2D" parent="Board/Border-B" unique_id=1758890446]
+position = Vector2(577, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB11" type="Sprite2D" parent="Board/Border-B" unique_id=317800441]
+position = Vector2(704, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="BorderB12" type="Sprite2D" parent="Board/Border-B" unique_id=311022925]
+position = Vector2(830, 400)
+texture = ExtResource("19_mrib1")
+
+[node name="Side" type="Node2D" parent="Board" unique_id=670014285]
+position = Vector2(-12, -268)
+
+[node name="Side7" type="Sprite2D" parent="Board/Side" unique_id=774623683]
+position = Vector2(917, 204)
+texture = ExtResource("20_uy4or")
+
+[node name="Side14" type="Sprite2D" parent="Board/Side" unique_id=1634891433]
+position = Vector2(917, 332)
+texture = ExtResource("20_uy4or")
+
+[node name="Side15" type="Sprite2D" parent="Board/Side" unique_id=1114808579]
+position = Vector2(917, 460)
+texture = ExtResource("20_uy4or")
+
+[node name="Side16" type="Sprite2D" parent="Board/Side" unique_id=1324690947]
+position = Vector2(917, 588)
+texture = ExtResource("20_uy4or")
+
+[node name="Side8" type="Sprite2D" parent="Board/Side" unique_id=1015265154]
+position = Vector2(917, 76)
+texture = ExtResource("20_uy4or")
+
+[node name="Side9" type="Sprite2D" parent="Board/Side" unique_id=101733631]
+position = Vector2(917, -52)
+texture = ExtResource("20_uy4or")
+
+[node name="Side10" type="Sprite2D" parent="Board/Side" unique_id=235755790]
+position = Vector2(917, -180)
+texture = ExtResource("20_uy4or")
+
+[node name="Side11" type="Sprite2D" parent="Board/Side" unique_id=736438454]
+position = Vector2(917, -308)
+texture = ExtResource("20_uy4or")
+
+[node name="Side12" type="Sprite2D" parent="Board/Side" unique_id=659783373]
+position = Vector2(917, -436)
+texture = ExtResource("20_uy4or")
+
+[node name="Side13" type="Sprite2D" parent="Board/Side" unique_id=1404536162]
+position = Vector2(917, -564)
+texture = ExtResource("20_uy4or")
+
+[node name="4" type="Sprite2D" parent="Board/Side" unique_id=302711347]
+position = Vector2(-642, -52)
+texture = ExtResource("20_uy4or")
+
+[node name="3" type="Sprite2D" parent="Board/Side" unique_id=739203192]
+position = Vector2(-642, -180)
+texture = ExtResource("20_uy4or")
+
+[node name="2" type="Sprite2D" parent="Board/Side" unique_id=729431408]
+position = Vector2(-642, -308)
+texture = ExtResource("20_uy4or")
+
+[node name="1" type="Sprite2D" parent="Board/Side" unique_id=121883648]
+position = Vector2(-642, -436)
+texture = ExtResource("20_uy4or")
+
+[node name="7" type="Sprite2D" parent="Board/Side" unique_id=347057016]
+position = Vector2(-642, -564)
+texture = ExtResource("20_uy4or")
+
+[node name="5" type="Sprite2D" parent="Board/Side" unique_id=1283838412]
+position = Vector2(-642, 76)
+texture = ExtResource("20_uy4or")
+
+[node name="6" type="Sprite2D" parent="Board/Side" unique_id=1189855617]
+position = Vector2(-642, 204)
+texture = ExtResource("20_uy4or")
+
+[node name="8" type="Sprite2D" parent="Board/Side" unique_id=1362546851]
+position = Vector2(-642, 331)
+texture = ExtResource("20_uy4or")
+
+[node name="9" type="Sprite2D" parent="Board/Side" unique_id=721993048]
+position = Vector2(-642, 458)
+texture = ExtResource("20_uy4or")
+
+[node name="10" type="Sprite2D" parent="Board/Side" unique_id=812092875]
+position = Vector2(-642, 585)
+texture = ExtResource("20_uy4or")

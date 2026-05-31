@@ -135,7 +135,7 @@ tile_number = 29
 position = Vector2(320, 256)
 tile_number = 30
 
-[node name="Filler" parent="Board/Layer5" unique_id=1403316351 instance=ExtResource("15_dljn3")]
+[node name="Filler" parent="Board/Layer5" unique_id=176817885 instance=ExtResource("18_55vpa")]
 position = Vector2(-512, 256)
 
 [node name="Layer4" type="Node2D" parent="Board" unique_id=200404372]

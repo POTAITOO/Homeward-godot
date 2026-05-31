@@ -110,12 +110,18 @@ func _next_turn():
 
 func _win_game(player):
 	game_over = true
-	player.move_to_tile(player.max_tile)
+	player.move_to_tile(player.get("max_tile"))
 	await _wait_for_player(player)
 	player.target_position = current_board.get_home_position()
 	player.is_moving = true
 	await _wait_for_player(player)
 	player.celebrate_win()
+
+	# All other players do sleep animation
+	for p in players:
+		if p != player:
+			p.play_sleep_reaction()
+
 	print("[WIN] ", player.name, " WINS!")
 
 func resolve_tile_effect(player) -> void:
