@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://csh6aab5laqaf" path="res://assets/Interactions/Select_Button3.png" id="8_yyaud"]
 [ext_resource type="Texture2D" uid="uid://ii406e60oggn" path="res://assets/Interactions/Select_Button4.png" id="9_bgbxg"]
 [ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="9_kqs65"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-1.png" id="10_uk7mg"]
+[ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="10_uk7mg"]
 [ext_resource type="Texture2D" uid="uid://dyrl3sevqqaxv" path="res://assets/Interactions/Select_Button5.png" id="11_ujna7"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-2.png" id="11_xf0ch"]
+[ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="11_xf0ch"]
 [ext_resource type="Texture2D" uid="uid://ddwchwrlcfbkp" path="res://assets/Interactions/Select_Button6.png" id="12_g2g1f"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-1.png" id="12_kqs65"]
-[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-2.png" id="13_wip7v"]
+[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="12_kqs65"]
+[ext_resource type="Texture2D" uid="uid://cj8fj636ori4x" path="res://assets/Interactions/Buttons4.png" id="13_wip7v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
 atlas = ExtResource("1_sav58")
