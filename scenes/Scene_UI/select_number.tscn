@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://yx5vd667ac0a" path="res://scenes/Scene_Players/p_3.tscn" id="8_xf0ch"]
 [ext_resource type="Texture2D" uid="uid://csh6aab5laqaf" path="res://assets/Interactions/Select_Button3.png" id="8_yyaud"]
 [ext_resource type="Texture2D" uid="uid://ii406e60oggn" path="res://assets/Interactions/Select_Button4.png" id="9_bgbxg"]
-[ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="9_kqs65"]
 [ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="10_uk7mg"]
 [ext_resource type="Texture2D" uid="uid://dyrl3sevqqaxv" path="res://assets/Interactions/Select_Button5.png" id="11_ujna7"]
 [ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="11_xf0ch"]
@@ -183,10 +182,6 @@ texture_pressed = ExtResource("12_g2g1f")
 
 [node name="P3" parent="Window/Quad/CollisionShape2D" unique_id=1148197306 instance=ExtResource("8_xf0ch")]
 position = Vector2(48, -112)
-scale = Vector2(2, 2)
-
-[node name="P4" parent="Window/Quad/CollisionShape2D" unique_id=851507044 instance=ExtResource("9_kqs65")]
-position = Vector2(-64, -112)
 scale = Vector2(2, 2)
 
 [node name="Back" type="TextureButton" parent="Window" unique_id=1852697575]

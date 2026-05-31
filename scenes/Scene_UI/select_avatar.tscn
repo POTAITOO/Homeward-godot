@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bsdfejblmy36y" path="res://assets/Interactions/Select_Button7.png" id="5_7yq3t"]
 [ext_resource type="Texture2D" uid="uid://dva4s4whbggak" path="res://assets/Interactions/Select_Button8.png" id="6_uvaek"]
 [ext_resource type="Texture2D" uid="uid://dtxjtw7sqkeej" path="res://assets/UI/Dialog2.png" id="14_evyiq"]
+[ext_resource type="Texture2D" uid="uid://p81e36dj5qoc" path="res://assets/Interactions/Buttons1.png" id="14_ol70m"]
+[ext_resource type="Texture2D" uid="uid://dba4wu7q1qc7s" path="res://assets/Interactions/Buttons2.png" id="15_8qd3g"]
 [ext_resource type="Texture2D" uid="uid://t40ucx5xbxl4" path="res://assets/UI/Mascot-Sheet.png" id="15_i6s6m"]
+[ext_resource type="Texture2D" uid="uid://c4j1lkdpl553j" path="res://assets/Interactions/Buttons3.png" id="16_yru3f"]
+[ext_resource type="Texture2D" uid="uid://cj8fj636ori4x" path="res://assets/Interactions/Buttons4.png" id="17_77wn5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
 atlas = ExtResource("1_5txgc")
@@ -60,9 +64,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wip7v"]
 size = Vector2(175.25, 240)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5txgc"]
-size = Vector2(832, 202)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj48s"]
 atlas = ExtResource("15_i6s6m")
@@ -144,20 +145,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Help" type="TextureButton" parent="Window" unique_id=137562144]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 80.0
+offset_right = 1224.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("16_yru3f")
+texture_pressed = ExtResource("17_77wn5")
+stretch_mode = 0
+
 [node name="P1" type="Area2D" parent="Window" unique_id=1305494026]
 position = Vector2(720, 384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window/P1" unique_id=414199307]
 position = Vector2(-480, 224)
 shape = SubResource("RectangleShape2D_wip7v")
-
-[node name="TextureButton" type="TextureButton" parent="Window/P1/CollisionShape2D" unique_id=632119365]
-offset_left = -96.0
-offset_top = 56.0
-offset_right = 96.0
-offset_bottom = 120.0
-texture_normal = ExtResource("5_7yq3t")
-texture_pressed = ExtResource("6_uvaek")
 
 [node name="P2" type="Area2D" parent="Window" unique_id=1155692649]
 position = Vector2(720, 384)
@@ -204,9 +208,8 @@ offset_bottom = 120.0
 texture_normal = ExtResource("5_7yq3t")
 texture_pressed = ExtResource("6_uvaek")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Window" unique_id=13001993]
+[node name="CollisionShape2D" type="Node2D" parent="Window" unique_id=860383751]
 position = Vector2(720, 352)
-shape = SubResource("RectangleShape2D_5txgc")
 
 [node name="TextureRect" type="TextureRect" parent="Window/CollisionShape2D" unique_id=94433477]
 offset_left = -376.0
@@ -231,3 +234,23 @@ theme_override_font_sizes/font_size = 28
 text = "Chooose your Avatar Player <Variable>"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Back" type="TextureButton" parent="Window" unique_id=1826102251]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 80.0
+offset_right = 1320.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("14_ol70m")
+texture_pressed = ExtResource("15_8qd3g")
+stretch_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="Window" unique_id=632119365]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 664.0
+offset_right = 336.0
+offset_bottom = 728.0
+texture_normal = ExtResource("5_7yq3t")
+texture_pressed = ExtResource("6_uvaek")
