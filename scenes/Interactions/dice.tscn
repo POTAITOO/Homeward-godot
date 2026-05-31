@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://camhlhmsilyiv"]
 
-[ext_resource type="Texture2D" path="res://assets/Interactions/Dice-Sheet.png" id="1_ldgix"]
-[ext_resource type="Script" path="res://scripts/Interactions/dice.gd" id="1_ypoht"]
+[ext_resource type="Texture2D" uid="uid://b33w5floo6ex6" path="res://assets/Interactions/Dice-Sheet.png" id="1_ldgix"]
+[ext_resource type="Script" uid="uid://soihfg2hk8gd" path="res://scripts/Interactions/dice.gd" id="1_ypoht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypoht"]
 size = Vector2(128, 128)
@@ -162,5 +162,5 @@ shape = SubResource("RectangleShape2D_ypoht")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1088522815]
 sprite_frames = SubResource("SpriteFrames_j32mj")
-animation = &"result_6"
+animation = &"result_1"
 speed_scale = 3.0

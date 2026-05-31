@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://2bcn3c7xb72w"]
 
 [ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_iuonh"]
-[ext_resource type="Texture2D" uid="uid://b4vrybolgirro" path="res://assets/UI/Sidebar.png" id="2_15rs1"]
 [ext_resource type="PackedScene" uid="uid://s3kjp54w1fhe" path="res://scenes/Scene_Tiles/school.tscn" id="2_iuonh"]
 [ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/board.gd" id="3_iuq8w"]
 [ext_resource type="PackedScene" uid="uid://bcopm2cvg2uj2" path="res://scenes/Scene_Tiles/connector_single.tscn" id="3_l3cfh"]
@@ -21,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://c0snw0kjdxerw" path="res://scenes/Scene_Power/dog-left.tscn" id="14_m4h2d"]
 [ext_resource type="PackedScene" uid="uid://b886hicstl1iu" path="res://scenes/Scene_Tiles/filler-tree.tscn" id="15_dljn3"]
 [ext_resource type="PackedScene" uid="uid://bvm5pcf6teyha" path="res://scenes/Scene_Tiles/filler-empty.tscn" id="18_55vpa"]
-[ext_resource type="PackedScene" uid="uid://camhlhmsilyiv" path="res://scenes/Interactions/dice.tscn" id="19_necax"]
 [ext_resource type="Texture2D" uid="uid://w28v76vnxxtt" path="res://assets/UI/Border-B.png" id="22_55vpa"]
 [ext_resource type="Script" uid="uid://bb43gihqef1td" path="res://scripts/core/MapData_6x6.gd" id="23_b7xp2"]
 [ext_resource type="Texture2D" uid="uid://c51r7vfmlc5eu" path="res://assets/UI/Side.png" id="24_b7xp2"]
@@ -37,9 +35,6 @@ zoom = Vector2(0.6, 0.6)
 position = Vector2(-48, 24)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1263217925]
-
-[node name="Dice" parent="." unique_id=453070204 instance=ExtResource("19_necax")]
-position = Vector2(709, 360)
 
 [node name="Board" type="Node2D" parent="." unique_id=156339385]
 script = ExtResource("3_iuq8w")
@@ -343,11 +338,3 @@ texture = ExtResource("24_b7xp2")
 [node name="Side2" type="Sprite2D" parent="Board/Side" unique_id=1375541775]
 position = Vector2(-656, 192)
 texture = ExtResource("24_b7xp2")
-
-[node name="Sidebar" type="TextureRect" parent="." unique_id=1299662083]
-visible = false
-offset_left = 560.0
-offset_top = -536.0
-offset_right = 960.0
-offset_bottom = 544.0
-texture = ExtResource("2_15rs1")
