@@ -55,9 +55,8 @@ func _setup_players():
 		player.set("board", current_board)
 		player.set("max_tile", current_map_data.total_tiles if current_map_data != null else 0)
 		
-		player.setup(current_board, current_board.get_school_position())
-			
 		players_node.add_child(player)
+		player.setup(current_board, current_board.get_school_position())
 		players.append(player)
 		
 		print("[PLAYER] " + player.name + " spawned at School")

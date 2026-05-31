@@ -80,9 +80,9 @@ func _update_walk_animation(new_target: Vector2) -> void:
 		else:
 			sprite.play("left walk")
 	elif dir.y < 0:
-		sprite.play("forward walk")
-	else:
 		sprite.play("back walk")
+	else:
+		sprite.play("forward walk")
 
 func _play_idle() -> void:
 	if sprite == null:

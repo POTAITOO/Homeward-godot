@@ -7,6 +7,20 @@ extends Node2D
 func _ready():
 	print("[GameScene] Starting setup...")
 	
+	# Dynamically load and instantiate the selected map scene
+	print("[GameScene] Selected map: " + GlobalData.selected_map)
+	for child in board.get_children():
+		child.queue_free()
+		
+	var map_scene_path = "res://scenes/main/" + GlobalData.selected_map + ".tscn"
+	var map_scene = load(map_scene_path)
+	if map_scene:
+		var map_instance = map_scene.instantiate()
+		board.add_child(map_instance)
+		print("[GameScene] Instantiated map scene: " + map_scene_path)
+	else:
+		push_error("[GameScene] Failed to load map scene: " + map_scene_path)
+
 	game_manager.set_board(board)
 	game_manager.players_node = players
 	
@@ -33,7 +47,11 @@ func _ready():
 
 	game_manager.player_count = GlobalData.player_count
 
+	# Wait a frame for new map nodes to enter the tree and call their _ready()
 	await get_tree().process_frame
+
+	# Re-cache the newly instanced board tiles and school/home positions
+	board._cache_nodes()
 
 	game_manager.initialize_game()
 	print("[GameScene] Ready")

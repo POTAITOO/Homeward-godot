@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cwt0hvehi5lj1"]
 
-[ext_resource type="Script" uid="uid://du2agcfxpexxs" path="res://scripts/core/game_scene.gd" id="1_5odut"]
-[ext_resource type="Script" uid="uid://cjc3mdqkrauxn" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
-[ext_resource type="PackedScene" uid="uid://2bcn3c7xb72w" path="res://scenes/main/6x6.tscn" id="3_5odut"]
-[ext_resource type="Script" uid="uid://djggwkvcu2mjx" path="res://scripts/core/board.gd" id="4_8gxuo"]
-[ext_resource type="PackedScene" uid="uid://dd1bi6muvhq42" path="res://scenes/main/player.tscn" id="5_8gxuo"]
+[ext_resource type="Script" path="res://scripts/core/game_scene.gd" id="1_5odut"]
+[ext_resource type="Script" path="res://scripts/core/GameManager.gd" id="1_sdya7"]
+[ext_resource type="PackedScene" path="res://scenes/main/6x6.tscn" id="3_5odut"]
+[ext_resource type="Script" path="res://scripts/core/board.gd" id="4_8gxuo"]
+[ext_resource type="PackedScene" path="res://scenes/main/player.tscn" id="5_8gxuo"]
 
 [node name="GameScene" type="Node2D" unique_id=705321355]
 script = ExtResource("1_5odut")

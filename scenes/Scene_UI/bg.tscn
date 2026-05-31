@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5v0bvjsts6n6"]
 
-[ext_resource type="Texture2D" uid="uid://cdlv06p5g1pss" path="res://assets/UI/Backdrop_Sky-Sheet.png" id="1_v77j7"]
-[ext_resource type="Script" uid="uid://cq814ng40qelg" path="res://scripts/UI_Script/bg.gd" id="1_y54if"]
+[ext_resource type="Texture2D" path="res://assets/UI/Backdrop_Sky-Sheet.png" id="1_v77j7"]
+[ext_resource type="Script" path="res://scripts/UI_Script/bg.gd" id="1_y54if"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

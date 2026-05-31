@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpvpmtsfatc5m"]
 
-[ext_resource type="Script" uid="uid://cmhnind3hglcs" path="res://scripts/Tile_Script/school.gd" id="1_gurgw"]
-[ext_resource type="Texture2D" uid="uid://mq7et45su47y" path="res://assets/Tiles/Home-Sheet.png" id="2_gurgw"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/school.gd" id="1_gurgw"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Home-Sheet.png" id="2_gurgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)

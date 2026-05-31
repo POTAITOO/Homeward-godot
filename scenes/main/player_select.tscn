@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blr11o6mtmu7s"]
 
-[ext_resource type="PackedScene" uid="uid://5v0bvjsts6n6" path="res://scenes/Scene_UI/bg.tscn" id="1_uh60o"]
-[ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_hy0vx"]
+[ext_resource type="PackedScene" path="res://scenes/Scene_UI/bg.tscn" id="1_uh60o"]
+[ext_resource type="FontFile" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_hy0vx"]
 
 [node name="PlayerSelect" type="Control" unique_id=2041017812]
 layout_mode = 3

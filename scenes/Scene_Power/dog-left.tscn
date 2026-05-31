@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0snw0kjdxerw"]
 
-[ext_resource type="Script" uid="uid://c8limqfdav54d" path="res://scripts/Tile_Script/dog_left.gd" id="1_70mjf"]
-[ext_resource type="Texture2D" uid="uid://k08v3ickt141" path="res://assets/Tiles/Dog-Sheet.png" id="2_ighr7"]
+[ext_resource type="Script" path="res://scripts/Tile_Script/dog_left.gd" id="1_70mjf"]
+[ext_resource type="Texture2D" path="res://assets/Tiles/Dog-Sheet.png" id="2_ighr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pty6h"]
 size = Vector2(128, 128)
