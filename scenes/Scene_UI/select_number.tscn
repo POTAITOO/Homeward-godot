@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://crgstvbhrls1f"]
+
+[ext_resource type="Texture2D" uid="uid://dfshfm5n551v" path="res://assets/UI/Blue-Sky-Sheet.png" id="1_sav58"]
+[ext_resource type="Texture2D" uid="uid://thorhihkk2b0" path="res://assets/UI/Window.png" id="2_onjc5"]
+[ext_resource type="FontFile" uid="uid://5xyp0llyx8hb" path="res://assets/Font/PixelifySans-VariableFont_wght.ttf" id="3_2ts1u"]
+[ext_resource type="PackedScene" uid="uid://cnfxucqxei6rt" path="res://scenes/Scene_Players/p_1.tscn" id="4_v185v"]
+[ext_resource type="PackedScene" uid="uid://dmiti0njxvxa0" path="res://scenes/Scene_Players/p_2.tscn" id="5_nmri4"]
+[ext_resource type="Texture2D" uid="uid://ctlnrjko2t2jw" path="res://assets/Interactions/Select_Button1.png" id="6_hwxah"]
+[ext_resource type="Texture2D" uid="uid://d3kudpmth0kv2" path="res://assets/Interactions/Select_Button2.png" id="7_jwefx"]
+[ext_resource type="PackedScene" uid="uid://yx5vd667ac0a" path="res://scenes/Scene_Players/p_3.tscn" id="8_xf0ch"]
+[ext_resource type="Texture2D" uid="uid://csh6aab5laqaf" path="res://assets/Interactions/Select_Button3.png" id="8_yyaud"]
+[ext_resource type="Texture2D" uid="uid://ii406e60oggn" path="res://assets/Interactions/Select_Button4.png" id="9_bgbxg"]
+[ext_resource type="PackedScene" uid="uid://27i7g12pofgr" path="res://scenes/Scene_Players/p_4.tscn" id="9_kqs65"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-1.png" id="10_uk7mg"]
+[ext_resource type="Texture2D" uid="uid://dyrl3sevqqaxv" path="res://assets/Interactions/Select_Button5.png" id="11_ujna7"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Cancel-2.png" id="11_xf0ch"]
+[ext_resource type="Texture2D" uid="uid://ddwchwrlcfbkp" path="res://assets/Interactions/Select_Button6.png" id="12_g2g1f"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-1.png" id="12_kqs65"]
+[ext_resource type="Texture2D" path="res://assets/Interactions/B-Help-2.png" id="13_wip7v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onjc5"]
+atlas = ExtResource("1_sav58")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjhe2"]
+atlas = ExtResource("1_sav58")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktp34"]
+atlas = ExtResource("1_sav58")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f36op"]
+atlas = ExtResource("1_sav58")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mil0"]
+atlas = ExtResource("1_sav58")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he3ob"]
+atlas = ExtResource("1_sav58")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruihq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onjc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjhe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktp34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f36op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mil0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he3ob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wip7v"]
+size = Vector2(318.5, 382.5)
+
+[node name="Control" type="Control" unique_id=1166207099]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1861311612]
+zoom = Vector2(0.6, 0.6)
+
+[node name="BG" type="AnimatedSprite2D" parent="." unique_id=1376145592]
+sprite_frames = SubResource("SpriteFrames_ruihq")
+
+[node name="Window" type="TextureRect" parent="." unique_id=877991671]
+layout_mode = 0
+offset_left = -720.0
+offset_top = -384.0
+offset_right = 720.0
+offset_bottom = 425.0
+texture = ExtResource("2_onjc5")
+
+[node name="Title" type="Label" parent="Window" unique_id=1618748504]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 152.0
+offset_right = 1232.0
+offset_bottom = 343.0
+theme_override_colors/font_shadow_color = Color(0.29803923, 0.11372549, 0, 0.8901961)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_2ts1u")
+theme_override_font_sizes/font_size = 78
+text = "Select Number of Players:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Duo" type="Area2D" parent="Window" unique_id=1305494026]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Duo" unique_id=414199307]
+position = Vector2(-416, 128)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="P1" parent="Window/Duo/CollisionShape2D" unique_id=1186178461 instance=ExtResource("4_v185v")]
+position = Vector2(63.25, 0.75)
+scale = Vector2(2, 2)
+
+[node name="P2" parent="Window/Duo/CollisionShape2D" unique_id=568122415 instance=ExtResource("5_nmri4")]
+position = Vector2(-64.75, 0.75)
+scale = Vector2(2, 2)
+
+[node name="TextureButton" type="TextureButton" parent="Window/Duo/CollisionShape2D" unique_id=632119365]
+offset_left = -96.0
+offset_top = 120.0
+offset_right = 96.0
+offset_bottom = 184.0
+texture_normal = ExtResource("6_hwxah")
+texture_pressed = ExtResource("7_jwefx")
+
+[node name="Trio" type="Area2D" parent="Window" unique_id=1206701802]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Trio" unique_id=1787998339]
+position = Vector2(8, 128)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="P1" parent="Window/Trio/CollisionShape2D" unique_id=1287442068 instance=ExtResource("4_v185v")]
+position = Vector2(48, 40)
+scale = Vector2(2, 2)
+
+[node name="P2" parent="Window/Trio/CollisionShape2D" unique_id=1078678306 instance=ExtResource("5_nmri4")]
+position = Vector2(-64, 40)
+scale = Vector2(2, 2)
+
+[node name="TextureButton" type="TextureButton" parent="Window/Trio/CollisionShape2D" unique_id=1156782197]
+offset_left = -104.0
+offset_top = 120.0
+offset_right = 88.0
+offset_bottom = 184.0
+texture_normal = ExtResource("8_yyaud")
+texture_pressed = ExtResource("9_bgbxg")
+
+[node name="P3" parent="Window/Trio/CollisionShape2D" unique_id=1574974646 instance=ExtResource("8_xf0ch")]
+position = Vector2(-8, -112)
+scale = Vector2(2, 2)
+
+[node name="Quad" type="Area2D" parent="Window" unique_id=1016491790]
+position = Vector2(720, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Quad" unique_id=56333920]
+position = Vector2(416, 128)
+shape = SubResource("RectangleShape2D_wip7v")
+
+[node name="P1" parent="Window/Quad/CollisionShape2D" unique_id=1681080331 instance=ExtResource("4_v185v")]
+position = Vector2(48, 40)
+scale = Vector2(2, 2)
+
+[node name="P2" parent="Window/Quad/CollisionShape2D" unique_id=505631299 instance=ExtResource("5_nmri4")]
+position = Vector2(-64, 40)
+scale = Vector2(2, 2)
+
+[node name="TextureButton" type="TextureButton" parent="Window/Quad/CollisionShape2D" unique_id=1759733817]
+offset_left = -96.0
+offset_top = 120.0
+offset_right = 96.0
+offset_bottom = 184.0
+texture_normal = ExtResource("11_ujna7")
+texture_pressed = ExtResource("12_g2g1f")
+
+[node name="P3" parent="Window/Quad/CollisionShape2D" unique_id=1148197306 instance=ExtResource("8_xf0ch")]
+position = Vector2(48, -112)
+scale = Vector2(2, 2)
+
+[node name="P4" parent="Window/Quad/CollisionShape2D" unique_id=851507044 instance=ExtResource("9_kqs65")]
+position = Vector2(-64, -112)
+scale = Vector2(2, 2)
+
+[node name="Back" type="TextureButton" parent="Window" unique_id=1852697575]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 80.0
+offset_right = 1320.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("10_uk7mg")
+texture_pressed = ExtResource("11_xf0ch")
+stretch_mode = 0
+
+[node name="Help" type="TextureButton" parent="Window" unique_id=705464312]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 80.0
+offset_right = 1224.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("12_kqs65")
+texture_pressed = ExtResource("13_wip7v")
+stretch_mode = 0
