@@ -170,7 +170,7 @@ tile_number = 84
 position = Vector2(187, -769)
 tile_number = 85
 
-[node name="86-Nike" parent="Board/Layer 9" unique_id=48997362 instance=ExtResource("14_aqlqd")]
+[node name="86-Bike" parent="Board/Layer 9" unique_id=48997362 instance=ExtResource("14_aqlqd")]
 position = Vector2(315, -768)
 tile_number = 86
 
