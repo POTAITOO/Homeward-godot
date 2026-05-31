@@ -90,8 +90,8 @@ func _play_turn():
 		return
 
 	# Wait for user input to roll (Space by default via input action 'roll_dice').
-	# Log turn start
-	print("[GAME] Turn", current_turn, "- Player", current_player_index, "starting at tile", player.get("grid_position"))
+	# Log turn start (use player.name so logs match displayed names)
+	print("[GAME] Turn %d - %s starting at tile %d" % [current_turn, player.name, player.get("grid_position")])
 
 	# Start a fresh roll session so only rolls produced during this window are accepted
 	current_roll_session += 1
@@ -102,23 +102,23 @@ func _play_turn():
 	var roll = await roll_submitted
 	waiting_for_roll = false
 
-	print("[GAME] Player", current_player_index, "rolled", roll)
+	print("[GAME] %s rolled %d" % [player.name, roll])
 	player.take_turn(roll)
 
 	# Predict destination using the player's last confirmed position (avoid races)
 	var last_pos = player.get("last_position")
 	var predicted = min(last_pos + roll, player.get("max_tile"))
-	print("[GAME] Player", current_player_index, "will move from", last_pos, "to", predicted, "(steps", roll, ")")
+	print("[GAME] %s will move from %d to %d (steps %d)" % [player.name, last_pos, predicted, roll])
 
 	await _wait_for_player(player)
 
 	# Log actual landing position after move
-	print("[GAME] Player", current_player_index, "landed on tile", player.get("grid_position"))
+	print("[GAME] %s landed on tile %d" % [player.name, player.get("grid_position")])
 
 	await resolve_tile_effect(player)
 
 	# Log position after resolving tile effects (may have changed)
-	print("[GAME] Player", current_player_index, "position after effects", player.get("grid_position"))
+	print("[GAME] %s position after effects %d" % [player.name, player.get("grid_position")])
 
 	if player.get("grid_position") >= player.get("max_tile"):
 		_win_game(player)
@@ -161,6 +161,10 @@ func _next_turn():
 
 func _win_game(player):
 	game_over = true
+	# Persist winner name for external UI / result screens
+	if player.name != "":
+		GlobalData.winner_name = str(player.name)
+		print("[GAME] Winner saved to GlobalData.winner_name:", GlobalData.winner_name)
 	player.move_to_tile(player.max_tile)
 	await _wait_for_player(player)
 	player.target_position = current_board.get_home_position()
